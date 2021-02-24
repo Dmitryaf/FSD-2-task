@@ -9,18 +9,9 @@
 
 @font-face {
   font-family: 'Montserrat', sans-serif;
-  src: url('../assets/Montserrat-SemiBold.woff') format('woff'),
-    url('../assets/Montserrat-SemiBold.svg#Montserrat-SemiBold') format('svg'),
-    url('../assets/Montserrat-SemiBold.ttf') format('truetype');
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Montserrat', sans-serif;
   src: url('../assets/Montserrat-Bold.woff') format('woff'),
     url('../assets/Montserrat-Bold.svg#Montserrat-Bold') format('svg'),
     url('../assets/Montserrat-Bold.ttf') format('truetype');
-  font-weight: 600;
+  font-weight: 700;
   font-style: normal;
 }
