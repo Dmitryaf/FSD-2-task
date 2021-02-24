@@ -5,11 +5,7 @@ const webpack = require('webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const HtmlWebpackHadrddiskPlugin = require('html-webpack-harddisk-plugin');
-
-const isProd = process.env.NODE_ENV === 'production';
-const isDev = !isProd;
+const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
 
 const pages = [];
 
@@ -38,10 +34,6 @@ const htmlPlugins = pages.map(
       alwaysWriteToDisk: true,
       inject: 'body',
       hash: true,
-      minify: {
-        removeComments: isProd,
-        collapseWhitespace: isProd,
-      },
     })
 );
 
@@ -58,47 +50,34 @@ const jsLoader = () => {
   return loaders;
 };
 
-const mode = process.env.NODE_ENV;
-
 module.exports = {
-  mode: mode,
   context: path.resolve(__dirname, 'src'),
-  entry: ['./entry.js'],
+  entry: './entry.js',
   output: {
-    filename: '[name].[hash].js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/static/',
+    filename: '[name].js',
     assetModuleFilename: 'assets/[name][ext]',
-  },
-  optimization: {
-    splitChunks: {
-      chunks: 'all',
-    },
+    publicPath: '/',
   },
   resolve: {
     extensions: ['.js'],
   },
-  devtool: false,
   devServer: {
-    port: 8080,
-    hot: isDev,
+    contentBase: './dist',
+    compress: true,
   },
+  mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
+  target: process.env.NODE_ENV === 'production' ? 'browserslist' : 'web',
+
   plugins: [
-    // new CleanWebpackPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
-    }),
+    new CleanWebpackPlugin({ cleanStaleWebpackAssets: false, dry: true }),
     new MiniCssExtractPlugin({
-      filename: '[name].[hash].css',
+      filename: '[name].css',
     }),
-    new UglifyJsPlugin({
-      uglifyOptions: {
-        mangle: true,
-      },
-    }),
-    new HtmlWebpackHadrddiskPlugin(),
+    new HtmlWebpackHarddiskPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
   ].concat(htmlPlugins),
+
   module: {
     rules: [
       {
@@ -106,8 +85,10 @@ module.exports = {
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
+            options: { publicPath: '' },
           },
           'css-loader',
+          'postcss-loader',
           'sass-loader',
         ],
       },
