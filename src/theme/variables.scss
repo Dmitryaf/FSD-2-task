@@ -1,0 +1,27 @@
+$xxs: 320px;
+$xs: 575px;
+$sm: 767px;
+$md: 991px;
+$lg: 1199px;
+$xl: 1440px;
+
+$darkShade: #1F2041;
+$darkShade75: #575871;
+$darkShade50: #8f90a0;
+$darkShade25: #c7c7d0;
+$darkShade5: #f4f4f6;
+$purple: #BC9CFF;
+$green: #6FCF97;
+
+/***** Mixins *****/
+@mixin media-breakpoint-up($width) {
+  @media (min-width: $width + 1) {
+    @content;
+  }
+}
+
+@mixin media-breakpoint-down($width) {
+  @media (max-width: $width) {
+    @content;
+  }
+}
