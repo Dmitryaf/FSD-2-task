@@ -1,4 +1,9 @@
+include ./base-data
+block variables
 
+include ../../components/layout/layout
+include ../../components/header/header
+include ../../components/footer/footer
 
 doctype html 
 html
@@ -8,9 +13,20 @@ html
     title
       block title
 
-  body 
-    block header 
-    block main 
-    block footer
+  body
+    +layout()
+      +layout__header()
+        +layout__container({basis: 1150, align: 'center'})
+          block header
+            +header()
 
-    block scripts 
+    +layout__main()
+      +layout__container({basis: 1150, align: 'center'})
+        block main
+
+    +layout__footer()
+      +layout__container({basis: 1150, align: 'center'})
+        block footer
+          +footer()
+
+    block scripts
