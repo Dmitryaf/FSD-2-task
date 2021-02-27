@@ -18,7 +18,7 @@ html
       +layout__header()
         +layout__container({basis: 1150, align: 'center'})
           block header
-            +header()
+            +header({menuItems: locals.menuItems, isAuth: locals.isAuth})
 
     +layout__main()
       +layout__container({basis: 1150, align: 'center'})

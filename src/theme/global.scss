@@ -2,9 +2,44 @@
 @import 'variables.scss';
 @import 'fonts.scss';
 
+html {
+  font-family: Montserrat,
+    Arial, sans-serif;
+  font-size: 14px;
+  color: $darkShade75;
+  background-color: white;
+}
+
 body {
-  font-family: 'Monserat', sans-serif;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: Montserrat, sans-serif;
+  font-weight: 700;
+  color: $darkShade100;
+}
+
+h1 {
+  font-size: 1.714rem;
+}
+
+h2 {
+  font-size: 1.429rem;
+}
+
+h3 {
+  font-size: 0.857rem;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: Montserrat, sans-serif;
 }
