@@ -1,3 +1,6 @@
+include ../menu/menu
+include ../button/button
+
 //-
   options.menuItems - массив елементов меню
 
@@ -6,7 +9,13 @@ mixin header(options)
     - options = {}
 
   .header
-    a.header__logo(href = '/home.html')
-      | home
+    a.header__logo(href = '/')
+      img.header__img-logo(src='./img/logo.svg' alt='logo')
     .header__menu
-      //- +menu({items: options.menuItems})
+      +menu({items: options.menuItems})
+    if !options.isAuth
+      .header__btns
+        +button({text: 'Войти', type: 'inverted'})
+        +button({text: 'Зарегистрироваться'})
+    else
+      .header__user
