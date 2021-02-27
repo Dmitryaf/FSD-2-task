@@ -1,2 +1,52 @@
 -
-  locals.menuItems = []
+  locals.menuItems = [
+    {
+      name: 'О нас',
+      href: '/about-us'
+    }, 
+    {
+      name: 'Услуги',
+      href: '/services',
+      childs: [
+        {
+          name: 'Пункт меню',
+          href: '/services-sub'
+        },
+        {
+          name: 'Пункт меню',
+          href: '/services-sub'
+        },
+        {
+          name: 'Пункт меню',
+          href: '/services-sub'
+        }
+      ],
+    }, 
+    {
+      name: 'Вакансии',
+      href: '/vacancy'
+    }, 
+    {
+      name: 'Новости',
+      href: '/news'
+    },
+    {
+      name: 'Соглашения',
+      href: '/agreement',
+      childs: [
+        {
+          name: 'Пункт меню',
+          href: '/agreement-sub'
+        },
+        {
+          name: 'Длинный пункт меню',
+          href: '/agreement-sub'
+        },
+        {
+          name: 'Очень длинный пункт меню',
+          href: '/agreement-sub'
+        }
+      ],
+    }, 
+  ],
+  locals.isAuth = false
