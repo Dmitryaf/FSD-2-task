@@ -1,0 +1,27 @@
+.header {
+  display: flex;
+  align-items: center;
+  flex: 1 0 auto;
+  background-color: white;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  padding: 1.071rem 0;
+
+  &__logo {
+    flex: 0 0 auto;
+    text-decoration: none;
+  }
+
+  &__img-logo {
+    display: block;
+  }
+
+  &__menu {
+    display: flex;
+    flex: 1 0 auto;
+    justify-content: flex-end;
+  }
+
+  &__btns {
+    display: flex;
+  }
+}

@@ -6,30 +6,33 @@
   color: white;
 
   &__element {
-    font-family: 'Monserrat', sans-serif;
-    font-size: 0.857rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
     font-weight: 700;
+    line-height: 14px;
     color: white;
     background: linear-gradient(180deg, $purple 0%, #8BA4F9 100%);
     border: 2px solid $purple;
-    border-radius: 1.570;
+    border-radius: 1.570rem;
     text-align: center;
     vertical-align: middle;
     text-transform: uppercase;
     width: 100%;
-    padding: 1rem 1.430rem;
+    padding: 0.6rem 1.3rem;
     cursor: pointer;
     outline: none;
-    transition: all .3;
+    transition: all .3s;
 
     &:hover,
     &:active {
       opacity: 0.5;
     }
+
+
   }
 
   &.button_inverted &__element {
     color: $purple;
-    background-color: white;
+    background: white;
   }
 }
