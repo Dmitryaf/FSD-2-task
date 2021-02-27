@@ -56,7 +56,6 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].js',
-    assetModuleFilename: 'assets/[name][ext]',
     publicPath: '/',
   },
   resolve: {
@@ -97,8 +96,18 @@ module.exports = {
         loader: 'pug-loader',
       },
       {
-        test: /\.(png|jpg|svg|ttf|woff|)$/,
+        test: /\.(png|jpg|svg|)$/,
         type: 'asset/resource',
+        generator: {
+          filename: 'img/[name][ext]',
+        },
+      },
+      {
+        test: /\.(ttf|woff|)$/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'fonts/[name][ext]',
+        },
       },
       {
         test: /\.m?js$/,
