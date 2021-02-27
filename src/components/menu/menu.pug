@@ -1,0 +1,24 @@
+//-
+  options.items - массив с элементами меню
+  options.items[0].name - имя элемента меню
+  options.items[0].href - ссылка элемента меню
+
+mixin menu(options)
+  if !options
+    - options = {}
+
+  if !options.items
+    - options.items = []
+
+  .menu
+    nav.menu__list
+      for item in options.items
+        if item.childs
+          .menu__item
+            a.menu__link.menu__link_arrow(href = item.href)= item.name
+            .submenu
+              for child in item.childs
+                a.submenu__item(href = child.href)= child.name
+        else
+          .menu__item
+            a.menu__link(href = item.href)= item.name
