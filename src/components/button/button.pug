@@ -8,13 +8,13 @@
 mixin button(options)
   if !options
     - options = {}
-    - 
-      var classes = ''
-      classes += options.type ? ' button_' + options.type : ''
-      classes += options.size ? ' button_' + options.size : ''
-      classes += options.isInverted ? ' button_inverted' : ''
+  -
+    var classes = ''
+    classes += options.type ? 'button_' + options.type : ''
+    classes += options.size ? 'button_' + options.size : ''
+    classes += options.isInverted ? ' button_inverted' : ''
 
-      .button(class=classes)
-        button.button__element(
-          type = options.isSubmit ? 'submit' : false,
-        )= options.text || 'Button'
+  .button(class=classes)
+    button.button__element(
+      type = options.isSubmit ? 'submit' : false,
+    )= options.text || 'Button'
