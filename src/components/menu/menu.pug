@@ -15,10 +15,10 @@ mixin menu(options)
       for item in options.items
         if item.childs
           .menu__item
-            a.menu__link.menu__link_arrow(href = item.href)= item.name
+            a.menu__link.menu__link_dropdown(class= item.active ? 'menu__link_active' : '' , href = item.href)= item.name
             .submenu
               for child in item.childs
                 a.submenu__item(href = child.href)= child.name
         else
           .menu__item
-            a.menu__link(href = item.href)= item.name
+            a.menu__link(class= item.active ? 'menu__link_active' : '' , href = item.href)= item.name

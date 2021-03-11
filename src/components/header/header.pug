@@ -8,14 +8,16 @@ mixin header(options)
   if !options
     - options = {}
 
-  .header
-    a.header__logo(href = '/')
-      img.header__img-logo(src='./img/logo.svg' alt='logo')
-    .header__menu
-      +menu({items: options.menuItems})
-    if !options.isAuth
-      .header__btns
-        +button({text: 'Войти', type: 'inverted'})
-        +button({text: 'Зарегистрироваться'})
-    else
-      .header__user
+  header.header
+    +container()
+      .header__content
+        a.header__logo(href = '/')
+          img.header__img-logo(src='./img/logo.svg' alt='logo')
+        .header__menu
+          +menu({items: options.menuItems})
+        if !options.isAuth
+          .header__btns
+            +button({text: 'Войти', type: 'inverted'})
+            +button({text: 'Зарегистрироваться'})
+        else
+          .header__user= 'Юлий Цезарь'
