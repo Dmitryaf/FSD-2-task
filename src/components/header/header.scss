@@ -1,14 +1,20 @@
+@import '../../theme/variables.scss';
+
 .header {
-  display: flex;
-  align-items: center;
-  flex: 1 0 auto;
   background-color: white;
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
-  padding: 1.071rem 0;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    flex: 1 0 auto;
+    padding: 1.071rem 0;
+  }
 
   &__logo {
     flex: 0 0 auto;
     text-decoration: none;
+    margin-left: 10px;
   }
 
   &__img-logo {
@@ -19,9 +25,20 @@
     display: flex;
     flex: 1 0 auto;
     justify-content: flex-end;
+    margin-right: 20px;
   }
 
   &__btns {
     display: flex;
+
+    & .button:first-child {
+      margin-right: 20px;
+    }
+  }
+
+  &__user {
+    color: $darkShade50;
+    border-left: 1px solid $darkShade10;
+    padding-left: 20px;
   }
 }
