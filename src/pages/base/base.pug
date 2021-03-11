@@ -1,7 +1,7 @@
 include ./base-data
 block variables
 
-include ../../components/layout/layout
+include ../../components/container/container
 include ../../components/header/header
 include ../../components/footer/footer
 
@@ -14,19 +14,13 @@ html
       block title
 
   body
-    +layout()
-      +layout__header()
-        +layout__container({basis: 1150, align: 'center'})
-          block header
-            +header({menuItems: locals.menuItems, isAuth: locals.isAuth})
+    block header
+      +header({menuItems: locals.menuItems, isAuth: locals.isAuth})
 
-    +layout__main()
-      +layout__container({basis: 1150, align: 'center'})
-        block main
+    block main
 
-    +layout__footer()
-      +layout__container({basis: 1150, align: 'center'})
-        block footer
-          +footer()
+    block footer
+      +footer()
+
 
     block scripts
