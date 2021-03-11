@@ -1,0 +1,9 @@
+mixin container(options)
+  if !options
+    - options = {}
+
+  -
+    var classes = ''
+    classes += options.size ? ' container_' + options.size : ''
+  .container(class= classes)
+    block
