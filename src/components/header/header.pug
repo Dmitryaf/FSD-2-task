@@ -8,7 +8,11 @@ mixin header(options)
   if !options
     - options = {}
 
-  header.header
+  -
+    var classes = ''
+    classes += options.class ? 'header_' + options.class : ''
+
+  header.header(class=classes)
     +container()
       .header__content
         a.header__logo(href = '/')
