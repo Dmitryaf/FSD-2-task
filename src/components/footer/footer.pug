@@ -2,13 +2,35 @@
   options.items - массив с элементами меню
   options.items[0].name - имя элемента меню
   options.items[0].href - ссылка элемента меню
+
 mixin footer(options)
   if !options
     - options = {}
+
   if !options.items
     - options.items = []
 
   footer.footer
-    nav.footer__nav
-    .footer__copyright
-      | &copy; 2016-2017
+    +container()
+      .footer__content
+        .footer__col
+          a.footer__logo(href = '/')
+            img.footer__img-logo(src='./img/logo.svg' alt='logo')
+          p.footer__text= 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»'
+
+        for item in options.menuItems
+          .footer__col
+            h5.footer__title= item.title
+            if item.title != 'Подписка'
+              .footer__list
+                for listItem in item.list
+                  a.footer__list-item(href= listItem.href)= listItem.name
+            else
+              p.footer__text= item.description
+              input(placeholder= 'Email')
+    .copyright
+      +container()
+        .copyright__content
+          .copyright__text= 'Copyright © 2018 Toxin отель. Все права зачищены.'
+          +socials()
+
