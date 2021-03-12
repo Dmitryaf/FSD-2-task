@@ -1,0 +1,74 @@
+@import '../../theme/variables.scss';
+
+.footer {
+  background: white;
+  box-shadow: 0px 1px 0px rgba(31, 32, 65, 0.1);
+
+  &__logo {
+    display: inline-block;
+    margin: 0 0 20px 10px;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    padding: 105px 0;
+  }
+
+  &__col {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    max-width: 260px;
+    margin-right: 40px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: $darkShade100;
+    text-transform: uppercase;
+    margin: 0 0 20px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__list-item {
+    display: inline-block;
+    position: relative;
+    color: $darkShade50;
+    line-height: 17px;
+    text-decoration: none;
+    margin-bottom: 20px;
+
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__text {
+    margin: 0 0 20px;
+    line-height: 24px;
+  }
+}
+
+.copyright {
+  background-color: white;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  border-top: 1px solid $darkShade10;
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 0;
+  }
+}
