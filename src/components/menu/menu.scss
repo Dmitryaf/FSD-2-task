@@ -18,14 +18,12 @@
 
   &__link {
     position: relative;
-    text-decoration: none;
     color: $darkShade50;
-    padding-bottom: 5px;
-    transition: all .3s;
     line-height: 17px;
+    text-decoration: none;
 
     &:hover {
-      border-bottom: 1px solid $darkShade50;
+      text-decoration: underline;
     }
 
     &_active {
