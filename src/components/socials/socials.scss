@@ -1,0 +1,17 @@
+.socials {
+  display: flex;
+
+  &__link {
+    display: inline-block;
+    margin-right: 20px;
+    transition: .3s;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover {
+      opacity: .7;
+    }
+  }
+}

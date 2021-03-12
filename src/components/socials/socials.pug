@@ -1,0 +1,14 @@
+mixin socials(options)
+  if !options
+    - options = {}
+
+  if !options.items
+    - options.items = []
+
+  .socials
+    a.socials__link(href='https://www.facebook.com/')
+      img.socials__icon(src= './img/facebook.svg')
+    a.socials__link(href='https://twitter.com/')
+      img.socials__icon(src= './img/twitter.svg')
+    a.socials__link(href='https://www.instagram.com/')
+      img.socials__icon(src= './img/instagram.svg')
