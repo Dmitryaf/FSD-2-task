@@ -1,9 +1,11 @@
 include ./base-data
 block variables
 
-include ../../components/container/container
 include ../../components/header/header
 include ../../components/footer/footer
+include ../../components/container/container
+include ../../components/socials/socials
+
 
 doctype html 
 html
@@ -20,7 +22,7 @@ html
     block main
 
     block footer
-      +footer()
+      +footer({menuItems: locals.footerMenuItems})
 
 
     block scripts
