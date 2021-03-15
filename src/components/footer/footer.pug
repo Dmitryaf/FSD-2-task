@@ -10,7 +10,7 @@ mixin footer(options)
   if !options.items
     - options.items = []
 
-  footer.footer
+  footer.footer(options)
     +container()
       .footer__content
         .footer__col
@@ -21,16 +21,17 @@ mixin footer(options)
         for item in options.menuItems
           .footer__col
             h5.footer__title= item.title
-            if item.title != 'Подписка'
-              .footer__list
-                for listItem in item.list
-                  a.footer__list-item(href= listItem.href)= listItem.name
-            else
-              p.footer__text= item.description
-              input(placeholder= 'Email')
+            .footer__list
+              for listItem in item.list
+                a.footer__list-item(href= listItem.href)= listItem.name
+        .footer__col
+          h5.footer__title= options.subscription.title
+          .footer__list
+            p.footer__text= options.subscription.text
+            input(placeholder= options.subscription.placeholder)
     .copyright
       +container()
         .copyright__content
-          .copyright__text= 'Copyright © 2018 Toxin отель. Все права зачищены.'
+          .copyright__text= options.copyright
           +socials()
 
