@@ -1,0 +1,51 @@
+@import '../../theme/variables.scss';
+
+.form-elements {
+  &__logo {
+    width: 100%;
+    max-width: 1380px;
+    margin: 30px auto 62px auto;
+    padding: 0 15px;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px 1fr));
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 'left mid right''left bot bot';
+    justify-items: center;
+    gap: 70px;
+    margin-top: 63px;
+  }
+
+  &__item {
+    width: 320px;
+    margin-bottom: 20px;
+  }
+
+  &__left {
+    grid-area: left;
+  }
+
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+  }
+
+  &__name,
+  &__state {
+    text-transform: uppercase;
+    font-size: 0.857rem;
+  }
+
+  &__name {
+    color: $darkShade100;
+    font-weight: bold;
+  }
+
+  &__state {
+    color: $darkShade50;
+    line-height: 15px;
+  }
+}
