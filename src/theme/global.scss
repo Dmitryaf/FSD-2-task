@@ -2,18 +2,18 @@
 @import 'variables.scss';
 @import 'fonts.scss';
 
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html {
   font-family: Montserrat,
     Arial, sans-serif;
   font-size: 14px;
   color: $darkShade75;
-  background-color: white;
-}
-
-body {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 h1,
