@@ -96,14 +96,14 @@ module.exports = {
         loader: 'pug-loader',
       },
       {
-        test: /\.(png|jpg|svg|)$/,
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
         generator: {
           filename: 'img/[name][ext]',
         },
       },
       {
-        test: /\.(ttf|woff|)$/,
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: 'asset/resource',
         generator: {
           filename: 'fonts/[name][ext]',
