@@ -14,7 +14,4 @@ mixin button(options)
     classes += options.size ? 'button_' + options.size : ''
     classes += options.isInverted ? ' button_inverted' : ''
 
-  .button(class=classes)
-    button.button__element(
-      type = options.isSubmit ? 'submit' : false,
-    )= options.text || 'Button'
+  button.button(class=classes, type = options.isSubmit ? 'submit' : false)= options.text || 'Button'
