@@ -1,0 +1,48 @@
+
+include ../../components/kit-logo/kit-logo
+include ../../components/text-field/text-field
+include ../../components/container/container
+
+doctype html 
+html
+  head
+    meta(charset = 'utf-8')
+    meta(name='viewport', content="initial-scale=1.0, width=device-width")
+    title Forms Elements
+
+  body
+    block main
+      .form-elements
+        .form-elements__logo
+          +kit-logo
+
+        +container()
+          .form-elements__content
+            .form-elements__left
+              .form-elements__item
+                .form-elements__title
+                  .form-elements__name= 'text-field'
+                  .form-elements__state= 'default'
+                +text-field({placeholder: 'Email'})
+              .form-elements__item
+                .form-elements__title
+                  .form-elements__name= 'text-field'
+                  .form-elements__state= 'hover / focus'
+                +text-field({placeholder: 'Email', value: 'This is pretty awesome', isFocused: true})
+
+            .form-elements__middle
+              .form-elements__item
+                .form-elements__title
+                  .form-elements__name= 'text-field'
+                  .form-elements__state= 'default'
+                +text-field({placeholder: 'Email'})
+
+            .form-elements__right
+              .form-elements__item
+                .form-elements__title
+                  .form-elements__name= 'text-field'
+                  .form-elements__state= 'default'
+                +text-field({placeholder: 'Email'})
+
+
+
