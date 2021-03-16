@@ -1,8 +1,32 @@
-extends ../base/base
+include ../base/base-data
+block variables
 
 include ../../components/header/header
+include ../../components/footer/footer
+include ../../components/container/container
+include ../../components/socials/socials
+include ../../components/kit-logo/kit-logo
 
 
-block header
-  +header({menuItems: locals.menuItems, isAuth: false, class: 'mb'})
-  +header({menuItems: locals.menuItems, isAuth: true, class: 'mb'})
+doctype html 
+html
+  head
+    meta(charset = 'utf-8')
+    meta(name='viewport', content="initial-scale=1.0, width=device-width")
+    title Headers & Footers
+
+  body.headers-footers
+    .headers-footers__logo
+      +kit-logo()
+    .headers-footers__item
+      +header({menuItems: locals.menuItems, isAuth: false})
+    .headers-footers__item
+      +header({menuItems: locals.menuItems, isAuth: true})
+
+    block main
+
+    block footer
+      +footer({menuItems: locals.footerMenuItems, subscription: locals.subscription, copyright: locals.copyright})
+
+
+    block scripts
