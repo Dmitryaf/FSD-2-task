@@ -1,0 +1,19 @@
+//-
+  options.type - input type
+  options.isMask - mask
+  options.isFocused - фокус
+  options.value - значение
+
+mixin text-field(options)
+  if !options
+    - options = {}
+
+  - 
+    var classes = []
+
+  if options.isMask
+    - classes.push('js-masked')
+  else if options.isFocused
+    - classes.push('text-field_focused')
+
+  input.text-field(type= options.type, placeholder= options.placeholder, value= options.value, class= classes)

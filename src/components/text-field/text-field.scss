@@ -1,0 +1,28 @@
+@import '../../theme/variables.scss';
+
+.text-field {
+  font-size: 1rem;
+  color: $darkShade75;
+  line-height: 18px;
+  border: 1px solid $darkShade25;
+  border-radius: 4px;
+  width: 100%;
+  padding: 13px 15px 13px 15px;
+  transition: .3s;
+
+  &::placeholder {
+    color: $darkShade25;
+    transition: .3s;
+  }
+
+  &:hover,
+  &:focus,
+  &_focused {
+    border-color: $darkShade50;
+    color: $darkShade75;
+
+    &::placeholder {
+      color: $darkShade75;
+    }
+  }
+}
