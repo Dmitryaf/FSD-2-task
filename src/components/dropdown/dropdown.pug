@@ -1,0 +1,11 @@
+//-
+  options.type - dropdown type
+  options.isFocused - фокус
+  options.placeholder
+
+mixin dropdown(options) 
+  .dropdown
+    input.dropdown__input.js-dropdown__input(placeholder= options.placeholder, readonly="readonly")
+    .dropdown__content
+      .dropdown__item
+
