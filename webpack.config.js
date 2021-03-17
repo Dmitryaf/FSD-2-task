@@ -75,6 +75,11 @@ module.exports = {
     }),
     new HtmlWebpackHarddiskPlugin(),
     new webpack.HotModuleReplacementPlugin(),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery',
+    }),
   ].concat(htmlPlugins),
 
   module: {
