@@ -1,6 +1,7 @@
 
 include ../../components/kit-logo/kit-logo
 include ../../components/text-field/text-field
+include ../../components/calendar/calendar
 include ../../components/container/container
 
 doctype html 
@@ -29,6 +30,15 @@ html
                   .form-elements__name= 'text-field'
                   .form-elements__state= 'hover / focus'
                 +text-field({placeholder: 'Email', value: 'This is pretty awesome', isFocused: true})
+              .form-elements__item
+                .form-elements__title
+                  .form-elements__name= 'masked text-field'
+                  .form-elements__state= 'default'
+                +text-field({isMask: true})
+              .form-elements__item
+                .form-elements__title
+                  .form-elements__name= 'DATE DROPDOWN'
+                +calendar({isMask: true})
 
             .form-elements__middle
               .form-elements__item
