@@ -1,0 +1,116 @@
+@import '~air-datepicker/src/sass/datepicker.scss';
+@import '~air-datepicker/src/sass/navigation.scss';
+@import '~air-datepicker/src/sass/cell.scss';
+@import '../variables.scss';
+
+.datepicker {
+  font-family: Montserrat, OpenSans, sans-serif;
+  font-size: 0.75rem;
+  padding: 10px 20px 16px;
+  width: 280px;
+
+  &--content {
+    padding: 0;
+  }
+
+  &--cell {
+    width: 40px;
+    height: 40px;
+    color: $darkShade50;
+
+    &.-current- {
+      background-image: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+      border-radius: 50%;
+      color: white;
+      font-family: Montserrat, OpenSans, sans-serif;
+      font-weight: bold;
+
+      &.-focus- {
+        background-image: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+        color: white;
+      }
+
+      &.-in-range- {
+        color: white;
+      }
+    }
+
+    &.-focus- {
+      background: none;
+    }
+
+    &.-selected- {
+      border-radius: 50%;
+      background-image: linear-gradient(180deg, $purple 0%, #8ba4f9 100%);
+      font-family: Montserrat, OpenSans, sans-serif;
+      font-weight: bold;
+
+      &.-focus- {
+        background-image: linear-gradient(180deg, $purple 0%, #8ba4f9 100%);
+      }
+    }
+
+    &.-in-range- {
+      background: linear-gradient(180deg, $purple 0%, #8ba4f9 100%)-25;
+      color: $darkShade50;
+    }
+
+    &.-range-from- {
+      position: relative;
+
+      &::after {
+        position: absolute;
+        content: '';
+        width: 20px;
+        height: 40px;
+        background-image: linear-gradient(180deg, $purple 0%, #8ba4f9 100%)-25;
+        right: 0;
+      }
+    }
+
+    &.-range-to- {
+      position: relative;
+
+      &::before {
+        position: absolute;
+        content: '';
+        width: 20px;
+        height: 40px;
+        background-image: linear-gradient(180deg, $purple 0%, #8ba4f9 100%)-25;
+        left: 0;
+      }
+    }
+  }
+
+  &--day-name {
+    font-family: Montserrat, OpenSans, sans-serif;
+    font-weight: bold;
+    color: $purple;
+    width: 40px;
+    height: 40px;
+    text-transform: none;
+  }
+
+  &--nav {
+    border-bottom: none;
+    padding: 6px 0 14px;
+    font-size: 1.5rem;
+  }
+
+  &--nav-action {
+    width: auto;
+    color: $purple;
+  }
+
+  &--pointer {
+    display: none;
+  }
+
+  &--nav-title,
+  &--nav-title i {
+    color: $darkShade100;
+    font-size: 1.19rem;
+    font-family: Quicksand, OpenSans, sans-serif;
+    font-weight: bold;
+  }
+}
