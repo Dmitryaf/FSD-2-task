@@ -4,26 +4,26 @@
 @import '../variables.scss';
 
 .datepicker {
-  font-family: Montserrat, OpenSans, sans-serif;
-  font-size: 0.75rem;
-  padding: 10px 20px 16px;
+  padding: 20px;
   width: 280px;
 
   &--content {
     padding: 0;
+    margin-bottom: 20px;
   }
 
   &--cell {
+    color: $darkShade50;
     width: 40px;
     height: 40px;
-    color: $darkShade50;
 
     &.-current- {
-      background-image: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
-      border-radius: 50%;
       color: white;
       font-family: Montserrat, OpenSans, sans-serif;
       font-weight: bold;
+      background-image: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+      border-radius: 50%;
+
 
       &.-focus- {
         background-image: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
@@ -40,10 +40,10 @@
     }
 
     &.-selected- {
-      border-radius: 50%;
-      background-image: linear-gradient(180deg, $purple 0%, #8ba4f9 100%);
       font-family: Montserrat, OpenSans, sans-serif;
       font-weight: bold;
+      border-radius: 50%;
+      background-image: linear-gradient(180deg, $purple 0%, #8ba4f9 100%);
 
       &.-focus- {
         background-image: linear-gradient(180deg, $purple 0%, #8ba4f9 100%);
@@ -51,7 +51,7 @@
     }
 
     &.-in-range- {
-      background: linear-gradient(180deg, $purple 0%, #8ba4f9 100%)-25;
+      background: linear-gradient(180deg, hsla(259, 100%, 81%, 0.25) 0%, rgba(139, 165, 249, 0.25) 100%);
       color: $darkShade50;
     }
 
@@ -59,12 +59,14 @@
       position: relative;
 
       &::after {
-        position: absolute;
         content: '';
+        position: absolute;
+        right: 0;
+        background-image: linear-gradient(180deg, hsla(259, 100%, 81%, 0.25) 0%, rgba(139, 165, 249, 0.25) 100%);
         width: 20px;
         height: 40px;
-        background-image: linear-gradient(180deg, $purple 0%, #8ba4f9 100%)-25;
-        right: 0;
+
+
       }
     }
 
@@ -72,18 +74,19 @@
       position: relative;
 
       &::before {
-        position: absolute;
         content: '';
+        position: absolute;
+        left: 0;
+        background-image: linear-gradient(180deg, hsla(259, 100%, 81%, 0.25) 0%, rgba(139, 165, 249, 0.25) 100%);
         width: 20px;
         height: 40px;
-        background-image: linear-gradient(180deg, $purple 0%, #8ba4f9 100%)-25;
-        left: 0;
       }
     }
   }
 
   &--day-name {
     font-family: Montserrat, OpenSans, sans-serif;
+    font-size: 0.857rem;
     font-weight: bold;
     color: $purple;
     width: 40px;
@@ -92,9 +95,14 @@
   }
 
   &--nav {
+    font-size: 0.857rem;
     border-bottom: none;
     padding: 6px 0 14px;
-    font-size: 1.5rem;
+
+    & .material-icons {
+      font-size: 1.714rem;
+    }
+
   }
 
   &--nav-action {
@@ -112,5 +120,23 @@
     font-size: 1.19rem;
     font-family: Quicksand, OpenSans, sans-serif;
     font-weight: bold;
+  }
+
+  &-btns {
+    display: flex;
+    justify-content: space-between;
+
+    &__clear,
+    &__apply {
+      font-weight: bold;
+      text-transform: uppercase;
+      color: $purple;
+      cursor: pointer;
+      transition: .3s;
+
+      &:hover {
+        opacity: .7;
+      }
+    }
   }
 }
