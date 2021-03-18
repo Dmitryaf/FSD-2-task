@@ -1,0 +1,10 @@
+include ../text-field/text-field
+include ../calendar/calendar
+
+mixin date-dropdown()
+  .date-dropdown
+    +calendar()
+    .date-dropdown__item
+      +text-field({placeholder: 'ДД.ММ.ГГГГ', isLabel: true, title: 'date dropdown', isMask: true})
+    .date-dropdown__item
+      +text-field({placeholder: 'ДД.ММ.ГГГГ', isLabel: true, title: 'date dropdown', isMask: true})
