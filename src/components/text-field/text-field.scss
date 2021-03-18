@@ -1,28 +1,59 @@
 @import '../../theme/variables.scss';
 
 .text-field {
-  font-size: 1rem;
-  color: $darkShade75;
-  line-height: 18px;
-  border: 1px solid $darkShade25;
-  border-radius: 4px;
-  width: 100%;
-  padding: 13px 15px 13px 15px;
-  transition: .3s;
 
-  &::placeholder {
-    color: $darkShade25;
-    transition: .3s;
-  }
-
-  &:hover,
-  &:focus,
-  &_focused {
-    border-color: $darkShade50;
+  &__input {
+    font-size: 1rem;
     color: $darkShade75;
+    line-height: 18px;
+    border: 1px solid $darkShade25;
+    border-radius: 4px;
+    width: 100%;
+    padding: 13px 15px 13px 15px;
+    transition: .3s;
 
     &::placeholder {
+      color: $darkShade25;
+      transition: .3s;
+    }
+
+    &:hover,
+    &:focus,
+    &_focused {
       color: $darkShade75;
+      border-color: $darkShade50;
+
+
+      &::placeholder {
+        color: $darkShade75;
+      }
     }
   }
+
+  &__title {
+    font-size: 0.857rem;
+    color: $darkShade100;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 15px;
+    margin-bottom: 5px;
+  }
+
+  &__label {
+    position: relative;
+
+    &::after {
+      content: "\e313";
+      position: absolute;
+      top: 2px;
+      right: 10px;
+      font-family: "Material Icons";
+      font-size: 1.714rem;
+      text-align: center;
+      line-height: 15px;
+      color: $darkShade50;
+
+    }
+  }
+
 }
