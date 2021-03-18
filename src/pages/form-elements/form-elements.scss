@@ -37,6 +37,7 @@
   &__state {
     text-transform: uppercase;
     font-size: 0.857rem;
+    line-height: 15px;
   }
 
   &__name {
@@ -46,6 +47,6 @@
 
   &__state {
     color: $darkShade50;
-    line-height: 15px;
+
   }
 }
