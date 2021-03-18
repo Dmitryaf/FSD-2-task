@@ -1,5 +1,6 @@
 
 include ../../components/kit-logo/kit-logo
+include ../../components/date-dropdown/date-dropdown
 include ../../components/text-field/text-field
 include ../../components/calendar/calendar
 include ../../components/container/container
@@ -36,9 +37,9 @@ html
                   .form-elements__state= 'default'
                 +text-field({isMask: true})
               .form-elements__item
-                .form-elements__title
-                  .form-elements__name= 'DATE DROPDOWN'
-                +calendar({isMask: true})
+                +date-dropdown()
+              .form-elements__item
+                +text-field({placeholder: 'Email', value: '19 авг - 23 авг', isLabel: true, title: 'filter date dropdown'})
 
             .form-elements__middle
               .form-elements__item
