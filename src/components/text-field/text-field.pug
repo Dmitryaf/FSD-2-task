@@ -1,19 +1,32 @@
 //-
-  options.type - input type
-  options.isMask - mask
-  options.isFocused - фокус
   options.value - значение
+  options.type - input type
+  options.isMask - добавление маски для инпута
+  options.isFocused - фокус
+  options.isLabel - label для инпута(для добавления стрелки)
+  options.isSubscription - добавляет инпут для подписки
 
 mixin text-field(options)
   if !options
     - options = {}
 
   - 
+    var {isMask, isFocused, isLabel, isSubscription, value, type} = options
     var classes = []
 
-  if options.isMask
-    - classes.push('js-masked')
-  else if options.isFocused
-    - classes.push('text-field_focused')
 
-  input.text-field(type= options.type, placeholder= options.placeholder, value= options.value, class= classes)
+
+  if isMask
+    - classes.push('js-masked')
+
+  if isFocused
+    - classes.push('text-field__input_focused')
+
+  if isLabel
+    .text-field
+      .text-field__title= options.title
+      label.text-field__label
+        input.text-field__input(type= options.type, placeholder= options.placeholder, value= options.value, class= classes)
+  else
+    .text-field
+      input.text-field__input(type= options.type, placeholder= options.placeholder, value= options.value, class= classes)
