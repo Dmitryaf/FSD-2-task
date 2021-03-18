@@ -5,6 +5,7 @@ class Calendar {
     this.$element = element;
 
     this.createDatepicker();
+    this.addHandlers();
   }
 
   hideCalendar() {
@@ -14,16 +15,18 @@ class Calendar {
   createDatepicker() {
     this.inputs = $(this.$element).parent().find('input');
 
-    if (this.inputs.length > 0) {
-      this.hideContainer();
+    if (this.inputs.length <= 0) {
+      this.isStatic = true;
+    } else {
+      this.hideCalendar();
     }
 
     const options = {
       range: true,
       multipleDates: true,
       onSelect: this.onSelect.bind(this),
-      prevHtml: '<',
-      nextHtml: '>',
+      prevHtml: '<i class="material-icons">arrow_back</i>',
+      nextHtml: '<i class="material-icons">arrow_forward</i>',
       navTitles: {
         days: 'MM yyyy',
       },
@@ -36,10 +39,62 @@ class Calendar {
         .datepicker(options)
         .data('datepicker');
     }
+
+    this.$clearButton = $(
+      '<span class="datepicker-btns__clear">Очистить</span>'
+    );
+    this.$applyButton = $(
+      '<span class="datepicker-btns__apply">Применить</span></div>'
+    );
+    const $btnContainer = $('<div class="datepicker-btns">')
+      .append(this.$clearButton)
+      .append(this.$applyButton);
+
+    $(this.datepicker.$datepicker).append($btnContainer);
   }
 
   onSelect(_, date) {
     this.dates = date;
+    this.clearInputs();
+  }
+
+  clearInputs() {
+    this.inputs.each((index) => {
+      this.inputs[index].value = '';
+    });
+  }
+
+  clearData() {
+    this.clearInputs();
+    this.datepicker.clear();
+  }
+
+  onClickInput() {
+    this.datepicker.show();
+  }
+
+  apply() {
+    if (this.dates < 2) return;
+
+    this.inputs.each((index, input) => {
+      if (this.dates[index]) {
+        $(input).val(this.dates[index].toLocaleDateString());
+      } else {
+        $(input).val('');
+      }
+    });
+
+    this.datepicker.hide();
+  }
+
+  addHandlers() {
+    this.$clearButton.on('click', this.clearData.bind(this));
+    this.$applyButton.on('click', this.apply.bind(this));
+
+    if (!this.isStatic) {
+      this.inputs.on('click', this.onClickInput.bind(this));
+      this.datepicker.hide();
+    }
   }
 }
 
