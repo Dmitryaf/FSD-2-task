@@ -1,0 +1,17 @@
+include ../text-field/text-field
+
+//-
+  options.link - ссылка на файл обработки формы
+  options.placeholder - placeholder
+
+mixin subscription(options)
+  if !options
+    - options = {}
+
+  - 
+    var {link, placeholder} = options
+
+  .subscription
+    form.subscription__form(action= link, method="get")
+      +text-field({type: "email", placeholder: placeholder})
+      button.subscription__button arrow_forward

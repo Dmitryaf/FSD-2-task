@@ -1,0 +1,21 @@
+@import '../../theme/variables.scss';
+
+.subscription {
+  position: relative;
+
+  &__button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    font-family: 'Material Icons';
+    font-size: 1.714rem;
+    color: $purple;
+    text-align: center;
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+}
