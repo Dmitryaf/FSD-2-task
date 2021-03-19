@@ -1,11 +1,35 @@
+include ./dropdown-item/dropdown-item
+
 //-
-  options.type - dropdown type
-  options.isFocused - фокус
+  options.type - guest || room
   options.placeholder
 
-mixin dropdown(options) 
-  .dropdown
-    input.dropdown__input.js-dropdown__input(placeholder= options.placeholder, readonly="readonly")
-    .dropdown__content
-      .dropdown__item
+mixin dropdown(options)
+  if !options
+    - options = {}
 
+  - 
+    var {type} = options
+    var value = type === 'guest' ? 'Сколько гостей' : 'Мебель'
+
+  .dropdown
+    label.dropdown__label
+      input.dropdown__input.js-dropdown__input(placeholder= value, value= value, readonly="readonly")
+
+    if type === 'guest'
+      .dropdown__content
+        +dropdown-item({title: 'Взрослые'})
+        +dropdown-item({title: 'Дети'})
+        +dropdown-item({title: 'Младенцы'})
+        .dropdown__btns
+          span.dropdown__btns__clear="Очистить"
+          span.dropdown__btns__apply="Применить"
+
+    else if type === 'room'
+      .dropdown__content
+        +dropdown-item({title: 'Спальни'})
+        +dropdown-item({title: 'Кровати'})
+        +dropdown-item({title: 'Ванные комнаты'})
+        .dropdown__btns
+          span.dropdown__btns__clear="Очистить"
+          span.dropdown__btns__apply="Применить"
