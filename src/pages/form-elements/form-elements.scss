@@ -14,13 +14,17 @@
     grid-template-rows: 1fr 1fr;
     grid-template-areas: 'left mid right''left bot bot';
     justify-items: center;
-    gap: 70px;
-    margin-top: 63px;
+    gap: 50px;
+    margin-top: 65px;
   }
 
   &__item {
     width: 320px;
     margin-bottom: 20px;
+
+    &_mb40 {
+      margin-bottom: 40px;
+    }
   }
 
   &__left {

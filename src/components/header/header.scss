@@ -11,19 +11,10 @@
     padding: 1.071rem 0;
   }
 
-  &__logo {
-    text-decoration: none;
-    margin: 0 auto 0 4px;
-  }
-
-  &__img-logo {
-    display: block;
-  }
-
   &__menu {
     display: flex;
     justify-content: flex-end;
-    margin-right: 29px;
+    margin: 0 29px 0 auto;
   }
 
   &__btns {

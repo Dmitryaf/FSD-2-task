@@ -5,11 +5,10 @@
   &__input {
     font-size: 1rem;
     color: $darkShade75;
-    line-height: 18px;
     border: 1px solid $darkShade25;
     border-radius: 4px;
     width: 100%;
-    padding: 13px 15px 13px 15px;
+    padding: 13px 35px 13px 15px;
     transition: .3s;
 
     &::placeholder {
