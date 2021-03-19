@@ -1,0 +1,48 @@
+@import '../../../theme/variables.scss';
+
+.dropdown-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px 7px 0 15px;
+
+  &__title {
+    font-size: 0.857rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: $darkShade100;
+  }
+
+  &__controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100px;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.286rem;
+    color: $darkShade50;
+    border: 1px solid $darkShade50;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    user-select: none;
+    cursor: pointer;
+
+    &_disable {
+      cursor: default;
+      opacity: .7;
+      pointer-events: none;
+    }
+  }
+
+  &__counter {
+    font-size: 0.857rem;
+    font-weight: bold;
+    color: $darkShade100;
+  }
+}
