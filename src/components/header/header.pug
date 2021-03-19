@@ -1,5 +1,6 @@
 include ../menu/menu
 include ../button/button
+include ../logo/logo
 
 //-
   options.menuItems - массив елементов меню
@@ -16,7 +17,7 @@ mixin header(options)
     +container()
       .header__content
         a.header__logo(href = '/')
-          img.header__img-logo(src='./img/logo.svg' alt='logo')
+          +logo()
         .header__menu
           +menu({items: options.menuItems})
         if !options.isAuth

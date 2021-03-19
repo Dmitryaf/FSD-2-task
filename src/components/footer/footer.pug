@@ -1,3 +1,5 @@
+include ../logo/logo
+
 //-
   options.items - массив с элементами меню
   options.items[0].name - имя элемента меню
@@ -15,7 +17,7 @@ mixin footer(options)
       .footer__content
         .footer__col
           a.footer__logo(href = '/')
-            img.footer__img-logo(src='./img/logo.svg' alt='logo')
+            +logo()
           p.footer__text= 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»'
 
         for item in options.menuItems
