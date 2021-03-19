@@ -31,6 +31,7 @@
     "babel-loader": "^8.2.2",
     "css-loader": "^5.0.2",
     "express": "^4.17.1",
+    "file-loader": "^6.2.0",
     "html-webpack-harddisk-plugin": "^2.0.0",
     "html-webpack-plugin": "^5.1.0",
     "jquery": "^3.5.1",
