@@ -101,17 +101,27 @@ module.exports = {
         loader: 'pug-loader',
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: 'asset/resource',
-        generator: {
-          filename: 'img/[name][ext]',
+        test: /\.(png|jpg|jpeg|svg|gif)$/,
+        exclude: [path.resolve(__dirname, 'src/fonts')],
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'assets/img',
+            esModule: false,
+          },
         },
       },
       {
-        test: /\.(woff|woff2|eot|ttf|otf)$/i,
-        type: 'asset/resource',
-        generator: {
-          filename: 'fonts/[name][ext]',
+        test: /\.(woff(2)?|ttf|eot|svg)$/,
+        include: [path.resolve(__dirname, 'src/fonts')],
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'assets/fonts',
+            esModule: false,
+          },
         },
       },
       {
