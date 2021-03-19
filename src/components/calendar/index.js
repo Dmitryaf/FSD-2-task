@@ -1,5 +1,4 @@
 import Calendar from './Calendar';
-import './calendar.scss';
 
 const calendarContainers = $('.js-calendar');
 
