@@ -1,0 +1,82 @@
+@import '../../theme/variables.scss';
+
+.dropdown {
+  position: relative;
+
+  &__content {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    border: 1px solid $darkShade25;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+    background-color: white;
+    padding: 0 0 13px;
+    z-index: 1;
+  }
+
+  &__input {
+    font-size: 1rem;
+    color: $darkShade75;
+    border: 1px solid $darkShade25;
+    border-radius: 4px 4px 0 0;
+    width: 100%;
+    padding: 13px 35px 13px 15px;
+    transition: .3s;
+
+    &::placeholder {
+      color: $darkShade25;
+      transition: .3s;
+    }
+
+    &:hover,
+    &:focus,
+    &_focused {
+      color: $darkShade75;
+      border-color: $darkShade50;
+
+
+      &::placeholder {
+        color: $darkShade75;
+      }
+    }
+  }
+
+  &__label {
+    position: relative;
+
+    &::after {
+      content: "\e313";
+      position: absolute;
+      top: 2px;
+      right: 10px;
+      font-family: "Material Icons";
+      font-size: 1.714rem;
+      text-align: center;
+      line-height: 15px;
+      color: $darkShade50;
+    }
+  }
+
+  &__btns {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 7px 0 15px;
+    margin: 20px 0 0;
+
+    &__clear,
+    &__apply {
+      font-weight: bold;
+      font-size: 0.857rem;
+      text-transform: uppercase;
+      color: $purple;
+      cursor: pointer;
+      transition: .3s;
+
+      &:hover {
+        opacity: .7;
+      }
+    }
+  }
+}
