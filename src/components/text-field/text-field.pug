@@ -4,14 +4,13 @@
   options.isMask - добавление маски для инпута
   options.isFocused - фокус
   options.isLabel - label для инпута(для добавления стрелки)
-  options.isSubscription - добавляет инпут для подписки
 
 mixin text-field(options)
   if !options
     - options = {}
 
   - 
-    var {isMask, isFocused, isLabel, isSubscription, value, type} = options
+    var {isMask, isFocused, isLabel, value, type} = options
     var classes = []
 
 
@@ -19,7 +18,7 @@ mixin text-field(options)
   if isMask
     - classes.push('js-masked')
 
-  if isFocused
+  else if isFocused
     - classes.push('text-field__input_focused')
 
   if isLabel
