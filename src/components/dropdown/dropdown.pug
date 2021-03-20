@@ -2,7 +2,6 @@ include ./dropdown-item/dropdown-item
 
 //-
   options.type - guest || room
-  options.placeholder
 
 mixin dropdown(options)
   if !options
@@ -12,9 +11,9 @@ mixin dropdown(options)
     var {type} = options
     var value = type === 'guest' ? 'Сколько гостей' : 'Мебель'
 
-  .dropdown
+  .dropdown.js-dropdown(data-type=`${type}`)
     label.dropdown__label
-      input.dropdown__input.js-dropdown__input(placeholder= value, value= value, readonly="readonly")
+      input.dropdown__input(value= value, readonly="readonly")
 
     if type === 'guest'
       .dropdown__content
@@ -22,14 +21,11 @@ mixin dropdown(options)
         +dropdown-item({title: 'Дети'})
         +dropdown-item({title: 'Младенцы'})
         .dropdown__btns
-          span.dropdown__btns__clear="Очистить"
-          span.dropdown__btns__apply="Применить"
+          span.dropdown__btns-clear="Очистить"
+          span.dropdown__btns-apply="Применить"
 
     else if type === 'room'
       .dropdown__content
         +dropdown-item({title: 'Спальни'})
         +dropdown-item({title: 'Кровати'})
         +dropdown-item({title: 'Ванные комнаты'})
-        .dropdown__btns
-          span.dropdown__btns__clear="Очистить"
-          span.dropdown__btns__apply="Применить"

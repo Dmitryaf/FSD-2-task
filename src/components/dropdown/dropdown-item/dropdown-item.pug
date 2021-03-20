@@ -8,6 +8,6 @@ mixin dropdown-item(options)
   .dropdown-item
     .dropdown-item__title= title
     .dropdown-item__controls
-      .dropdown-item__button= '-'
+      .dropdown-item__button(data-btn='minus')= '-'
       .dropdown-item__counter= '0'
-      .dropdown-item__button= '+'
+      .dropdown-item__button(data-btn='plus')= '+'
