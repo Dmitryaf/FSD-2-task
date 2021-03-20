@@ -5,7 +5,7 @@ class Calendar {
     this.$element = element;
 
     this.createDatepicker();
-    this.addHandlers();
+    this.initHandlers();
   }
 
   hideCalendar() {
@@ -87,7 +87,7 @@ class Calendar {
     this.datepicker.hide();
   }
 
-  addHandlers() {
+  initHandlers() {
     this.$clearButton.on('click', this.clearData.bind(this));
     this.$applyButton.on('click', this.apply.bind(this));
 
