@@ -1,39 +1,38 @@
 import DropdownItem from './dropdown-item/DropdownItem';
 
 class Dropdown {
-  constructor($container, type) {
+  constructor($container, options) {
     this.$container = $container;
-    this.type = type;
+    this.type = options.type;
+    this.isVisible = options.isVisible;
     this.$content = this.$container.find('.dropdown__content');
     this.$input = this.$container.find('input');
     this.$applyBtn = this.$container.find('.dropdown__btns-apply');
     this.$clearBtn = this.$container.find('.dropdown__btns-clear');
-    this.$dropdownItems = [];
-    this.words = {
-      guest: ['гость', 'гостя', 'гостей'],
-      rooms: ['кровати', 'спальни', 'ванные комнаты'],
-    };
+    this.dropdownItems = [];
 
+    if (this.isVisible === 'show') {
+      this.$content.addClass('dropdown__content_show');
+    }
     this.$container.find('.dropdown-item').each((_, $element) => {
-      this.$dropdownItems.push(
-        new DropdownItem(
-          $($element),
-          this.$input,
-          this.dropdownValue.bind(this)
-        )
+      this.dropdownItems.push(
+        new DropdownItem($($element), {
+          input: this.$input,
+          dropdownValue: this.dropdownValue.bind(this),
+          hideClearBtn: this.hideClearBtn.bind(this),
+        })
       );
     });
     this.initHandlers();
-  }
-
-  showItems() {
-    this.$content.toggleClass('dropdown__content_show');
+    this.hideClearBtn();
   }
 
   initHandlers() {
     this.$input.on('click', this.showItems.bind(this));
     this.$applyBtn.on('click', this.apply.bind(this));
     this.$clearBtn.on('click', this.clear.bind(this));
+    this.$container.on('click', this.onContainerClick.bind(this));
+    $(document).on('click', this.hideItems.bind(this));
   }
 
   apply() {
@@ -42,47 +41,122 @@ class Dropdown {
 
   clear() {
     this.$input.val('Сколько гостей');
+    this.dropdownItems.forEach((item) => {
+      item.resetCounter();
+    });
+    this.hideClearBtn();
+  }
+
+  showItems() {
+    this.$content.toggleClass('dropdown__content_show');
+  }
+
+  hideItems() {
+    this.$content.removeClass('dropdown__content_show');
+  }
+
+  hideClearBtn() {
+    let sum = 0;
+    this.dropdownItems.forEach((item) => {
+      sum += item.counterValue();
+    });
+
+    if (sum === 0) {
+      this.$clearBtn.css('visibility', 'hidden');
+    } else {
+      this.$clearBtn.css('visibility', 'visible');
+    }
+  }
+
+  onContainerClick(e) {
+    e.stopPropagation();
   }
 
   dropdownValue() {
     if (this.type === 'guest') {
-      const guest = this.words.guest;
-      let sum = 0;
+      const adults = {
+        amount:
+          this.dropdownItems[0].counterValue() +
+          this.dropdownItems[1].counterValue(),
+        words: ['гость', 'гостя', 'гостей'],
+      };
+      const babies = {
+        amount: this.dropdownItems[2].counterValue(),
+        words: ['младенец', 'младенца', 'младенцев'],
+      };
 
-      $(this.$dropdownItems).each((_, item) => {
-        sum += item.counterValue();
-      });
+      const adultValue = this.calculateValueInput(adults.amount, adults.words);
+      const babiesValue = this.calculateValueInput(babies.amount, babies.words);
 
-      sum = Math.abs(sum) % 100;
-      const num = sum % 10;
-
-      if (sum > 10 && sum < 20) {
-        return `${sum} ${guest[2]}`;
+      if (adultValue && babiesValue) {
+        return `${adultValue}, ${babiesValue}`;
       }
-      if (num > 1 && num < 5) {
-        return `${sum} ${guest[1]}`;
+      if (!adultValue && !babiesValue) {
+        return 'Сколько гостей';
       }
-      if (num === 1) {
-        return `${sum} ${guest[0]}`;
-      }
-      if (num === 0) {
-        return `Сколько гостей`;
-      }
-      return `${sum} ${guest[2]}`;
+      return adultValue || babiesValue;
     } else if (this.type === 'room') {
       const bedrooms = {
-        amount: this.$dropdownItems[0].counterValue(),
-        words: ['спальня', 'спален', 'спальни'],
+        amount: this.dropdownItems[0].counterValue(),
+        words: ['спальня', 'спальни', 'спален'],
       };
       const beds = {
-        amount: this.$dropdownItems[1].counterValue(),
-        words: ['кровать', 'Кроватей', 'Кровати'],
+        amount: this.dropdownItems[1].counterValue(),
+        words: ['кровать', 'кровати', 'кроватей'],
       };
       const bathrooms = {
-        amount: this.$dropdownItems[2].counterValue(),
-        words: ['ванная комната', 'ванных комнат', 'ванные комнаты'],
+        amount: this.dropdownItems[2].counterValue(),
+        words: ['ванная комната', 'ванные комнаты', 'ванных комнат'],
       };
+
+      const bedroomsValue = this.calculateValueInput(
+        bedrooms.amount,
+        bedrooms.words
+      );
+      const bedsValue = this.calculateValueInput(beds.amount, beds.words);
+      const bathroomsValue = this.calculateValueInput(
+        bathrooms.amount,
+        bathrooms.words
+      );
+
+      if (bedrooms.amount > 0 && beds.amount > 0 && bathrooms.amount > 0) {
+        return `${bedroomsValue}, ${bedsValue}, ...`;
+      }
+      if (
+        bedrooms.amount === 0 &&
+        beds.amount === 0 &&
+        bathrooms.amount === 0
+      ) {
+        return `Комната`;
+      }
+      if (bedrooms.amount > 0 && beds.amount > 0) {
+        return `${bedroomsValue}, ${bedsValue}`;
+      } else if (beds.amount > 0 && bathrooms.amount > 0) {
+        return `${bedsValue}, ${bathroomsValue}`;
+      } else if (bedrooms.amount > 0 && bathrooms.amount > 0) {
+        return `${bedroomsValue}, ${bathroomsValue}`;
+      }
+
+      return bedroomsValue || bedsValue || bathroomsValue;
     }
+  }
+
+  calculateValueInput(count, words, defaultValue) {
+    const amount = count % 100;
+    const num = amount % 10;
+    if (amount >= 10 && amount <= 20) {
+      return `${amount} ${words[2]}`;
+    }
+    if (num > 1 && num < 5) {
+      return `${amount} ${words[1]}`;
+    }
+    if (num === 1) {
+      return `${amount} ${words[0]}`;
+    }
+    if (num === 0) {
+      return '';
+    }
+    return `${amount} ${words[2]}`;
   }
 }
 
