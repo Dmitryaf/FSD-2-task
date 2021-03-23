@@ -1,0 +1,47 @@
+@import '../../theme/variables.scss';
+
+.toggle {
+  display: block;
+  position: relative;
+  color: $darkShade50;
+  padding: 0 0 0 50px;
+  cursor: pointer;
+  user-select: none;
+
+  &__input {
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+
+  &__input:checked~&__mark {
+    border-color: $purple;
+  }
+
+  &__input:checked~&__mark:after {
+    transform: translateX(20px);
+    background-image: linear-gradient(180deg, $purple 0%, #8ba4f9 100%);
+  }
+
+  &__mark {
+    position: absolute;
+    left: 0;
+    top: -2px;
+    border: 1px solid $darkShade25;
+    border-radius: 10px;
+    width: 40px;
+    height: 20px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 4px;
+      background-color: $darkShade25;
+      border-radius: 50%;
+      width: 12px;
+      height: 12px;
+      transition: 0.3s;
+    }
+  }
+}

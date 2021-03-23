@@ -1,0 +1,15 @@
+//-
+  options.label
+  options.isChecked - true || false
+
+mixin toggle(options)
+  if !options
+    - options = {}
+
+  - 
+    var {label, isChecked = false} = options
+
+  label.toggle= label
+    input.toggle__input(type='checkbox' checked=isChecked)
+    span.toggle__mark
+
