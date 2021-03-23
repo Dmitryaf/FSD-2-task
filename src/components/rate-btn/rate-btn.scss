@@ -1,0 +1,18 @@
+@import '../../theme/variables.scss';
+
+.rate-btn {
+  display: flex;
+  user-select: none;
+
+  &__icon {
+    display: inline-block;
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1.714rem;
+    background: $gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: none;
+  }
+}
