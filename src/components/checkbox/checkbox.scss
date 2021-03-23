@@ -1,0 +1,49 @@
+@import '../../theme/variables.scss';
+
+.checkbox {
+  display: block;
+  position: relative;
+  color: $darkShade50;
+  padding: 0 0 0 30px;
+  cursor: pointer;
+  user-select: none;
+
+  &__input {
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+
+  &__input:checked~&__mark {
+    border-color: $purple;
+  }
+
+  &__input:checked~&__mark:after {
+    display: block;
+  }
+
+  &__mark {
+    position: absolute;
+    left: 0;
+    top: -2px;
+    border: 1px solid $darkShade25;
+    border-radius: 4px;
+    width: 20px;
+    height: 20px;
+
+    &::after {
+      content: '';
+      display: none;
+      position: absolute;
+      top: 2px;
+      left: 5px;
+      border-width: 0 2px 2px 0;
+      border-style: solid;
+      border-image: $gradient;
+      border-image-slice: 1;
+      transform: rotate(45deg);
+      width: 6px;
+      height: 8px;
+    }
+  }
+}

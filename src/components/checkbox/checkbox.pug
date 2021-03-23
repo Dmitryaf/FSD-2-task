@@ -1,0 +1,16 @@
+//-
+  options.label
+  options.isChecked - true || false
+  options.isBold - true || false
+
+mixin checkbox(options)
+  if !options
+    - options = {}
+
+  - 
+    var {label, isChecked = false, isBold = false} = options
+
+  label.checkbox= label
+    input.checkbox__input(type='checkbox' checked=isChecked)
+    span.checkbox__mark
+
