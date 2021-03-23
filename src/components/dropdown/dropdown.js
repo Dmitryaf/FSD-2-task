@@ -141,7 +141,7 @@ class Dropdown {
     }
   }
 
-  calculateValueInput(count, words, defaultValue) {
+  calculateValueInput(count, words) {
     const amount = count % 100;
     const num = amount % 10;
     if (amount >= 10 && amount <= 20) {
