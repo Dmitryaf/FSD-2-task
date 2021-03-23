@@ -5,6 +5,11 @@ include ../../components/text-field/text-field
 include ../../components/calendar/calendar
 include ../../components/subscription/subscription
 include ../../components/dropdown/dropdown
+include ../../components/checkbox/checkbox
+include ../../components/radio/radio
+include ../../components/toggle/toggle
+include ../../components/like-btn/like-btn
+include ../../components/rate-btn/rate-btn
 
 doctype html 
 html
@@ -21,52 +26,92 @@ html
 
         +container()
           .form-elements__content
-            .form-elements__left
-              .form-elements__item
-                .form-elements__title
-                  .form-elements__name= 'text-field'
-                  .form-elements__state= 'default'
-                +text-field({placeholder: 'Email'})
+            .form-elements__row
+              .form-elements__column.form-elements__column_width320
+                .form-elements__item
+                  .form-elements__title
+                    .form-elements__name text-field
+                    .form-elements__state default
+                  +text-field({placeholder: 'Email'})
 
-              .form-elements__item
-                .form-elements__title
-                  .form-elements__name= 'text-field'
-                  .form-elements__state= 'hover / focus'
-                +text-field({placeholder: 'Email', value: 'This is pretty awesome', isFocused: true})
+                .form-elements__item
+                  .form-elements__title
+                    .form-elements__name text-field
+                    .form-elements__state hover / focus
+                  +text-field({placeholder: 'Email', value: 'This is pretty awesome', isFocused: true})
 
-              .form-elements__item
-                .form-elements__title
-                  .form-elements__name= 'dropdown'
-                +dropdown({type: 'guest', isVisible: 'hide', 'withBtn': true})
+                .form-elements__item
+                  .form-elements__title
+                    .form-elements__name dropdown
+                  +dropdown({type: 'guest', isVisible: 'hide', 'withBtn': true})
 
 
-              .form-elements__item.form-elements__item_mb40
-                .form-elements__title
-                  .form-elements__name= 'masked text-field'
-                +text-field({isMask: true})
+                .form-elements__item.form-elements__item_mb
+                  .form-elements__title
+                    .form-elements__name masked text-field
+                  +text-field({isMask: true})
 
-              .form-elements__item.form-elements__item_mb40
-                +date-dropdown()
+                .form-elements__item.form-elements__item_mb
+                  +date-dropdown()
 
-              .form-elements__item
-                +text-field({placeholder: 'Email', value: '19 авг - 23 авг', isLabel: true, title: 'filter date dropdown'})
+                .form-elements__item.form-elements__item_mb.form-elements__item_sm
+                  +text-field({placeholder: 'Email', value: '19 авг - 23 авг', isLabel: true, title: 'filter date dropdown'})
 
-              .form-elements__item
-                +subscription({placeholder: 'Email'})
+                .form-elements__item.form-elements__item_sm
+                  .form-elements__title
+                    .form-elements__name subscription text field
+                  +subscription({placeholder: 'Email'})
 
-            .form-elements__middle
-              .form-elements__item
-                .form-elements__title
-                  .form-elements__name= 'text-field'
-                  .form-elements__state= 'default'
-                +text-field({placeholder: 'Email'})
+              .form-elements__column.form-elements__column_width320
+                .form-elements__item.form-elements__item_mb
+                  .form-elements__title.form-elements__title_mb
+                    .form-elements__name ckeckbox buttons
+                  .form-elements__checkbox
+                    +checkbox({label: 'Можно курить'})
+                  .form-elements__checkbox
+                    +checkbox({label: 'Можно с питомцами', isChecked: true})
+                  .form-elements__checkbox
+                    +checkbox({label: 'Можно пригралисть гостей (до 10 человек)', isChecked: true, isBold: false})
 
-            .form-elements__right
-              .form-elements__item
-                .form-elements__title
-                  .form-elements__name= 'text-field'
-                  .form-elements__state= 'default'
-                +text-field({placeholder: 'Email'})
+                .form-elements__item.form-elements__item_mb
+                  .form-elements__title.form-elements__title_mb
+                    .form-elements__name radio buttons
+                  +radio([
+                    {label: 'Мужчина', name: 'gender', isChecked: true},
+                    {label: 'Женщина', name: 'gender', isChecked: false}
+                    ])
+
+                .form-elements__item.form-elements__item_toggle
+                  .form-elements__title.form-elements__title_mb
+                    .form-elements__name toggle
+                  .form-elements__toggle
+                    +toggle({label: 'Получать спецпредложения', isChecked: true})
+                  .form-elements__toggle
+                    +toggle({label: 'Получать спецпредложения', isChecked: false})
+
+                .form-elements__item.form-elements__item_mb
+                  .form-elements__title.form-elements__title_mb
+                    .form-elements__name like button
+                  span.form-elements__like
+                    +like-btn({likes: 2, isLiked: false})
+                  +like-btn({likes: 12, isLiked: true})
+
+                .form-elements__item.form-elements__item_mb
+                  .form-elements__title.form-elements__title_rate
+                    .form-elements__name rate button
+                  .form-elements__rating
+                    .form-elements__rating-item
+                      +rate-btn({rate: 4})
+                    +rate-btn({rate: 5})
+
+
+
+              .form-elements__column.form-elements__column_width320
+                .form-elements__item
+                  .form-elements__title
+                    .form-elements__name= 'text-field'
+                    .form-elements__state= 'default'
+                  +text-field({placeholder: 'Email'})
 
 
 

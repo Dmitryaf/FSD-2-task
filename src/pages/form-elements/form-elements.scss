@@ -5,16 +5,9 @@
     width: 100%;
     max-width: 1380px;
     margin: 30px auto 62px auto;
-    padding: 0 15px;
   }
 
   &__content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px 1fr));
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas: 'left mid right''left bot bot';
-    justify-items: center;
-    gap: 50px;
     margin-top: 65px;
   }
 
@@ -22,19 +15,52 @@
     width: 320px;
     margin-bottom: 20px;
 
-    &_mb40 {
-      margin-bottom: 40px;
+    &_mb {
+      margin-bottom: 42px;
+    }
+
+    &_sm {
+      width: 266px;
+    }
+
+    &_toggle {
+      margin-bottom: 48px;
     }
   }
 
-  &__left {
-    grid-area: left;
+  &__row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__column {
+    margin: 0 40px 0 0;
+
+    &_width320 {
+      max-width: 320px;
+    }
+
+    &:first-child {
+      margin-right: 90px;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
 
   &__title {
     display: flex;
     justify-content: space-between;
     margin-bottom: 5px;
+
+    &_mb {
+      margin-bottom: 18px;
+    }
+
+    &_rate {
+      margin-bottom: 13px;
+    }
   }
 
   &__name,
@@ -51,6 +77,33 @@
 
   &__state {
     color: $darkShade50;
+  }
 
+  &__checkbox {
+    margin-bottom: 15px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__toggle {
+    margin-bottom: 18px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__like {
+    margin-right: 10px;
+  }
+
+  &__rating {
+    display: flex;
+
+    &-item {
+      margin-right: 20px;
+    }
   }
 }
