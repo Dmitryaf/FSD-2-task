@@ -1,0 +1,17 @@
+//-
+  options.isLiked - true || false
+  options.likes - количество лайков
+
+mixin like-btn(options)
+  if !options
+    - options = {}
+
+  - 
+    var {likes, isLiked = false} = options
+
+  if isLiked
+    .like-btn.like-btn_liked= likes
+      i.like-btn__icon.like-btn__icon_liked favorite
+  else
+    .like-btn= likes
+      i.like-btn__icon favorite_border

@@ -1,0 +1,51 @@
+@import '../../theme/variables.scss';
+
+.like-btn {
+  display: inline-block;
+  position: relative;
+  font-size: 0.714rem;
+  color: $darkShade25;
+  background-color: white;
+  padding: 3px 10px 3px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  user-select: none;
+
+  &__icon {
+    position: absolute;
+    top: 4px;
+    left: 5px;
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: .625rem;
+    display: inline-block;
+    line-height: .7rem;
+    text-transform: none;
+
+    &_liked {
+      color: $purple;
+    }
+  }
+
+  &_liked {
+    color: $purple;
+  }
+
+  &::after {
+    content: '';
+    display: inherit;
+    position: absolute;
+    top: -1px;
+    bottom: -1px;
+    left: -1px;
+    right: -1px;
+    background-color: $darkShade25;
+    z-index: -1;
+    border-radius: 10px;
+  }
+
+  &_liked::after {
+    background-image: $gradient;
+  }
+}
