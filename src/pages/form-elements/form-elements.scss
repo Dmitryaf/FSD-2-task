@@ -26,6 +26,14 @@
     &_toggle {
       margin-bottom: 48px;
     }
+
+    &_range {
+      margin-bottom: 33px;
+    }
+
+    &_btn {
+      margin-bottom: 39px;
+    }
   }
 
   &__row {
@@ -101,6 +109,25 @@
 
   &__rating {
     display: flex;
+
+    &-item {
+      margin-right: 20px;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    flex-wrap: wrap;
+
+    &-row {
+      display: flex;
+      flex: 1 1 100%;
+      margin-bottom: 31px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
 
     &-item {
       margin-right: 20px;

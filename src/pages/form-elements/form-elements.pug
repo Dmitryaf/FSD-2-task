@@ -10,6 +10,11 @@ include ../../components/radio/radio
 include ../../components/toggle/toggle
 include ../../components/like-btn/like-btn
 include ../../components/rate-btn/rate-btn
+include ../../components/range-slider/range-slider
+include ../../components/button/button
+include ../../components/simple-button/simple-button
+include ../../components/long-button/long-button
+include ../../components/pagination/pagination
 
 doctype html 
 html
@@ -107,11 +112,41 @@ html
 
 
               .form-elements__column.form-elements__column_width320
-                .form-elements__item
-                  .form-elements__title
-                    .form-elements__name= 'text-field'
-                    .form-elements__state= 'default'
-                  +text-field({placeholder: 'Email'})
+                .form-elements__item.form-elements__item_range
+                  +range-slider({
+                    title: "Range slider",
+                    type: "double",
+                    min: "500",
+                    max: "15000",
+                    from: "5000",
+                    to: "10000"
+                  })
 
+                .form-elements__item.form-elements__item_btn
+                  .form-elements__title.form-elements__title_mb
+                    .form-elements__name buttons
+                  .form-elements__buttons
+                    .form-elements__buttons-row
+                      .form-elements__buttons-item
+                        +button({text: 'click me', size: 'lg'})
+                      .form-elements__buttons-item
+                        +button({text: 'click me', size: 'lg', isDisabled: true})
+                    .form-elements__buttons-row
+                      .form-elements__buttons-item
+                        +button({text: 'click me', size: 'lg', isInverted: true})
+                      .form-elements__buttons-item
+                        +button({text: 'click me', size: 'lg', isInverted: true, isDisabled: true})
+                    .form-elements__buttons-row
+                      .form-elements__buttons-item
+                        +simple-button({text: 'click me'})
+                      .form-elements__buttons-item
+                        +simple-button({text: 'click me', isDisabled: true})
+                    .form-elements__buttons-row
+                      +long-button({text: 'Перейти к оплате'})
+
+                .form-elements__item
+                  .form-elements__title.form-elements__title_mb
+                    .form-elements__name pagination
+                  +pagination()
 
 
