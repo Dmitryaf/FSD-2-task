@@ -1,4 +1,5 @@
 include ../logo/logo
+include ../subscription/subscription
 
 //-
   options.items - массив с элементами меню
@@ -30,7 +31,7 @@ mixin footer(options)
           h5.footer__title= options.subscription.title
           .footer__list
             p.footer__text= options.subscription.text
-            input(placeholder= options.subscription.placeholder)
+            +subscription()
     .copyright
       +container()
         .copyright__content
