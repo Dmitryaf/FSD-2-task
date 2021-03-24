@@ -15,6 +15,7 @@ $purple: #BC9CFF;
 $green: #6FCF97;
 $gray: #e5e5e5;
 $gradient: linear-gradient(180deg, $purple 0%, #8ba4f9 100%);
+$gradient-green: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
 
 /***** Mixins *****/
 @mixin media-breakpoint-up($width) {
