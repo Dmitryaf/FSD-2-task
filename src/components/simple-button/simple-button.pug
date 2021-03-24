@@ -1,0 +1,13 @@
+//-
+  options.text - текст
+  options.isDisabled - bool
+
+mixin simple-button(options)
+  if !options
+    - options = {}
+
+  -
+    var {text, isDisabled = false} = options
+
+  button.simple-button(class= isDisabled ? 'simple-button_disabled' : '')= text || 'Button'
+

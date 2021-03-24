@@ -1,0 +1,25 @@
+@import '../../theme/variables.scss';
+
+.simple-button {
+  display: inline-block;
+  font-family: 'Montserrat',
+    sans-serif;
+  font-size: 0.857rem;
+  font-weight: 700;
+  color: $purple;
+  text-transform: uppercase;
+  line-height: 14px;
+  border: none;
+  cursor: pointer;
+
+  &:hover,
+  &:active {
+    opacity: 0.7;
+  }
+
+  &_disabled {
+    pointer-events: none;
+    color: $darkShade50;
+    cursor: default;
+  }
+}
