@@ -1,0 +1,20 @@
+//-
+  options.text - текст
+  options.size - lg || avg
+  options.isInverted - bool
+  options.isSubmit - bool
+  options.isDisabled - bool
+
+mixin long-button(options)
+  if !options
+    - options = {}
+  -
+    var classes = ''
+    var {text, isInverted = false, isSubmit = false, isDisabled = false} = options
+
+    classes += isInverted ? ' button_inverted' : ''
+    classes += isDisabled ? ' button_disabled' : ''
+
+
+  button.long-button(class=classes, type = isSubmit ? 'submit' : false)= text || 'Button'
+    i.long-button__icon arrow_forward
