@@ -1,17 +1,20 @@
 //-
   options.text - текст
-  options.size - размер ('', 'small')
-  options.type - тип ('', 'error')
-  options.isInverted - инвертирование цвета (bool)
-  options.isSubmit - задает тип кнопки Submit (bool)
+  options.size - lg || avg
+  options.isInverted - bool
+  options.isSubmit - bool
+  options.isDisabled - bool
 
 mixin button(options)
   if !options
     - options = {}
   -
     var classes = ''
-    classes += options.type ? 'button_' + options.type : ''
-    classes += options.size ? 'button_' + options.size : ''
-    classes += options.isInverted ? ' button_inverted' : ''
+    var {text, size = 'avg', isInverted = false, isSubmit = false, isDisabled = false} = options
 
-  button.button(class=classes, type = options.isSubmit ? 'submit' : false)= options.text || 'Button'
+    classes += isInverted ? ' button_inverted' : ''
+    classes += isDisabled ? ' button_disabled' : ''
+    classes += size === 'lg' ? ' button_lg' : ''
+
+
+  button.button(class=classes, type = isSubmit ? 'submit' : false)= text || 'Button'
