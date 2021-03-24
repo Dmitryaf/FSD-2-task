@@ -1,0 +1,22 @@
+@import '../../theme/variables.scss';
+
+.rslider {
+
+  &__head {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__values {
+    font-size: 0.857rem;
+    color: $darkShade50;
+  }
+
+  &__title {
+    font-size: 0.857rem;
+    font-weight: bold;
+    color: $darkShade100;
+    line-height: 15px;
+    text-transform: uppercase;
+  }
+}

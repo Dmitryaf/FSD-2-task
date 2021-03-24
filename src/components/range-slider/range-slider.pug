@@ -1,0 +1,16 @@
+
+
+mixin range-slider(options)
+  if !options
+    - options = {}
+
+  - 
+    var {title, type, min, max, from, to } = options
+
+  .rslider
+    .rslider__head
+      .rslider__title= title
+      .rslider__values 5000Р - 10000Р
+    input.js-rslider(data-min=min data-max=max data-type=type data-from=from data-to=to)
+    if footerText
+      .slider__footer= footerText
