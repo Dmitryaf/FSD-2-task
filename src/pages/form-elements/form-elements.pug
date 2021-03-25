@@ -1,6 +1,7 @@
 include ../../components/container/container
 include ../../components/kit-logo/kit-logo
 include ../../components/date-dropdown/date-dropdown
+include ../../components/filter-dropdown/filter-dropdown
 include ../../components/text-field/text-field
 include ../../components/calendar/calendar
 include ../../components/subscription/subscription
@@ -32,7 +33,7 @@ html
         +container()
           .form-elements__content
             .form-elements__row
-              .form-elements__column.form-elements__column_width320
+              .form-elements__column.form-elements__column_width320.form-elements__column_mr90
                 .form-elements__item
                   .form-elements__title
                     .form-elements__name text-field
@@ -48,7 +49,7 @@ html
                 .form-elements__item
                   .form-elements__title
                     .form-elements__name dropdown
-                  +dropdown({type: 'guest', isVisible: 'hide', 'withBtn': true})
+                  +dropdown()
 
 
                 .form-elements__item.form-elements__item_mb
@@ -60,7 +61,7 @@ html
                   +date-dropdown()
 
                 .form-elements__item.form-elements__item_mb.form-elements__item_sm
-                  +text-field({placeholder: 'Email', value: '19 авг - 23 авг', isLabel: true, title: 'filter date dropdown'})
+                  +filter-dropdown()
 
                 .form-elements__item.form-elements__item_sm
                   .form-elements__title
@@ -147,6 +148,41 @@ html
                 .form-elements__item
                   .form-elements__title.form-elements__title_mb
                     .form-elements__name pagination
-                  +pagination()
+                  +pagination({ 
+                    text: "1 &ndash; 12 из 100+ вариантов аренды",
+                    items: [
+                      { link: "/page", text: "1", active: true },
+                      { link: "/page", text: "2" },
+                      { link: "/page", text: "3" },
+                      { text: "..." },
+                      { link: "/page", text: "15" },
+                    ]
+                  })
+
+            .form-elements__row
+              .form-elements__column.form-elements__column_width320.form-elements__column_mr183
+                .form-elements__item.form-elements__item_sm
+                  .form-elements__title
+                    .form-elements__name dropdown
+                    .form-elements__state default
+                  +dropdown({type: 'room', isDefault: 'show'})
+                .form-elements__item.form-elements__item_sm
+                  .form-elements__title
+                    .form-elements__name dropdown
+                    .form-elements__state expanded
+                  +dropdown({type: 'room', isVisible: 'show', withBtn: false, isDefault: 'show'})
+
+              .form-elements__column.form-elements__column_width320.form-elements__column_mr72
+                .form-elements__item
+                  .form-elements__title
+                    .form-elements__name dropdown
+                  +dropdown({type: 'guest', isVisible: 'show', isDefault: 'hide'})
+
+              .form-elements__column.form-elements__column_width320
+                .form-elements__item
+                  .form-elements__title
+                    .form-elements__name dropdown
+                  +dropdown({type: 'guest', isVisible: 'show', isDefault: 'show'})
+
 
 

@@ -1,2 +1,11 @@
-mixin calendar()
-  .calendar.js-calendar
+//-
+  options.type - date || filter
+
+mixin calendar(options)
+  if !options
+    - options = {}
+
+  - 
+    let {type} = options
+
+  .calendar.js-calendar(data-type= type)

@@ -2,38 +2,52 @@ import 'air-datepicker';
 
 class Calendar {
   constructor(element) {
-    this.$element = element;
-
+    this.$element = $(element);
+    this.type = this.$element.attr('data-type');
     this.createDatepicker();
     this.initHandlers();
   }
 
   hideCalendar() {
-    this.$element.style.display = 'none';
+    this.$element.css('display', 'none');
   }
 
   createDatepicker() {
-    this.inputs = $(this.$element).parent().find('input');
+    this.inputs = this.$element.parent().find('input');
 
     if (this.inputs.length <= 0) {
       this.isStatic = true;
     } else {
       this.hideCalendar();
     }
-
-    const options = {
-      range: true,
-      multipleDates: true,
-      onSelect: this.onSelect.bind(this),
-      prevHtml: '<i class="material-icons">arrow_back</i>',
-      nextHtml: '<i class="material-icons">arrow_forward</i>',
-      navTitles: {
-        days: 'MM yyyy',
-      },
-    };
+    let options;
+    if (this.type === 'filter') {
+      options = {
+        range: true,
+        multipleDates: true,
+        multipleDatesSeparator: ' - ',
+        prevHtml: '<i class="material-icons">arrow_back</i>',
+        nextHtml: '<i class="material-icons">arrow_forward</i>',
+        navTitles: {
+          days: 'MM yyyy',
+        },
+        dateFormat: 'd M',
+      };
+    } else {
+      options = {
+        range: true,
+        multipleDates: true,
+        onSelect: this.onSelect.bind(this),
+        prevHtml: '<i class="material-icons">arrow_back</i>',
+        nextHtml: '<i class="material-icons">arrow_forward</i>',
+        navTitles: {
+          days: 'MM yyyy',
+        },
+      };
+    }
 
     if (this.inputs.length <= 0) {
-      this.datepicker = $(this.$element).datepicker(options).data('datepicker');
+      this.datepicker = this.$element.datepicker(options).data('datepicker');
     } else {
       this.datepicker = $(this.inputs[0])
         .datepicker(options)
@@ -76,13 +90,15 @@ class Calendar {
   apply() {
     if (this.dates < 2) return;
 
-    this.inputs.each((index, input) => {
-      if (this.dates[index]) {
-        $(input).val(this.dates[index].toLocaleDateString());
-      } else {
-        $(input).val('');
-      }
-    });
+    if (this.type !== 'filter') {
+      this.inputs.each((index, input) => {
+        if (this.dates[index]) {
+          $(input).val(this.dates[index].toLocaleDateString());
+        } else {
+          $(input).val('');
+        }
+      });
+    }
 
     this.datepicker.hide();
   }

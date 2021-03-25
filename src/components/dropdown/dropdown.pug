@@ -10,10 +10,10 @@ mixin dropdown(options)
     - options = {}
 
   - 
-    var {type, isVisible, withBtn} = options
-    var value = type === 'guest' ? 'Сколько гостей' : 'Комната'
+    let {type = 'guest', isVisible = 'hide', withBtn = true, isDefault = 'hide'} = options
+    let value = type === 'guest' ? 'Сколько гостей' : 'Комната'
 
-  .dropdown.js-dropdown(data-type=`${type}` data-visible=`${isVisible}`)
+  .dropdown.js-dropdown(data-type= type, data-visible= isVisible, data-default= isDefault)
     label.dropdown__label
       input.dropdown__input(value= value, readonly="readonly")
 

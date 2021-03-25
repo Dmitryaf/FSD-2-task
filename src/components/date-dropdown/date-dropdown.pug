@@ -3,7 +3,7 @@ include ../calendar/calendar
 
 mixin date-dropdown()
   .date-dropdown
-    +calendar()
+    +calendar({type: 'date'})
     .date-dropdown__item
       +text-field({placeholder: 'ДД.ММ.ГГГГ', isLabel: true, title: 'date dropdown', isMask: true})
     .date-dropdown__item
