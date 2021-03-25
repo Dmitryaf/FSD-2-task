@@ -1,0 +1,44 @@
+@import '../../theme/variables.scss';
+
+.pagination {
+  &__item {
+    display: inline-block;
+    font-size: 0.857rem;
+    color: $darkShade50;
+    text-align: center;
+    vertical-align: bottom;
+    text-decoration: none;
+    line-height: 40px;
+    width: 40px;
+    height: 40px;
+
+    &_active {
+      color: white;
+      border-radius: 50%;
+      background-image: $gradient;
+
+    }
+  }
+
+  &__info {
+    padding: 10px 0 0 5px;
+  }
+
+  &__next {
+    text-align: center;
+    vertical-align: bottom;
+    border: none;
+    border-radius: 50%;
+    background-image: $gradient-green;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+
+    &::after {
+      content: '\e5c8';
+      font-family: 'Material Icons';
+      color: white;
+      font-size: 1.714rem;
+    }
+  }
+}
