@@ -5,24 +5,32 @@ class Dropdown {
     this.$container = $container;
     this.type = options.type;
     this.isVisible = options.isVisible;
+    this.isDefault = options.isDefault;
     this.$content = this.$container.find('.dropdown__content');
     this.$input = this.$container.find('input');
     this.$applyBtn = this.$container.find('.dropdown__btns-apply');
     this.$clearBtn = this.$container.find('.dropdown__btns-clear');
+    this.defaultValue = [2, 2, 0];
     this.dropdownItems = [];
 
     if (this.isVisible === 'show') {
       this.$content.addClass('dropdown__content_show');
     }
-    this.$container.find('.dropdown-item').each((_, $element) => {
+    this.$container.find('.dropdown-item').each((index, $element) => {
       this.dropdownItems.push(
         new DropdownItem($($element), {
           input: this.$input,
           dropdownValue: this.dropdownValue.bind(this),
           hideClearBtn: this.hideClearBtn.bind(this),
+          value: this.defaultValue[index],
         })
       );
     });
+
+    if (this.isDefault === 'show') {
+      this.initDefault();
+    }
+
     this.initHandlers();
     this.hideClearBtn();
   }
@@ -33,6 +41,12 @@ class Dropdown {
     this.$clearBtn.on('click', this.clear.bind(this));
     this.$container.on('click', this.onContainerClick.bind(this));
     $(document).on('click', this.hideItems.bind(this));
+  }
+
+  initDefault() {
+    this.dropdownItems.forEach((item) => {
+      item.default();
+    });
   }
 
   apply() {

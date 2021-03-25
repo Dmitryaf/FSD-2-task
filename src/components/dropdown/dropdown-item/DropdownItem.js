@@ -3,7 +3,6 @@ import './dropdown-item.scss';
 class DropdownItem {
   constructor($element, options) {
     this.$element = $element;
-    this.$title = this.$element.find('.dropdown-item__title');
     this.$plusBtn = this.$element.find(
       '.dropdown-item__button[data-btn="plus"]'
     );
@@ -14,7 +13,13 @@ class DropdownItem {
     this.$input = options.input;
     this.getDropdownValue = options.dropdownValue;
     this.hideClearBtn = options.hideClearBtn;
+    this.defaultValue = options.value;
     this.initHandlers();
+  }
+
+  default() {
+    this.$counter.text(this.defaultValue);
+    this.$input.val(this.dropdownValue());
   }
 
   dropdownValue() {
