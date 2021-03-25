@@ -1,0 +1,8 @@
+include ../text-field/text-field
+include ../calendar/calendar
+
+mixin filter-dropdown()
+  .filter-dropdown
+    +calendar({type: 'filter'})
+    .filter-dropdown__item
+      +text-field({placeholder: 'ДД.ММ.ГГГГ', isLabel: true, title: 'filter date dropdown'})
