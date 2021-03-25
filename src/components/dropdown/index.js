@@ -7,5 +7,6 @@ dropdownContainers.each((_, element) => {
   let $element = $(element);
   let type = $element.attr('data-type');
   let isVisible = $element.attr('data-visible');
-  new Dropdown($element, { type, isVisible });
+  let isDefault = $element.attr('data-default');
+  new Dropdown($element, { type, isVisible, isDefault });
 });
