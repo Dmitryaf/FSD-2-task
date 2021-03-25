@@ -9,7 +9,7 @@ mixin subscription(options)
     - options = {}
 
   - 
-    var {link = '/', placeholder = 'Email'} = options
+    let {link = '/', placeholder = 'Email'} = options
 
   .subscription
     form.subscription__form(action= link, method="get")

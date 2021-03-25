@@ -9,8 +9,8 @@ mixin long-button(options)
   if !options
     - options = {}
   -
-    var classes = ''
-    var {text, isInverted = false, isSubmit = false, isDisabled = false} = options
+    let classes = ''
+    let {text, isInverted = false, isSubmit = false, isDisabled = false} = options
 
     classes += isInverted ? ' button_inverted' : ''
     classes += isDisabled ? ' button_disabled' : ''

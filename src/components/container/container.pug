@@ -3,7 +3,7 @@ mixin container(options)
     - options = {}
 
   -
-    var classes = ''
+    let classes = ''
     classes += options.size ? ' container_' + options.size : ''
   .container(class= classes)
     block

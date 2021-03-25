@@ -7,7 +7,7 @@ mixin toggle(options)
     - options = {}
 
   - 
-    var {label, isChecked = false} = options
+    let {label, isChecked = false} = options
 
   label.toggle= label
     input.toggle__input(type='checkbox' checked=isChecked)

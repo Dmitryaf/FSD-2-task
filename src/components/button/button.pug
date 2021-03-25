@@ -9,8 +9,8 @@ mixin button(options)
   if !options
     - options = {}
   -
-    var classes = ''
-    var {text, size = 'avg', isInverted = false, isSubmit = false, isDisabled = false} = options
+    let classes = ''
+    let {text, size = 'avg', isInverted = false, isSubmit = false, isDisabled = false} = options
 
     classes += isInverted ? ' button_inverted' : ''
     classes += isDisabled ? ' button_disabled' : ''

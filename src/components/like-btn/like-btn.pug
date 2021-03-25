@@ -7,7 +7,7 @@ mixin like-btn(options)
     - options = {}
 
   - 
-    var {likes, isLiked = false} = options
+    let {likes, isLiked = false} = options
 
   if isLiked
     .like-btn.like-btn_liked= likes

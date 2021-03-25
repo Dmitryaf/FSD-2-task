@@ -3,9 +3,9 @@ mixin rate-btn(options)
     - options = {}
 
   - 
-    var {rate} = options
+    let {rate} = options
 
-  - var count = 0;
+  - let count = 0;
   .rate-btn
     while count < 5
       if count < rate
