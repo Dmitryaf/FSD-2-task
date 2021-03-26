@@ -1,0 +1,7 @@
+mixin bullet(items)
+  if !items
+    - items = []
+
+  ul.bullet
+    for item in items 
+      li.bullet__item= item.text
