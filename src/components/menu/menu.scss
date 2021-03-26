@@ -27,16 +27,15 @@
     &_dropdown {
       padding-right: 15px;
 
-      &:after {
-        content: '';
+      &::after {
+        content: "\e313";
         position: absolute;
-        right: 0;
         top: 4px;
-        display: inline-block;
-        border: solid $darkShade50;
-        border-width: 0 2px 2px 0;
-        padding: 3px;
-        transform: rotate(45deg);
+        font-family: "Material Icons";
+        font-size: 1.714rem;
+        text-align: center;
+        line-height: 15px;
+        color: $darkShade50;
       }
     }
 
