@@ -8,6 +8,11 @@
   cursor: pointer;
   user-select: none;
 
+  &_bold {
+    font-weight: bold;
+    color: $darkShade75;
+  }
+
   &__input {
     width: 0;
     height: 0;
