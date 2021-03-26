@@ -65,8 +65,8 @@
       max-width: 320px;
     }
 
-    &_mr183 {
-      margin-right: 183px;
+    &_mr178 {
+      margin-right: 178px;
     }
 
     &_mr90 {
@@ -93,6 +93,10 @@
 
     &_rate {
       margin-bottom: 13px;
+    }
+
+    &_bullet {
+      margin-bottom: 12px;
     }
   }
 
@@ -157,5 +161,9 @@
     &-item {
       margin-right: 20px;
     }
+  }
+
+  &__rich-checkbox {
+    margin-bottom: 14px;
   }
 }
