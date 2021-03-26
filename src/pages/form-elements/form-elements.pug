@@ -7,6 +7,7 @@ include ../../components/calendar/calendar
 include ../../components/subscription/subscription
 include ../../components/dropdown/dropdown
 include ../../components/checkbox/checkbox
+include ../../components/expander/expander
 include ../../components/radio/radio
 include ../../components/toggle/toggle
 include ../../components/like-btn/like-btn
@@ -159,7 +160,7 @@ html
                     ]
                   })
 
-            .form-elements__row
+            .form-elements__row.form-elements__row_dropdown
               .form-elements__column.form-elements__column_width320.form-elements__column_mr183
                 .form-elements__item.form-elements__item_sm
                   .form-elements__title
@@ -183,6 +184,68 @@ html
                   .form-elements__title
                     .form-elements__name dropdown
                   +dropdown({type: 'guest', isVisible: 'show', isDefault: 'show'})
+
+            .form-elements__row
+              .form-elements__column.form-elements__column_width320.form-elements__column_mr183
+                .form-elements__item.form-elements__item_sm.form-elements__item_expander
+                  +expander({
+                    items: [
+                    {
+                      label: 'Завтрак',
+                      isChecked: false
+                    },
+                    {
+                      label: 'Письменный стол',
+                      isChecked: true
+                    },
+                    {
+                      label: 'Стул для кормления',
+                      isChecked: true
+                    },
+                    {
+                      label: 'Кроватка',
+                      isChecked: true
+                    },
+                    {
+                      label: 'Телевизор',
+                      isChecked: false
+                    },
+                    {
+                      label: 'Шампунь',
+                      isChecked: false
+                    }
+                  ]})
+
+                .form-elements__item.form-elements__item_sm
+                  +expander({
+                    visibility: 'show',
+                    items: [
+                    {
+                      label: 'Завтрак',
+                      isChecked: false
+                    },
+                    {
+                      label: 'Письменный стол',
+                      isChecked: true
+                    },
+                    {
+                      label: 'Стул для кормления',
+                      isChecked: true
+                    },
+                    {
+                      label: 'Кроватка',
+                      isChecked: true
+                    },
+                    {
+                      label: 'Телевизор',
+                      isChecked: false
+                    },
+                    {
+                      label: 'Шампунь',
+                      isChecked: false
+                    }
+                  ]})
+
 
 
 

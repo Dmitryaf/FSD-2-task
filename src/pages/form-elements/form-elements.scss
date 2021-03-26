@@ -38,12 +38,24 @@
     &_btn {
       margin-bottom: 39px;
     }
+
+    &_expander {
+      margin-bottom: 50px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
   }
 
   &__row {
     display: flex;
     justify-content: space-between;
     margin-bottom: 100px;
+
+    &_dropdown {
+      margin-bottom: 172px;
+    }
   }
 
   &__column {
