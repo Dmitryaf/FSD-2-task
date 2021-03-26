@@ -1,0 +1,47 @@
+@import '../../theme/variables.scss';
+
+.expander {
+  &__top {
+    position: relative;
+    font-size: 0.857rem;
+    font-weight: bold;
+    color: $darkShade100;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+    cursor: pointer;
+
+    &::after {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      top: 0px;
+      right: 15px;
+      border-color: $darkShade50;
+      border-style: solid;
+      border-width: 0 0 2px 2px;
+      width: 6px;
+      height: 6px;
+      transform: rotate(-45deg);
+    }
+
+    &_open {
+      &::after {
+        transform: rotate(135deg);
+        top: 6px;
+      }
+
+    }
+  }
+
+  &__list {
+    display: none;
+
+    &_show {
+      display: block;
+    }
+  }
+
+  &__item {
+    margin-bottom: 14px;
+  }
+}
