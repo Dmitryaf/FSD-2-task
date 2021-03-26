@@ -7,6 +7,7 @@ include ../../components/calendar/calendar
 include ../../components/subscription/subscription
 include ../../components/dropdown/dropdown
 include ../../components/checkbox/checkbox
+include ../../components/rich-checkbox/rich-checkbox
 include ../../components/expander/expander
 include ../../components/radio/radio
 include ../../components/toggle/toggle
@@ -17,6 +18,7 @@ include ../../components/button/button
 include ../../components/simple-button/simple-button
 include ../../components/long-button/long-button
 include ../../components/pagination/pagination
+include ../../components/bullet/bullet
 
 doctype html 
 html
@@ -161,7 +163,7 @@ html
                   })
 
             .form-elements__row.form-elements__row_dropdown
-              .form-elements__column.form-elements__column_width320.form-elements__column_mr183
+              .form-elements__column.form-elements__column_width320.form-elements__column_mr178
                 .form-elements__item.form-elements__item_sm
                   .form-elements__title
                     .form-elements__name dropdown
@@ -186,7 +188,7 @@ html
                   +dropdown({type: 'guest', isVisible: 'show', isDefault: 'show'})
 
             .form-elements__row
-              .form-elements__column.form-elements__column_width320.form-elements__column_mr183
+              .form-elements__column.form-elements__column_width320.form-elements__column_mr178
                 .form-elements__item.form-elements__item_sm.form-elements__item_expander
                   +expander({
                     items: [
@@ -245,6 +247,25 @@ html
                       isChecked: false
                     }
                   ]})
+
+              .form-elements__column.form-elements__column_width320.form-elements__column_mr72
+                .form-elements__item
+                  .form-elements__title.form-elements__title_mb
+                    .form-elements__name rich Checkbox Buttons
+                  .form-elements__rich-checkbox
+                    +rich-checkbox({label: 'Широкий коридор', description: 'Ширина коридоров в номере не менее 91 см.'})
+                  .form-elements__rich-checkbox
+                    +rich-checkbox({label: 'Помошник для инвалидов', description: 'На 1 этаже вас встретит специалист  и проводит до номера.'})
+
+              .form-elements__column.form-elements__column_width320
+                .form-elements__item
+                  .form-elements__title.form-elements__title_bullet
+                    .form-elements__name bullet list
+                  +bullet([
+                    {text: 'Нельзя с питомцами'},
+                    {text: 'Без вечеринок и мероприятий'},
+                    {text: 'Время прибытия — после 13:00, а выезд до 12:00'}
+                  ])
 
 
 
