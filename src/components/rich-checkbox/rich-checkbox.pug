@@ -1,0 +1,12 @@
+include ../checkbox/checkbox
+
+mixin rich-checkbox(options)
+  if !options
+    - options = {}
+
+  - 
+    let {label, description} = options
+
+  .rich-checkbox
+    +checkbox({label, isBold: true})
+    p.rich-checkbox__descr= description

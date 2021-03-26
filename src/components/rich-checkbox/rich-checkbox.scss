@@ -1,0 +1,12 @@
+@import '../../theme/variables.scss';
+
+.rich-checkbox {
+  &__descr {
+    font-size: 0.857rem;
+    color: $darkShade50;
+    line-height: 14px;
+    max-width: 260px;
+    padding: 0 0 0 30px;
+    margin: 5px 0 0;
+  }
+}
