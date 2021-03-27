@@ -9,8 +9,11 @@ mixin checkbox(options)
 
   - 
     let {label, isChecked = false, isBold = false} = options
+    let classes = ''
+    
+    classes += isBold ? 'checkbox_bold' : ''
 
-  label.checkbox(class= isBold ? 'checkbox_bold' : '')= label
+  label.checkbox(class= classes)= label
     input.checkbox__input(type='checkbox' checked=isChecked)
     span.checkbox__mark
 
