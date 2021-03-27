@@ -1,0 +1,24 @@
+include ../like-btn/like-btn
+//-
+  options.img
+  options.author
+  options.day
+  options.description
+
+mixin comment(options)
+  if !options
+    - options = {}
+
+  - 
+    let {img, author, day, description, likes} = options
+
+  article.comment 
+    .comment__column.comment__column_center
+      img.comment__img(src=require(`/components/comment/img/${img}`), alt=`${author}`)
+      .comment__likes
+        +like-btn({likes, isLiked: true})
+    .comment__column 
+      .comment__info 
+        .comment__author= author
+        .comment__day= day
+      p.comment__description= description

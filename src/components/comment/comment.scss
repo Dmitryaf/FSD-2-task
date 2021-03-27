@@ -1,0 +1,45 @@
+@import '../../theme/variables.scss';
+
+.comment {
+  display: flex;
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+
+    &_center {
+      align-items: center;
+    }
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    margin-bottom: 13px;
+  }
+
+  &__img {
+    display: block;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    margin-bottom: 14px;
+  }
+
+  &__info {
+    padding-top: 6px;
+    margin-left: 10px;
+  }
+
+  &__author {
+    font-weight: bold;
+    color: $darkShade75;
+    margin-bottom: 8px;
+  }
+
+  &__description {
+    color: $darkShade75;
+    line-height: 24px;
+    margin: 13px 0 0 10px;
+  }
+}
