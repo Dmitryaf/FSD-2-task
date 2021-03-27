@@ -19,6 +19,8 @@ include ../../components/simple-button/simple-button
 include ../../components/long-button/long-button
 include ../../components/pagination/pagination
 include ../../components/bullet/bullet
+include ../../components/advantage/advantage
+include ../../components/comment/comment
 
 doctype html 
 html
@@ -187,7 +189,7 @@ html
                     .form-elements__name dropdown
                   +dropdown({type: 'guest', isVisible: 'show', isDefault: 'show'})
 
-            .form-elements__row
+            .form-elements__row.form-elements__row_checkboxes
               .form-elements__column.form-elements__column_width320.form-elements__column_mr178
                 .form-elements__item.form-elements__item_sm.form-elements__item_expander
                   +expander({
@@ -198,15 +200,15 @@ html
                     },
                     {
                       label: 'Письменный стол',
-                      isChecked: true
+                      isChecked: false
                     },
                     {
                       label: 'Стул для кормления',
-                      isChecked: true
+                      isChecked: false
                     },
                     {
                       label: 'Кроватка',
-                      isChecked: true
+                      isChecked: false
                     },
                     {
                       label: 'Телевизор',
@@ -267,6 +269,17 @@ html
                     {text: 'Время прибытия — после 13:00, а выезд до 12:00'}
                   ])
 
+            .form-elements__row.form-elements__row_no-space
+              .form-elements__column.form-elements__column_width320.form-elements__column_advantages
+                .form-elements__item.form-elements__item_sm
+                  +advantage()
+                .form-elements__item.form-elements__item_sm
+                  +advantage({icon: 'location_city', title: 'Удобство', description: 'Окно в каждой из спален'})
+              
+              .form-elements__column
+                .form-elements__item.form-elements__item_lg
+                  .form-elements__comment
+                    +comment({img: 'user.png', author: 'Мурад Сарафанов', day: '5 дней назад', description: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.', likes: 12})
 
 
 

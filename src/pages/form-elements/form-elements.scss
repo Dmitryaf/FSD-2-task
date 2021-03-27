@@ -11,50 +11,21 @@
     margin-top: 65px;
   }
 
-  &__item {
-    width: 320px;
-    margin-bottom: 20px;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-
-    &_mb {
-      margin-bottom: 42px;
-    }
-
-    &_sm {
-      width: 266px;
-    }
-
-    &_toggle {
-      margin-bottom: 48px;
-    }
-
-    &_range {
-      margin-bottom: 33px;
-    }
-
-    &_btn {
-      margin-bottom: 39px;
-    }
-
-    &_expander {
-      margin-bottom: 50px;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-  }
-
   &__row {
     display: flex;
     justify-content: space-between;
     margin-bottom: 100px;
 
+    &_no-space {
+      justify-content: unset;
+    }
+
     &_dropdown {
       margin-bottom: 172px;
+    }
+
+    &_checkboxes {
+      margin-bottom: 85px;
     }
   }
 
@@ -79,6 +50,51 @@
 
     &:last-child {
       margin-right: 0;
+    }
+
+    &_advantages {
+      margin-right: 179px;
+    }
+  }
+
+  &__item {
+    width: 320px;
+    margin-bottom: 20px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &_mb {
+      margin-bottom: 42px;
+    }
+
+    &_sm {
+      width: 266px;
+    }
+
+    &_lg {
+      width: 100%;
+    }
+
+    &_toggle {
+      margin-bottom: 48px;
+    }
+
+    &_range {
+      margin-bottom: 33px;
+    }
+
+    &_btn {
+      margin-bottom: 39px;
+    }
+
+    &_expander {
+      margin-bottom: 50px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 
@@ -165,5 +181,9 @@
 
   &__rich-checkbox {
     margin-bottom: 14px;
+  }
+
+  &__comment {
+    padding-top: 13px;
   }
 }
