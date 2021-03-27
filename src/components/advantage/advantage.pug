@@ -1,0 +1,17 @@
+//-
+  options.icon
+  options.title
+  options.description
+
+mixin advantage(options)
+  if !options
+    - options = {}
+
+  - 
+    let {icon = 'tag_faces', title = 'Комфорт', description = 'Шумопоглощающие стены', isBorder = true} = options
+
+  .advantage(class= !isBorder ? 'advantage_no-border' : '')
+    i.advantage__icon= icon
+    .advantage__info 
+      .advantage__title= title 
+      .advantage__descr= description

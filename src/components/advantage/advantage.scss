@@ -1,0 +1,29 @@
+@import '../../theme/variables.scss';
+
+.advantage {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid $darkShade10;
+  padding: 0 0 17px 0;
+
+  &_no-border {
+    border-bottom-color: transparent;
+  }
+
+  &__icon {
+    font-family: Material Icons;
+    font-style: normal;
+    font-size: 3.429rem;
+    color: $purple;
+  }
+
+  &__info {
+    margin-left: 10px;
+  }
+
+  &__title {
+    font-weight: bold;
+    color: $darkShade75;
+    margin-bottom: 8px;
+  }
+}
