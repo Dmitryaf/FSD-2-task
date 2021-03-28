@@ -3,24 +3,24 @@ include ../button/button
 include ../logo/logo
 
 //-
-  options.menuItems - массив елементов меню
+  options.menuItems
+  options.isAuth - bool
 
 mixin header(options)
   if !options
     - options = {}
 
-  -
-    let classes = ''
-    classes += options.class ? 'header_' + options.class : ''
+  - 
+    let {menuItems, isAuth} = options
 
-  header.header(class=classes)
+  header.header
     +container()
       .header__content
         a.header__logo(href = '/')
           +logo()
         .header__menu
-          +menu({items: options.menuItems})
-        if !options.isAuth
+          +menu({items: menuItems})
+        if !isAuth
           .header__btns
             +button({text: 'Войти', isInverted: true})
             +button({text: 'Зарегистрироваться'})

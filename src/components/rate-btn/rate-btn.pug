@@ -2,13 +2,11 @@ mixin rate-btn(options)
   if !options
     - options = {}
 
-  - 
-    let {rate} = options
 
   - let count = 0;
   .rate-btn
     while count < 5
-      if count < rate
+      if count < options.rate
         i.rate-btn__icon star
       else
         i.rate-btn__icon star_border

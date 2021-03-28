@@ -11,9 +11,9 @@ mixin pagination(options)
 
   .pagination
     for item in items
-      - let classes = ["pagination__item"]
+      - let classes = ['pagination__item']
       if item.active
-        - classes.push("pagination__item_active")
+        - classes.push('pagination__item_active')
       if item.link
         a(class=classes href=item.link)= item.text
       else

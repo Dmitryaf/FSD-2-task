@@ -15,14 +15,16 @@ html
     title
       block title
 
-  body
+  body.base-layout
     block header
-      +header({menuItems: locals.menuItems, isAuth: locals.isAuth})
+      .base-layout__header
+        +header({menuItems: locals.menuItems, isAuth: locals.isAuth})
 
-    block main
+    block content
 
     block footer
-      +footer({menuItems: locals.footerMenuItems, subscription: locals.subscription, copyright: locals.copyright})
+      .base-layout__footer
+        +footer({menuItems: locals.footerMenuItems, subscription: locals.subscription, copyright: locals.copyright})
 
 
     block scripts

@@ -5,7 +5,4 @@ mixin calendar(options)
   if !options
     - options = {}
 
-  - 
-    let {type} = options
-
-  .calendar.js-calendar(data-type= type)
+  .calendar.js-calendar(data-type= options.type)

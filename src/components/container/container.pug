@@ -1,9 +1,3 @@
-mixin container(options)
-  if !options
-    - options = {}
-
-  -
-    let classes = ''
-    classes += options.size ? ' container_' + options.size : ''
-  .container(class= classes)
+mixin container()
+  .container
     block
