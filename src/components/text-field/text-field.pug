@@ -1,9 +1,9 @@
 //-
-  options.value - значение
-  options.type - input type
-  options.isMask - добавление маски для инпута
-  options.isFocused - фокус
-  options.isLabel - label для инпута(для добавления стрелки)
+  options.value
+  options.type
+  options.isMask - bool
+  options.isFocused - bool
+  options.isLabel - bool
 
 mixin text-field(options)
   if !options
@@ -12,8 +12,6 @@ mixin text-field(options)
   - 
     let {isMask, isFocused, isLabel, value, type} = options
     let classes = []
-
-
 
   if isMask
     - classes.push('js-masked')
