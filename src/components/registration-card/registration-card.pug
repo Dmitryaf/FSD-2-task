@@ -1,0 +1,49 @@
+include ../text-field/text-field
+include ../radio/radio
+include ../toggle/toggle
+include ../long-button/long-button
+include ../button/button
+
+mixin registration-card()
+  .registration-card
+    h1.registration-card__title Регистрация аккаунта
+    .registration-card__item
+      .registration-card__input
+        +text-field({type: 'text', placeholder: 'Имя'})
+      .registration-card__input
+        +text-field({type: 'text', placeholder: 'Фамилия'})
+      .registration-card__radio 
+        +radio([
+          {
+            label: 'Мужчина',
+            name: 'gender',
+            isChecked: true
+          },
+          {
+            label: 'Женщина',
+            name: 'gender',
+            isChecked: false
+          }
+        ])
+
+    .registration-card__item.registration-card__item_born
+      h3.registration-card__subtitle Дата рождения
+      +text-field({type: 'text', isMask: true})
+
+    .registration-card__item
+      h3.registration-card__subtitle данные для входа в сервис
+      .registration-card__input
+        +text-field({type: 'Email', placeholder: 'Email'})
+      .registration-card__input
+        +text-field({type: 'password', placeholder: 'Пароль'})
+      .registration-card__toggle
+        +toggle({label: 'Получать спецпредложения', isChecked: false})
+
+    .registration-card__item.registration-card__item_btn
+      .registration-card__btn
+        +long-button({text: 'перейти к оплате'})
+
+    .registration-card__account
+      .registration-card__account-text Уже есть аккаунт на Toxin
+      .registration-card__account-btn
+        +button({text: 'Войти', size: 'lg', isInverted: true})

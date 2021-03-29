@@ -1,0 +1,44 @@
+@import '../../theme//variables.scss';
+
+.registration-card {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  background-color: white;
+  width: 380px;
+  padding: 40px 30px 30px;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__item {
+    margin-bottom: 24px;
+
+    &_btn {
+      margin-bottom: 30px;
+    }
+
+    &_born {
+      margin-bottom: 22px;
+    }
+  }
+
+  &__subtitle {
+    color: $darkShade100;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 15px;
+    margin-bottom: 5px;
+  }
+
+  &__input {
+    margin-bottom: 10px;
+  }
+
+  &__account {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
