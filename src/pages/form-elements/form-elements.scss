@@ -21,11 +21,11 @@
     }
 
     &_dropdown {
-      margin-bottom: 172px;
+      margin-bottom: 170px;
     }
 
     &_checkboxes {
-      margin-bottom: 85px;
+      margin-bottom: 92px;
     }
   }
 
@@ -59,14 +59,14 @@
 
   &__item {
     width: 320px;
-    margin-bottom: 20px;
+    margin-bottom: 21px;
 
     &:last-child {
       margin-bottom: 0;
     }
 
     &_mb {
-      margin-bottom: 42px;
+      margin-bottom: 41px;
     }
 
     &_sm {
@@ -78,7 +78,7 @@
     }
 
     &_toggle {
-      margin-bottom: 48px;
+      margin-bottom: 42px;
     }
 
     &_range {
@@ -107,8 +107,12 @@
       margin-bottom: 18px;
     }
 
+    &_like-btn {
+      margin-bottom: 16px;
+    }
+
     &_rate {
-      margin-bottom: 13px;
+      margin-bottom: 14px;
     }
 
     &_bullet {
@@ -133,7 +137,7 @@
   }
 
   &__checkbox {
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 
     &:last-child {
       margin-bottom: 0;
@@ -149,7 +153,7 @@
   }
 
   &__like {
-    margin-right: 10px;
+    margin-right: 14px;
   }
 
   &__rating {
@@ -180,10 +184,10 @@
   }
 
   &__rich-checkbox {
-    margin-bottom: 14px;
+    margin-bottom: 11px;
   }
 
   &__comment {
-    padding-top: 13px;
+    padding-top: 6px;
   }
 }
