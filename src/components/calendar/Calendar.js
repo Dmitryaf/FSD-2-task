@@ -33,7 +33,7 @@ class Calendar {
         },
         dateFormat: 'd M',
       };
-    } else if (this.type === 'date') {
+    } else {
       options = {
         range: true,
         multipleDates: true,
