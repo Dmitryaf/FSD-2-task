@@ -30,7 +30,9 @@ html
     title Forms Elements
 
   body
-    block main
+    block header
+
+    block content
       .form-elements
         .form-elements__logo
           +kit-logo
@@ -63,7 +65,7 @@ html
                   +text-field({isMask: true})
 
                 .form-elements__item.form-elements__item_mb
-                  +date-dropdown()
+                  +date-dropdown({firstTitle: 'date-dropdown', secondTitle: 'date-dropdown'})
 
                 .form-elements__item.form-elements__item_mb.form-elements__item_sm
                   +filter-dropdown()
@@ -101,7 +103,7 @@ html
                     +toggle({label: 'Получать спецпредложения', isChecked: false})
 
                 .form-elements__item.form-elements__item_mb
-                  .form-elements__title.form-elements__title_mb
+                  .form-elements__title.form-elements__title_like-btn
                     .form-elements__name like button
                   span.form-elements__like
                     +like-btn({likes: 2, isLiked: false})
@@ -281,5 +283,7 @@ html
                   .form-elements__comment
                     +comment({img: 'user.png', author: 'Мурад Сарафанов', day: '5 дней назад', description: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.', likes: 12})
 
+
+    block footer
 
 

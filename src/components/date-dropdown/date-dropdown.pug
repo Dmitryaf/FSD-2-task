@@ -1,10 +1,16 @@
 include ../text-field/text-field
 include ../calendar/calendar
 
-mixin date-dropdown()
+mixin date-dropdown(options)
+  if !options
+    - options = {}
+
+  - 
+    let {firstTitle = 'date-dropdown', secondTitle = 'date-dropdown'} = options
+    
   .date-dropdown
     +calendar({type: 'date'})
     .date-dropdown__item
-      +text-field({placeholder: 'ДД.ММ.ГГГГ', isLabel: true, title: 'date dropdown', isMask: true})
+      +text-field({placeholder: 'ДД.ММ.ГГГГ', isLabel: true, title: firstTitle, isMask: true})
     .date-dropdown__item
-      +text-field({placeholder: 'ДД.ММ.ГГГГ', isLabel: true, title: 'date dropdown', isMask: true})
+      +text-field({placeholder: 'ДД.ММ.ГГГГ', isLabel: true, title: secondTitle, isMask: true})
