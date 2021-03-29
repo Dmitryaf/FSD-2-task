@@ -10,7 +10,7 @@ mixin text-field(options)
     - options = {}
 
   - 
-    let {isMask, isFocused, isLabel, value, type} = options
+    let {title, value, type, placeholder = 'placeholder', isMask = false, isFocused = false, isLabel = false} = options
     let classes = []
 
   if isMask
@@ -21,9 +21,9 @@ mixin text-field(options)
 
   if isLabel
     .text-field
-      h3.text-field__title= options.title
+      h3.text-field__title= title
       label.text-field__label
-        input.text-field__input(type= options.type, placeholder= options.placeholder, value= options.value, class= classes)
+        input.text-field__input(type= type, placeholder= placeholder, value= value, class= classes)
   else
     .text-field
-      input.text-field__input(type= options.type, placeholder= options.placeholder, value= options.value, class= classes)
+      input.text-field__input(type= type, placeholder= placeholder, value= value, class= classes)
