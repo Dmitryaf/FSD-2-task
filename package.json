@@ -38,8 +38,6 @@
     "jquery": "^3.5.1",
     "jquery-mask-plugin": "^1.14.16",
     "node-sass": "^4.0.0",
-    "normalize.css": "^8.0.1",
-    "paginationjs": "^2.1.5",
     "postcss": "^8.2.6",
     "postcss-loader": "^5.0.0",
     "postcss-preset-env": "^6.7.0",
