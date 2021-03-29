@@ -1,0 +1,30 @@
+@import '../../theme/variables.scss';
+
+.room-search-card {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  background-color: white;
+  width: 380px;
+  padding: 40px 30px 30px;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__dates {
+    margin-bottom: 21px;
+  }
+
+  &__guests {
+    margin-bottom: 32px;
+  }
+
+  &__guests-title {
+    color: $darkShade100;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 15px;
+    margin-bottom: 5px;
+  }
+}

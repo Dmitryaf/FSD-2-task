@@ -1,0 +1,16 @@
+include ../date-dropdown/date-dropdown
+include ../dropdown/dropdown
+include ../long-button/long-button
+
+mixin room-search-card()
+  .room-search-card
+    h1.room-search-card__title Найдем номера под ваши пожелания
+    form.room-search-card__form(action='action')
+      .room-search-card__body
+        .room-search-card__dates 
+          +date-dropdown({firstTitle: 'Прибытие', secondTitle: 'Выезд'})
+        .room-search-card__guests
+          h3.room-search-card__guests-title Гости
+          +dropdown({type: 'guest'})
+        .room-search-card__btn
+          +long-button({text: 'подобрать номер'})
