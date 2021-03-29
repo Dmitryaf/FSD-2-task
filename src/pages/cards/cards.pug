@@ -1,7 +1,39 @@
-extends ../base/base
+include ../../components/kit-logo/kit-logo
+include ../../components/room-search-card/room-search-card
+include ../../components/registration-card/registration-card
+include ../../components/container/container
+include ../../components/calendar/calendar
 
-block title
-  | Flat Starter Kit
 
-block main
-  <div class="test">test</div>
+doctype html 
+html
+  head
+    meta(charset = 'utf-8')
+    meta(name='viewport', content="initial-scale=1.0, width=device-width")
+    title Cards
+
+  body
+    block header
+
+    block content
+      .cards
+        .cards__logo 
+          +kit-logo()
+
+        +container()
+          .cards__content
+            .cards__column
+              .cards__item.cards__item_room-search
+                +room-search-card()
+              .cards__item 
+                +registration-card()
+
+            .cards__column
+              .cards__item
+
+            .cards__column
+              .cards__item
+                +calendar()
+
+
+    block footer
