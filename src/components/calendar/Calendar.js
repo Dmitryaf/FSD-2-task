@@ -33,7 +33,7 @@ class Calendar {
         },
         dateFormat: 'd M',
       };
-    } else {
+    } else if (this.type === 'date') {
       options = {
         range: true,
         multipleDates: true,
@@ -43,6 +43,7 @@ class Calendar {
         navTitles: {
           days: 'MM yyyy',
         },
+        dateFormat: 'dd.mm.yyyy',
       };
     }
 
@@ -93,7 +94,9 @@ class Calendar {
     if (this.type !== 'filter') {
       this.inputs.each((index, input) => {
         if (this.dates[index]) {
-          $(input).val(this.dates[index].toLocaleDateString());
+          $(input).val(
+            this.dates[index].toLocaleDateString().replace(/[\\\/]/g, '.')
+          );
         } else {
           $(input).val('');
         }
