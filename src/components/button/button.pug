@@ -10,11 +10,11 @@ mixin button(options)
     - options = {}
   -
     let classes = ''
-    let {text, size = 'avg', isInverted = false, isSubmit = false, isDisabled = false} = options
+    let {text = 'Button', size = 'avg', isInverted = false, isSubmit = false, isDisabled = false} = options
 
     classes += isInverted ? ' button_inverted' : ''
     classes += isDisabled ? ' button_disabled' : ''
     classes += size === 'lg' ? ' button_lg' : ''
 
 
-  button.button(class=classes, type = isSubmit ? 'submit' : false)= text || 'Button'
+  button.button(class=classes, type = isSubmit ? 'submit' : false)= text

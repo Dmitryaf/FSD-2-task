@@ -7,7 +7,7 @@ mixin simple-button(options)
     - options = {}
 
   -
-    let {text, isDisabled = false} = options
+    let {text = 'Button', isDisabled = false} = options
 
-  button.simple-button(class= isDisabled ? 'simple-button_disabled' : '')= text || 'Button'
+  button.simple-button(class= isDisabled ? 'simple-button_disabled' : '')= text
 
