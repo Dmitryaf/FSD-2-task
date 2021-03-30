@@ -1,8 +1,33 @@
 include ../date-dropdown/date-dropdown
 include ../dropdown/dropdown
 include ../long-button/long-button
+include ../room-info/room-info
+include ../subtitle/subtitle
+include ../price/price
 
 mixin booking-card()
   .booking-card 
     .booking-card__top
-      .booking-card__number
+      +room-info({roomNumber: 888, price: '9 990', isLuxe: true})
+
+    .booking-card__dates
+      +date-dropdown({firstTitle: 'Прибытие', secondTitle: 'Выезд'})
+
+    .booking-card__guests
+      .booking-card__guests
+        +subtitle({title: 'Гости'})
+        +dropdown({isDefault: 'show'})
+
+    .booking-card__price
+      +price({ 
+        standing: "9 990&#8381; х 4 суток",
+        standingPrice: "39 960&#8381;",
+        services: "Сбор за услуги: скидка 2 179&#8381;",
+        servicesPrice: "0&#8381;",
+        additional: "Сбор за дополнительные услуги",
+        additionalPrice: "300&#8381;",
+        total: "38 081&#8381;",
+        })
+
+    .booking-card__btn
+      +long-button({text: 'Забронировать'})
