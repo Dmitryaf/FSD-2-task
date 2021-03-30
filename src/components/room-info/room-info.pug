@@ -1,0 +1,27 @@
+//-
+  options.roomNumber
+  options.price
+  options.priceText
+  options.isLuxe
+
+mixin room-info(options)
+  if !options
+    - options = {}
+
+  -
+    let {roomNumber = 0, price = 0, priceText = ' в сутки', isLuxe = false} = options
+
+  .room-info
+    .room-info__left
+      span.room-info__symbol № 
+      span.room-info__number #{roomNumber}
+      if isLuxe
+        span.room-info__luxe люкс
+
+    .room-info__right
+      span.room-info__price #{price}&#8381
+      span.room-info__price-text= priceText
+
+
+
+

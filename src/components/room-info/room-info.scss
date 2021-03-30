@@ -1,0 +1,44 @@
+@import '../../theme/variables.scss';
+
+.room-info {
+  display: flex;
+  justify-content: space-between;
+
+  &__symbol,
+  &__number {
+    font-weight: bold;
+    color: $darkShade100;
+  }
+
+  &__right {
+    align-self: flex-end;
+  }
+
+  &__symbol {
+    font-size: 1rem;
+  }
+
+  &__number {
+    font-size: 1.714rem;
+  }
+
+  &__luxe {
+    font-size: 0.857rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: $purple;
+  }
+
+  &__price,
+  &__price-text {
+    color: $darkShade50
+  }
+
+  &__price {
+    font-weight: bold;
+  }
+
+  &__price-text {
+    font-size: 0.857rem;
+  }
+}
