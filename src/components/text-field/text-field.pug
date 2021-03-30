@@ -1,3 +1,5 @@
+include ../subtitle/subtitle
+
 //-
   options.value
   options.type
@@ -21,7 +23,7 @@ mixin text-field(options)
 
   if isLabel
     .text-field
-      h3.text-field__title= title
+      +subtitle({title})
       label.text-field__label
         input.text-field__input(type= type, placeholder= placeholder, value= value, class= classes)
   else

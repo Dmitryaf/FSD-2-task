@@ -1,6 +1,7 @@
 include ../date-dropdown/date-dropdown
 include ../dropdown/dropdown
 include ../long-button/long-button
+include ../subtitle/subtitle
 
 mixin room-search-card()
   .room-search-card
@@ -10,7 +11,7 @@ mixin room-search-card()
         .room-search-card__dates 
           +date-dropdown({firstTitle: 'Прибытие', secondTitle: 'Выезд'})
         .room-search-card__guests
-          h3.room-search-card__guests-title Гости
+          +subtitle({title: 'Гости'})
           +dropdown({type: 'guest'})
         .room-search-card__btn
           +long-button({text: 'подобрать номер'})

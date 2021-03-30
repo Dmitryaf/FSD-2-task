@@ -2,7 +2,8 @@ include ../text-field/text-field
 include ../radio/radio
 include ../toggle/toggle
 include ../long-button/long-button
-include ../button/button
+include ../account/account
+include ../subtitle/subtitle
 
 mixin registration-card()
   .registration-card
@@ -27,11 +28,11 @@ mixin registration-card()
         ])
 
     .registration-card__item.registration-card__item_born
-      h3.registration-card__subtitle Дата рождения
+      +subtitle({title: 'Дата рождения'}) 
       +text-field({type: 'text', isMask: true})
 
     .registration-card__item
-      h3.registration-card__subtitle данные для входа в сервис
+      +subtitle({title: 'данные для входа в сервис'})  
       .registration-card__input
         +text-field({type: 'Email', placeholder: 'Email'})
       .registration-card__input
@@ -44,6 +45,4 @@ mixin registration-card()
         +long-button({text: 'перейти к оплате'})
 
     .registration-card__account
-      .registration-card__account-text Уже есть аккаунт на Toxin
-      .registration-card__account-btn
-        +button({text: 'Войти', size: 'lg', isInverted: true})
+      +account({btnText: 'Войти', description: 'Уже есть аккаунт на Toxin'})
