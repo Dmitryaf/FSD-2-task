@@ -1,0 +1,23 @@
+//-
+  options.items
+  options.number
+  options.price
+  options.rate
+  options.reviewsCount
+  options.isArrow
+  options.isLuxe
+
+mixin gallery(options)
+  if !options
+    - options = {}
+
+  if !options.items
+    - options.items = []
+
+  - 
+    let {items, number, price, ratem, reviewsCount, isArrow, isLuxe} = options
+
+  .gallery.js-gallery
+    for item in items
+      img.gallery__item(src=require(`/components/gallery/img/${item.img}`), alt=`${item.img}`)
+
