@@ -7,7 +7,7 @@
     font-weight: bold;
     color: $darkShade100;
     text-transform: uppercase;
-    margin-bottom: 22px;
+    margin-bottom: 18px;
     cursor: pointer;
 
     &::after {
@@ -42,6 +42,6 @@
   }
 
   &__item {
-    margin-bottom: 11px;
+    margin-bottom: 12px;
   }
 }
