@@ -1,0 +1,30 @@
+//-
+  options.standing
+  options.standingPrice
+  options.services
+  options.servicesPrice
+  options.additional
+  options.additionalPrice
+  options.total
+
+mixin price(options)
+  if !options
+    - options = {}
+
+  - 
+    let {standing, standingPrice, services, servicesPrice, additional, additionalPrice, total} = options
+
+  .price
+    .price__row
+      .price__service!= standing
+      div.price__sum!= standingPrice
+    .price__row
+      .price__service.price__service_icon!= services
+      div.price__sum!= servicesPrice
+    .price__row
+      .price__service.price__service_icon= additional
+      div.price__sum!= additionalPrice
+    .price__row.price__row_total
+      h2.price__total Итого
+      .price__line
+      h2.price__total!= total
