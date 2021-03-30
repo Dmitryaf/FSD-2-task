@@ -1,0 +1,12 @@
+//-
+  options.title
+  options.classes
+
+mixin subtitle(options)
+  if !options
+    - options = {}
+
+  -
+    let {title = 'subtitle', classes = ''} = options
+
+  h3.subtitle(class= classes)= title
