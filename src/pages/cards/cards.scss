@@ -4,17 +4,22 @@
     width: 100%;
     max-width: 1380px;
     margin: 30px auto 62px auto;
-    }
+  }
 
   &__content {
     display: flex;
     margin-top: 72px;
   }
 
-  &__item {
+  &__column {
+    margin-right: 40px;
 
-    &_room-search {
-      margin-bottom: 40px;
+    &:last-child {
+      margin-right: 0;
     }
+  }
+
+  &__item {
+    margin-bottom: 38px;
   }
 }

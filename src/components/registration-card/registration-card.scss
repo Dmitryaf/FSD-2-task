@@ -13,7 +13,7 @@
   }
 
   &__item {
-    margin-bottom: 24px;
+    margin-bottom: 26px;
 
     &_btn {
       margin-bottom: 30px;
@@ -24,21 +24,11 @@
     }
   }
 
-  &__subtitle {
-    color: $darkShade100;
-    font-weight: bold;
-    text-transform: uppercase;
-    line-height: 15px;
-    margin-bottom: 5px;
-  }
-
   &__input {
     margin-bottom: 10px;
-  }
 
-  &__account {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }
