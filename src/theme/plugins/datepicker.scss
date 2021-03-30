@@ -4,7 +4,7 @@
 @import '../variables.scss';
 
 .datepicker {
-  padding: 20px;
+  padding: 13px 20px 20px;
   width: 280px;
 
   &--content {
@@ -97,7 +97,7 @@
   &--nav {
     font-size: 0.857rem;
     border-bottom: none;
-    padding: 6px 0 14px;
+    padding: 6px 0 20px;
 
     & .material-icons {
       font-size: 1.714rem;
@@ -117,8 +117,8 @@
   &--nav-title,
   &--nav-title i {
     color: $darkShade100;
-    font-size: 1.19rem;
-    font-family: Quicksand, OpenSans, sans-serif;
+    font-size: 1.357rem;
+    font-family: Montserrat, OpenSans, sans-serif;
     font-weight: bold;
   }
 
@@ -128,6 +128,7 @@
 
     &__clear,
     &__apply {
+      font-size: 0.857rem;
       font-weight: bold;
       text-transform: uppercase;
       color: $purple;
