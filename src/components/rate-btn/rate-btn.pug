@@ -1,12 +1,9 @@
-mixin rate-btn(options)
-  if !options
-    - options = {}
-
+mixin rate-btn({rate = 0})
 
   - let count = 0;
   .rate-btn
     while count < 5
-      if count < options.rate
+      if count < rate
         i.rate-btn__icon star
       else
         i.rate-btn__icon star_border
