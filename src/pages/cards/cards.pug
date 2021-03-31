@@ -5,7 +5,7 @@ include ../../components/booking-card/booking-card
 include ../../components/login-card/login-card
 include ../../components/container/container
 include ../../components/calendar/calendar
-include ../../components/gallery/gallery
+include ../../components/room-card/room-card
 
 
 doctype html 
@@ -41,7 +41,7 @@ html
               .cards__item
                 +calendar()
               .cards__item
-                +gallery({items: [
+                +room-card({galleryItems: [
                   {
                     img: 'room-1.png'
                   },
@@ -53,11 +53,32 @@ html
                   },
                   {
                     img: 'room-4.png'
+                  }
+                ],
+                rate: 5,
+                reviewCount: 145
+                })
+                .cards__item
+                +room-card({galleryItems: [
+                  {
+                    img: 'room-1.png'
                   },
                   {
-                    img: 'room-5.png'
+                    img: 'room-2.png'
+                  },
+                  {
+                    img: 'room-3.png'
+                  },
+                  {
+                    img: 'room-4.png'
                   }
-                ]})
+                ],
+                galleryNav: 'hide',
+                number: 840,
+                rate: 4,
+                reviewCount: 65,
+                isLuxe: false
+                })
 
 
     block footer
