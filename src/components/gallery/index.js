@@ -4,5 +4,6 @@ import './gallery.scss';
 const galleryContainers = $('.js-gallery');
 
 galleryContainers.each((_, element) => {
-  new Gallery(element);
+  const isNav = $(element).attr('data-nav');
+  new Gallery(element, { isNav });
 });
