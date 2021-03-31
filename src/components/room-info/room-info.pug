@@ -2,6 +2,7 @@
   options.roomNumber
   options.price
   options.priceText
+  options.size - md || sm
   options.isLuxe
 
 mixin room-info(options)
@@ -9,9 +10,9 @@ mixin room-info(options)
     - options = {}
 
   -
-    let {roomNumber = 0, price = 0, priceText = ' в сутки', isLuxe = false} = options
+    let {roomNumber = 0, price = 0, priceText = ' в сутки', isLuxe = false, size = 'md'} = options
 
-  .room-info
+  .room-info(class= size === 'sm' ? 'room-info_sm' : '')
     .room-info__left
       span.room-info__symbol № 
       span.room-info__number #{roomNumber}
