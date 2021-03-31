@@ -4,8 +4,15 @@
   display: flex;
   justify-content: space-between;
 
+  &_sm {
+    & .room-info__number {
+      font-size: 1.429rem;
+    }
+  }
+
   &__symbol,
   &__number {
+    font-family: Quicksand, OpenSans, sans-serif;
     font-weight: bold;
     color: $darkShade100;
   }
