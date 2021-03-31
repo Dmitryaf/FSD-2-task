@@ -1,0 +1,64 @@
+@import '../../theme/variables.scss';
+
+.colors {
+
+  &__list {
+    list-style: none;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  &__square {
+    background-color: white;
+    width: 70px;
+    height: 70px;
+    border-radius: 6px;
+
+    &_ds100 {
+      background-color: $darkShade100;
+    }
+
+    &_ds75 {
+      background-color: $darkShade75;
+    }
+
+    &_ds50 {
+      background-color: $darkShade50;
+    }
+
+    &_ds25 {
+      background-color: $darkShade25;
+    }
+
+    &_ds5 {
+      background-color: $darkShade5;
+    }
+
+    &_purple {
+      background-color: $purple;
+    }
+
+    &_green {
+      background-color: $green;
+    }
+  }
+
+  &__info {
+    margin-left: 40px;
+  }
+
+  &__title,
+  &__hex {
+    font-size: 1.357rem;
+    color: $darkShade100
+  }
+
+  &__title {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+}

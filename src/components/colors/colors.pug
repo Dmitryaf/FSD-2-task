@@ -1,0 +1,19 @@
+//-
+  item.title
+  item.hex
+  item.colorPrefix
+
+mixin colors(options)
+  if !options
+    - options = {}
+
+  if !options.items
+    - options.items = []
+
+  ul.colors__list
+    for item in options.items
+      li.colors__item
+        .colors__square(class= `colors__square_${item.colorPrefix}`)
+        .colors__info
+          h2.colors__title= item.title
+          .colors__hex= item.hex
