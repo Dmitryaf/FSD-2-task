@@ -5,25 +5,49 @@
   box-shadow: 0px 1px 0px rgba(31, 32, 65, 0.1);
 
   &__logo {
-    margin: 0 0 20px;
+    display: inline-block;
+    margin: 0 0 13px;
   }
 
   &__content {
     display: flex;
-    justify-content: space-between;
-    padding: 105px 0;
+    padding: 100px 0 77px;
+
+    @include media-breakpoint($lg) {
+      flex-wrap: wrap;
+    }
+
+    @include media-breakpoint($md) {
+      justify-content: space-between;
+    }
+
+    @include media-breakpoint($sm) {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 60px 0;
+    }
+  }
+
+  &__left {
+    max-width: 260px;
+
+    @include media-breakpoint($md) {
+      max-width: auto;
+    }
+  }
+
+  &__right {
+    display: flex;
+    padding-top: 5px;
+    margin-left: 40px;
+
+    @include media-breakpoint($md) {
+      display: none;
+    }
   }
 
   &__column {
-    display: flex;
-    flex-direction: column;
-    width: auto;
-    max-width: 260px;
-    margin-right: 40px;
-
-    &:last-child {
-      margin-right: 0;
-    }
+    min-width: 200px;
   }
 
   &__title {
@@ -45,7 +69,7 @@
     color: $darkShade50;
     line-height: 17px;
     text-decoration: none;
-    margin-bottom: 20px;
+    margin-bottom: 21px;
 
 
     &:hover {
@@ -57,17 +81,15 @@
     margin: 0 0 20px;
     line-height: 24px;
   }
-}
 
-.copyright {
-  background-color: white;
-  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
-  border-top: 1px solid $darkShade10;
+  &__subscription {
+    padding-top: 5px;
+  }
 
-  &__content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  &__copyright {
+    background-color: white;
+    border-top: 1px solid $darkShade10;
     padding: 25px 0;
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
   }
 }
