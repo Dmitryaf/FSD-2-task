@@ -1,17 +1,16 @@
 include ../menu/menu
-include ../button/button
+
 include ../logo/logo
 
 //-
   options.menuItems
-  options.isAuth - bool
 
 mixin header(options)
   if !options
     - options = {}
 
   - 
-    let {menuItems, isAuth} = options
+    let {menuItems = [], isAuth = false} = options
 
   header.header
     +container()
@@ -19,10 +18,4 @@ mixin header(options)
         a.header__logo(href = '/')
           +logo()
         .header__menu
-          +menu({items: menuItems})
-        if !isAuth
-          .header__btns
-            +button({text: 'Войти', isInverted: true})
-            +button({text: 'Зарегистрироваться'})
-        else
-          .header__user= 'Юлий Цезарь'
+          +menu({items: menuItems, isAuth})
