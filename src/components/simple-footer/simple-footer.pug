@@ -1,0 +1,10 @@
+include ../logo/logo
+include ../copyright/copyright
+
+mixin simple-footer() 
+
+  footer.simple-footer
+    .simple-footer__logo
+      +logo()
+    .simple-footer__copyright
+      +copyright({isColumn: true})
