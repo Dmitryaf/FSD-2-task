@@ -3,6 +3,7 @@ block variables
 
 include ../../components/header/header
 include ../../components/footer/footer
+include ../../components/simple-footer/simple-footer
 include ../../components/container/container
 include ../../components/socials/socials
 include ../../components/kit-logo/kit-logo
@@ -26,7 +27,11 @@ html
     block main
 
     block footer
-      +footer({menuItems: locals.footerMenuItems, subscription: locals.subscription, copyright: locals.copyright})
+      .headers-footers__item
+        +footer({menuItems: locals.footerMenuItems, subscription: locals.subscription})
+
+      .headers-footers__item
+        +simple-footer()
 
 
     block scripts
