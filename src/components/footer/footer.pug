@@ -1,5 +1,6 @@
 include ../logo/logo
 include ../subscription/subscription
+include ../copyright/copyright
 
 //-
   options.items
@@ -16,25 +17,23 @@ mixin footer(options)
   footer.footer(options)
     +container()
       .footer__content
-        .footer__column
+        .footer__left
           a.footer__logo(href = '/')
             +logo()
           p.footer__text= 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»'
-
-        for item in options.menuItems
-          .footer__column
-            h5.footer__title= item.title
-            .footer__list
-              for listItem in item.list
-                a.footer__list-item(href= listItem.href)= listItem.name
-        .footer__column
+        .footer__right
+          for item in options.menuItems
+            .footer__column
+              h5.footer__title= item.title
+              .footer__list
+                for listItem in item.list
+                  a.footer__list-item(href= listItem.href)= listItem.name
+        .footer__subscription
           h5.footer__title= options.subscription.title
           .footer__list
             p.footer__text= options.subscription.text
             +subscription()
-    .copyright
-      +container()
-        .copyright__content
-          .copyright__text= options.copyright
-          +socials()
+      .footer__copyright
+        +copyright()
+
 
