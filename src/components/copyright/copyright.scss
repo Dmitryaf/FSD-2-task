@@ -1,0 +1,32 @@
+@import '../../theme/variables.scss';
+
+.copyright {
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include media-breakpoint($xs) {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    &_column {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      & .copyright__text {
+        margin-bottom: 25px;
+        text-align: center;
+      }
+    }
+  }
+
+  &__text {
+    @include media-breakpoint($xs) {
+      margin-bottom: 20px;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+include ../socials/socials
+
+mixin copyright(options)
+  if !options
+    - options = {}
+
+  -
+    const {text = 'Copyright © 2018 Toxin отель. Все права зачищены.', isColumn = false} = options
+
+  .copyright
+    .copyright__content(class= isColumn ? 'copyright__content_column' : '')
+      .copyright__text= text
+      .copyright__socials
+        +socials()
