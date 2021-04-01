@@ -1,7 +1,10 @@
+include ../button/button
+
 //-
   options.items
   options.items[0].name
   options.items[0].href
+  options.isAuth - bool
 
 mixin menu(options)
   if !options
@@ -10,15 +13,28 @@ mixin menu(options)
   if !options.items
     - options.items = []
 
-  .menu
-    nav.menu__list
-      for item in options.items
-        if item.childs
-          .menu__item
-            a.menu__link.menu__link_dropdown(class= item.active ? 'menu__link_active' : '' , href = item.href)= item.name
-            .submenu
-              for child in item.childs
-                a.submenu__item(href = child.href)= child.name
+  .menu.js-menu
+    nav.menu__nav
+      ul.menu__list.js-menu__list
+        for item in options.items
+          if item.childs
+            li.menu__item.menu__item_dropdown
+              a.menu__link.menu__link_dropdown(class= item.active ? 'menu__link_active' : '' , href = item.href)= item.name
+              ul.submenu
+                for child in item.childs
+                  li.submenu__item
+                    a.submenu__item-link(href = child.href)= child.name
+          else
+            li.menu__item
+              a.menu__link(class= item.active ? 'menu__link_active' : '' , href = item.href)= item.name
+
+        if !options.isAuth
+          li.menu__item.menu__item_btns
+            +button({text: 'Войти', isInverted: true})
+            +button({text: 'Зарегистрироваться'})
         else
-          .menu__item
-            a.menu__link(class= item.active ? 'menu__link_active' : '' , href = item.href)= item.name
+          li.menu__item.menu__item_user
+            .menu__user= 'Юлий Цезарь'
+
+      button.menu__humburger.js-menu__humburger
+        span.menu__humburger-item
