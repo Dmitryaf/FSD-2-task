@@ -2,19 +2,19 @@ include ../text-field/text-field
 include ../long-button/long-button
 include ../account/account
 
-mixin login-card()
-  .login-card
-    h1.login-card__title Войти
+mixin sign-in-card()
+  .sign-in-card
+    h1.sign-in-card__title Войти
 
-    .login-card__item.login-card__item_inputs
-      .login-card__input
+    .sign-in-card__item.sign-in-card__item_inputs
+      .sign-in-card__input
         +text-field({type: 'Email', placeholder: 'Email'})
-      .login-card__input
+      .sign-in-card__input
         +text-field({type: 'password', placeholder: 'Пароль'})
 
-    .login-card__item.login-card__item_btn
-      .login-card__btn
+    .sign-in-card__item.sign-in-card__item_btn
+      .sign-in-card__btn
         +long-button({text: 'войти'})
 
-    .login-card__account
+    .sign-in-card__account
       +account({btnText: 'Создать', description: 'Нет аккаунта на Toxin?'})
