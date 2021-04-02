@@ -1,5 +1,4 @@
 include ./base-data
-block variables
 
 include ../../components/header/header
 include ../../components/footer/footer
@@ -12,8 +11,9 @@ html
   head
     meta(charset = 'utf-8')
     meta(name='viewport', content="initial-scale=1.0, width=device-width")
-    title
-      block title
+
+    block title
+      title Main
 
   body.base-layout
     block header
@@ -24,7 +24,7 @@ html
 
     block footer
       .base-layout__footer
-        +footer({menuItems: locals.footerMenuItems, subscription: locals.subscription, copyright: locals.copyright})
+        +footer({menuItems: locals.footerMenuItems, subscription: locals.subscription})
 
 
     block scripts
