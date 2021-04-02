@@ -3,12 +3,8 @@
   item.hex
   item.colorPrefix
 
-mixin colors(options)
-  if !options
-    - options = {}
-
-  if !options.items
-    - options.items = []
+mixin colors(options = {})
+  - const {items = []} = options
 
   ul.colors__list
     for item in options.items

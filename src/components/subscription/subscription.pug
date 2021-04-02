@@ -4,12 +4,8 @@ include ../text-field/text-field
   options.link
   options.placeholder
 
-mixin subscription(options)
-  if !options
-    - options = {}
-
-  - 
-    let {link = '/', placeholder = 'Email'} = options
+mixin subscription(options = {})
+  - const {link = '/', placeholder = 'Email'} = options
 
   .subscription
     form.subscription__form(action= link, method="get")

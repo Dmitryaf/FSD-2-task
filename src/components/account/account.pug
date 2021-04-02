@@ -4,12 +4,8 @@ include ../button/button
   options.btnText
   options.description
 
-mixin account(options)
-  if !options
-    - options = {}
-
-  - 
-    let {btnText = 'Button', description} = options
+mixin account(options = {})
+  - const {btnText = 'Button', description} = options
 
   .account
     .account__description= description

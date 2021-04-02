@@ -2,12 +2,8 @@
   options.text
   options.isDisabled - bool
 
-mixin simple-button(options)
-  if !options
-    - options = {}
-
-  -
-    let {text = 'Button', isDisabled = false} = options
+mixin simple-button(options = {})
+  - const {text = 'Button', isDisabled = false} = options
 
   button.simple-button(class= isDisabled ? 'simple-button_disabled' : '')= text
 

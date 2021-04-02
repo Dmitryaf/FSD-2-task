@@ -2,12 +2,8 @@
   options.label
   options.isChecked - bool
 
-mixin toggle(options)
-  if !options
-    - options = {}
-
-  - 
-    let {label, isChecked = false} = options
+mixin toggle(options = {})
+  - const {label, isChecked = false} = options
 
   label.toggle= label
     input.toggle__input(type='checkbox' checked=isChecked)

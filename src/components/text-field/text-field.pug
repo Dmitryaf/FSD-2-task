@@ -7,12 +7,9 @@ include ../subtitle/subtitle
   options.isFocused - bool
   options.isLabel - bool
 
-mixin text-field(options)
-  if !options
-    - options = {}
-
+mixin text-field(options = {})
   - 
-    let {title, value, type, placeholder = 'placeholder', isMask = false, isFocused = false, isLabel = false} = options
+    const {title, value, type, placeholder = 'placeholder', isMask = false, isFocused = false, isLabel = false} = options
     let classes = []
 
   if isMask

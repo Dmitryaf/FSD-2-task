@@ -5,12 +5,8 @@ include ../logo/logo
 //-
   options.menuItems
 
-mixin header(options)
-  if !options
-    - options = {}
-
-  - 
-    let {menuItems = [], isAuth = false} = options
+mixin header(options = {})
+  - const {menuItems = [], isAuth = false} = options
 
   header.header
     +container()

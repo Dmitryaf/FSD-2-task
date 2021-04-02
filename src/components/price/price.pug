@@ -7,12 +7,8 @@
   options.additionalPrice
   options.total
 
-mixin price(options)
-  if !options
-    - options = {}
-
-  - 
-    let {standing, standingPrice, services, servicesPrice, additional, additionalPrice, total} = options
+mixin price(options = {})
+  - const {standing, standingPrice, services, servicesPrice, additional, additionalPrice, total} = options
 
   .price
     .price__row

@@ -3,10 +3,7 @@
   options.isChecked - bool
   options.isBold - bool
 
-mixin radio(items)
-  if !items
-    - items = []
-
+mixin radio(items = [])
   for item in items 
     label.radio= item.label
       input.radio__input(type='radio' name=item.name checked=item.isChecked)

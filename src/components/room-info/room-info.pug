@@ -5,12 +5,8 @@
   options.size - md || sm
   options.isLuxe
 
-mixin room-info(options)
-  if !options
-    - options = {}
-
-  -
-    let {roomNumber = 0, price = 0, priceText = ' в сутки', isLuxe = false, size = 'md'} = options
+mixin room-info(options = {})
+  - const {roomNumber = 0, price = 0, priceText = ' в сутки', isLuxe = false, size = 'md'} = options
 
   .room-info(class= size === 'sm' ? 'room-info_sm' : '')
     .room-info__left

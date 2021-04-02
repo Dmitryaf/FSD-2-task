@@ -1,13 +1,6 @@
 
-mixin pagination(options)
-  if !options
-    - options = {}
-
-  if !options.items
-    - options.items = []
-
-  - 
-    let {text, items} = options
+mixin pagination(options = {})
+  - const {text, items = []} = options
 
   .pagination
     for item in items

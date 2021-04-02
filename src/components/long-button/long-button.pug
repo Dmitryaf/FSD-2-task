@@ -5,12 +5,10 @@
   options.isSubmit - bool
   options.isDisabled - bool
 
-mixin long-button(options)
-  if !options
-    - options = {}
+mixin long-button(options = {})
   -
+    const {text = 'Button', isInverted = false, isSubmit = false, isDisabled = false} = options
     let classes = ''
-    let {text = 'Button', isInverted = false, isSubmit = false, isDisabled = false} = options
 
     classes += isInverted ? ' button_inverted' : ''
     classes += isDisabled ? ' button_disabled' : ''

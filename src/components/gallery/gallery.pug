@@ -2,12 +2,8 @@
   options.galleryItems
   options.isNav
 
-mixin gallery(options)
-  if !options
-    - options = {}
-
-  - 
-    let {galleryItems = [], isNav = 'show'} = options
+mixin gallery(options = {})
+  - const {galleryItems = [], isNav = 'show'} = options
 
   .gallery.js-gallery(data-nav= isNav)
     for item in galleryItems

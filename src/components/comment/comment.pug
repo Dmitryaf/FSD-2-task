@@ -5,12 +5,8 @@ include ../like-btn/like-btn
   options.day
   options.description
 
-mixin comment(options)
-  if !options
-    - options = {}
-
-  - 
-    let {img, author, day, description, likes} = options
+mixin comment(options = {})
+  - const {img, author, day, description, likes} = options
 
   article.comment 
     .comment__column.comment__column_center

@@ -2,12 +2,8 @@
   options.isLiked - bool
   options.likes
 
-mixin like-btn(options)
-  if !options
-    - options = {}
-
-  - 
-    let {likes, isLiked = false} = options
+mixin like-btn(options = {})
+  - const {likes, isLiked = false} = options
 
   if isLiked
     .like-btn.like-btn_liked= likes

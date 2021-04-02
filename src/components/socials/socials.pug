@@ -1,10 +1,4 @@
-mixin socials(options)
-  if !options
-    - options = {}
-
-  if !options.items
-    - options.items = []
-
+mixin socials()
   .socials
     a.socials__link(href='https://www.facebook.com/')
       img.socials__icon(src=require('/components/socials/img/twitter.svg'), alt='twitter')

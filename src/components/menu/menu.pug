@@ -6,17 +6,12 @@ include ../button/button
   options.items[0].href
   options.isAuth - bool
 
-mixin menu(options)
-  if !options
-    - options = {}
-
-  if !options.items
-    - options.items = []
-
+mixin menu(options = {})
+  - const {items = []} = options
   .menu.js-menu
     nav.menu__nav
       ul.menu__list.js-menu__list
-        for item in options.items
+        for item in items
           if item.childs
             li.menu__item.menu__item_dropdown
               a.menu__link.menu__link_dropdown(class= item.active ? 'menu__link_active' : '' , href = item.href)= item.name

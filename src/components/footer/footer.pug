@@ -7,33 +7,30 @@ include ../copyright/copyright
   options.items[0].name
   options.items[0].href
 
-mixin footer(options)
-  if !options
-    - options = {}
+mixin footer(options = {})
 
-  if !options.items
-    - options.items = []
+  - const {menuItems = [], subscription = {}} = options
 
-  footer.footer(options)
-    +container()
-      .footer__content
-        .footer__left
-          a.footer__logo(href = '/')
-            +logo()
-          p.footer__text= 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»'
-        .footer__right
-          for item in options.menuItems
-            .footer__column
-              h5.footer__title= item.title
-              .footer__list
-                for listItem in item.list
-                  a.footer__list-item(href= listItem.href)= listItem.name
-        .footer__subscription
-          h5.footer__title= options.subscription.title
-          .footer__list
-            p.footer__text= options.subscription.text
-            +subscription()
-      .footer__copyright
-        +copyright()
+    footer.footer(options)
+      +container()
+        .footer__content
+          .footer__left
+            a.footer__logo(href = '/')
+              +logo()
+            p.footer__text= 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»'
+          .footer__right
+            for item in menuItems
+              .footer__column
+                h5.footer__title= item.title
+                .footer__list
+                  for listItem in item.list
+                    a.footer__list-item(href= listItem.href)= listItem.name
+          .footer__subscription
+            h5.footer__title= subscription.title
+            .footer__list
+              p.footer__text= subscription.text
+              +subscription()
+        .footer__copyright
+          +copyright()
 
 
