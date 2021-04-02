@@ -6,4 +6,12 @@
   text-transform: uppercase;
   line-height: 15px;
   margin-bottom: 5px;
+
+  &_rules {
+    margin-bottom: 16px;
+  }
+
+  &_availability {
+    margin-bottom: 18px;
+  }
 }
