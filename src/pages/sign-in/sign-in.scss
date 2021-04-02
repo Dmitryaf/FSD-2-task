@@ -1,0 +1,19 @@
+  @import '../../theme/variables.scss';
+
+  .sign-in {
+    background-image: url('./img/sign-in-bg.jpg');
+    background-position: 50%;
+    background-color: $gray;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &__content {
+      display: flex;
+      justify-content: center;
+      padding: 172px 0;
+
+      @include media-breakpoint($xs) {
+        padding: 70px 0;
+      }
+    }
+  }

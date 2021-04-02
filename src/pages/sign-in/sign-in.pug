@@ -1,0 +1,13 @@
+extends ../base/base
+
+include ../../components/sign-in-card/sign-in-card
+include ../../components/container/container
+
+block title
+  title Sing in
+
+block content
+  .sign-in
+    +container()
+      .sign-in__content
+        +sign-in-card()
