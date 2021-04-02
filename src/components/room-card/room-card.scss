@@ -8,15 +8,6 @@
   overflow: hidden;
   transition: box-shadow .2s ease;
 
-  &:hover {
-    box-shadow: 0 10px 30px rgba(31, 32, 65, .15);
-  }
-
-  &:focus {
-    box-shadow: 0 0px 3px rgba(31, 32, 65, .15);
-    outline: none;
-  }
-
   &__content {
     padding: 20px;
   }
