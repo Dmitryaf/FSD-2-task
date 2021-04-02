@@ -1,11 +1,8 @@
 
 
-mixin range-slider(options)
-  if !options
-    - options = {}
-
+mixin range-slider(options = {})
   - 
-    let {title, type, min, max, from, to } = options
+    const {title = 'Range slider', footerText = '', type = 'double', min = '500', max = '15000', from = '5000', to = '10000' } = options
 
   .rslider
     .rslider__head
@@ -13,4 +10,4 @@ mixin range-slider(options)
       .rslider__values 5000Р - 10000Р
     input.js-rslider(data-min=min data-max=max data-type=type data-from=from data-to=to)
     if footerText
-      .slider__footer= footerText
+      .rslider__footer= footerText

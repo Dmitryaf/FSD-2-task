@@ -2,11 +2,8 @@
   options.title
   options.classes
 
-mixin subtitle(options)
-  if !options
-    - options = {}
-
+mixin subtitle(options = {})
   -
-    let {title = 'subtitle', classes = ''} = options
+    const {title = 'subtitle', classes = ''} = options
 
   h3.subtitle(class= classes)= title

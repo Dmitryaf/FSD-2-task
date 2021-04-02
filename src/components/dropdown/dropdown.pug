@@ -5,13 +5,10 @@ include ./dropdown-item/dropdown-item
   options.isVisible - hide || show
   options.withBtn - true || false
 
-mixin dropdown(options)
-  if !options
-    - options = {}
-
+mixin dropdown(options = {})
   - 
-    let {type = 'guest', isVisible = 'hide', withBtn = true, isDefault = 'hide'} = options
-    let value = type === 'guest' ? 'Сколько гостей' : 'Комната'
+    const {type = 'guest', isVisible = 'hide', withBtn = true, isDefault = 'hide'} = options
+    const value = type === 'guest' ? 'Сколько гостей' : 'Комната'
 
   .dropdown.js-dropdown(data-type= type, data-visible= isVisible, data-default= isDefault)
     label.dropdown__label

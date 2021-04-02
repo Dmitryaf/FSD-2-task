@@ -7,15 +7,8 @@ include ../checkbox/checkbox
   options.items[0].label
   options.items[0].isChecked
 
-mixin expander(options)
-  if !options
-    - options = {}
-
-  if !options.items
-    - options.items = []
-
-  - 
-    let {title = 'Expandable checkbox list', visibility = hide, items} = options
+mixin expander(options = {})
+  - const {title = 'Expandable checkbox list', visibility = hide, items = []} = options
 
   .expander
     .expander__top.js-expander(class= visibility === 'show' ? 'expander__top_open' : '')= title

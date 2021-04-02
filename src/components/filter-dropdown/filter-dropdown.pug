@@ -1,8 +1,13 @@
 include ../text-field/text-field
 include ../calendar/calendar
 
-mixin filter-dropdown()
+//-
+  options.title
+
+mixin filter-dropdown(options = {})
+  - const {title = 'filter date dropdown'} = options
+
   .filter-dropdown
     +calendar({type: 'filter'})
     .filter-dropdown__item
-      +text-field({placeholder: 'ДД.ММ.ГГГГ', isLabel: true, title: 'filter date dropdown'})
+      +text-field({placeholder: 'ДД.ММ.ГГГГ', isLabel: true, title})
