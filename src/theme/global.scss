@@ -41,6 +41,10 @@ h3 {
 
 h1 {
   font-size: 1.714rem;
+
+  @include media-breakpoint($xs) {
+    font-size: 1.429rem;
+  }
 }
 
 h2 {
