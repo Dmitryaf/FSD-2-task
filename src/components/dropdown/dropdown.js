@@ -1,11 +1,18 @@
+import './dropdown.scss';
 import DropdownItem from './dropdown-item/DropdownItem';
 
 class Dropdown {
-  constructor($container, options) {
-    this.$container = $container;
-    this.type = options.type;
-    this.isVisible = options.isVisible;
-    this.isDefault = options.isDefault;
+  constructor(container) {
+    this.$container = container;
+    this.init();
+    this.initHandlers();
+    this.hideClearBtn();
+  }
+
+  init() {
+    this.type = this.$container.attr('data-type');
+    this.isVisible = this.$container.attr('data-visible');
+    this.isDefault = this.$container.attr('data-default');
     this.$content = this.$container.find('.dropdown__content');
     this.$input = this.$container.find('input');
     this.$applyBtn = this.$container.find('.dropdown__btns-apply');
@@ -30,9 +37,6 @@ class Dropdown {
     if (this.isDefault === 'show') {
       this.initDefault();
     }
-
-    this.initHandlers();
-    this.hideClearBtn();
   }
 
   initHandlers() {
@@ -174,4 +178,8 @@ class Dropdown {
   }
 }
 
-export default Dropdown;
+$(() => {
+  $('.js-dropdown').each((_, element) => {
+    new Dropdown($(element));
+  });
+});

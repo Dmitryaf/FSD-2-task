@@ -1,13 +1,14 @@
 import 'slick-carousel';
+import './gallery.scss';
 
 class Gallery {
-  constructor(element, options) {
+  constructor(element) {
     this.$element = $(element);
-    this.isNav = options.isNav;
     this.init();
   }
 
   init() {
+    this.isNav = this.$element.attr('data-nav');
     this.$element.slick({
       dots: true,
       autoplay: true,
@@ -23,4 +24,9 @@ class Gallery {
   }
 }
 
-export default Gallery;
+$(() => {
+  $('.js-gallery').each((_, element) => {
+    const isNav = $(element);
+    new Gallery($(element));
+  });
+});

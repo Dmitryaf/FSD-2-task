@@ -1,6 +1,9 @@
+import $ from 'jquery';
+import './expander.scss';
+
 export class Expander {
-  constructor() {
-    this.expander = $('.js-expander');
+  constructor(expander) {
+    this.expander = expander;
     this.expander.on('click', this.toggle.bind(this));
   }
 
@@ -11,4 +14,8 @@ export class Expander {
   }
 }
 
-export default Expander;
+$(() => {
+  $('.js-expander').each((_, element) => {
+    new Expander($(element));
+  });
+});

@@ -117,4 +117,8 @@ class Calendar {
   }
 }
 
-export default Calendar;
+$(() => {
+  $('.js-calendar').each((_, element) => {
+    new Calendar(element);
+  });
+});

@@ -1,6 +1,12 @@
+import './menu.scss';
+
 class Menu {
   constructor(element) {
-    this.$element = $(element);
+    this.$element = element;
+    this.init();
+  }
+
+  init() {
     this.$humburger = this.$element.find('.js-menu__humburger');
     this.$menu = this.$element.find('.js-menu__list');
     this.$menuItemDropdown = this.$element.find('.js-menu__item');
@@ -13,4 +19,8 @@ class Menu {
   }
 }
 
-export default Menu;
+$(() => {
+  $('.js-menu').each((_, element) => {
+    new Menu($(element));
+  });
+});

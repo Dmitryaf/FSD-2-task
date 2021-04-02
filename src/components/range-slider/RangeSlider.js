@@ -1,15 +1,16 @@
+import './range-slider.scss';
 import 'ion-rangeslider';
 
 class RangeSlider {
-  constructor() {
+  constructor(element) {
+    this.$element = element;
     this.init();
   }
 
   init() {
-    const element = $('.js-rslider');
-    this.$values = element.parent().find('.rslider__values');
+    this.$values = this.$element.parent().find('.rslider__values');
 
-    this.slider = element.ionRangeSlider({
+    this.slider = this.$element.ionRangeSlider({
       type: 'double',
       min: 500,
       max: 15000,
@@ -31,4 +32,8 @@ class RangeSlider {
   }
 }
 
-export default RangeSlider;
+$(() => {
+  $('.js-rslider').each((_, element) => {
+    new RangeSlider($(element));
+  });
+});
