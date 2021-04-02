@@ -1,0 +1,11 @@
+@import '../../theme/variables.scss';
+
+.registration {
+  @include setBackground('./img/registration-bg.jpg');
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    padding: 18px 0;
+  }
+}

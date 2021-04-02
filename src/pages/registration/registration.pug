@@ -1,0 +1,13 @@
+extends ../base/base
+
+include ../../components/registration-card/registration-card
+include ../../components/container/container
+
+block title
+  title Registration
+
+block content
+  .registration
+    +container()
+      .registration__content
+        +registration-card()
