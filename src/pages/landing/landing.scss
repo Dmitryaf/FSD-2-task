@@ -1,0 +1,27 @@
+@import '../../theme/variables.scss';
+
+.landing {
+  background-image: url('./img/landing-bg.jpg');
+  background-position: 50%;
+  background-color: $gray;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding: 70px 0 20px;
+
+    @include media-breakpoint($xs) {
+      align-items: center;
+    }
+  }
+
+  &__text {
+    align-self: flex-end;
+    text-align: right;
+    line-height: 24px;
+    max-width: 300px;
+    margin-top: 316px;
+  }
+}

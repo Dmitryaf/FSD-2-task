@@ -1,0 +1,14 @@
+extends ../base/base
+
+include ../../components/room-search-card/room-search-card
+include ../../components/container/container
+
+block title
+  title Landing
+
+block content
+  .landing
+    +container()
+      .landing__content
+        +room-search-card()
+        .landing__text Лучшие номера для вашей работы, отдыха и просто вдохновения
