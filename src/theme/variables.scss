@@ -23,3 +23,11 @@ $gradient-green: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
     @content;
   }
 }
+
+@mixin setBackground($url) {
+  background-image: url($url);
+  background-position: 50%;
+  background-color: $gray;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

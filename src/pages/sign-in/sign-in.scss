@@ -1,11 +1,7 @@
   @import '../../theme/variables.scss';
 
   .sign-in {
-    background-image: url('./img/sign-in-bg.jpg');
-    background-position: 50%;
-    background-color: $gray;
-    background-repeat: no-repeat;
-    background-size: cover;
+    @include setBackground('./img/sign-in-bg.jpg');
 
     &__content {
       display: flex;

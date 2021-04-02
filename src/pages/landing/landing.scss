@@ -1,11 +1,7 @@
 @import '../../theme/variables.scss';
 
 .landing {
-  background-image: url('./img/landing-bg.jpg');
-  background-position: 50%;
-  background-color: $gray;
-  background-repeat: no-repeat;
-  background-size: cover;
+  @include setBackground('./img/landing-bg.jpg');
 
   &__content {
     display: flex;
