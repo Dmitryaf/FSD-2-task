@@ -19,4 +19,10 @@
     line-height: 15px;
     text-transform: uppercase;
   }
+
+  &__footer {
+    font-size: 0.857rem;
+    color: $darkShade50;
+    margin-top: 3px;
+  }
 }
