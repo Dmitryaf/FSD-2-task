@@ -1,0 +1,334 @@
+extends ../base/base
+
+include ../../components/container/container
+include ../../components/filter-dropdown/filter-dropdown
+include ../../components/dropdown/dropdown
+include ../../components/subtitle/subtitle
+include ../../components/range-slider/range-slider
+include ../../components/checkbox/checkbox
+include ../../components/rich-checkbox/rich-checkbox
+include ../../components/expander/expander
+include ../../components/room-card/room-card
+include ../../components/pagination/pagination
+
+block title
+  title Search room
+
+block content
+  .search-room
+    +container()
+      .search-room__content
+        .search-room__sidebar
+          .search-room__dates
+            +filter-dropdown({title: 'Даты пребывания в отеле'})
+
+          .search-room__guests
+            +subtitle({title: 'Гости'})
+            +dropdown({isDefault: 'show'})
+
+          .search-room__price
+            +range-slider({title: 'Диапазон цены', footerText: 'Стоимость за сутки пребывания в номере'})
+
+          .search-room__rules
+            +subtitle({title: 'Правила дома', classes: 'subtitle_rules'})
+            .search-room__rules-item
+              +checkbox({label: 'Можно курить', name: 'rules'})
+            .search-room__rules-item
+              +checkbox({label: 'Можно с питомцами', name: 'rules', isChecked: true})
+            .search-room__rules-item
+              +checkbox({label: 'Можно пригласить гостей (до 10 человек)', name: 'rules', isChecked: true})
+
+          .search-room__availability
+            +subtitle({title: 'Доступность', classes: 'subtitle_availability'})
+            .search-room__availability-item
+              +rich-checkbox({label: 'Широкий коридор', description: 'Ширина коридоров в номере не менее 91 см.'})
+            .search-room__availability-item
+              +rich-checkbox({label: 'Помошник для инвалидов', description: 'На 1 этаже вас встретит специалист  и проводит до номера.'})
+
+          .search-room__facilities
+            +subtitle({title: 'Удобства номера'})
+            +dropdown({type: 'room', isDefault: 'show'})
+
+          .search-room__extra
+            +expander({
+              title: 'Дополнительные удобства', 
+              items: [
+                {
+                  label: 'Завтрак',
+                  isChecked: false
+                },
+                {
+                  label: 'Письменный стол',
+                  isChecked: true
+                },
+                {
+                  label: 'Стул для кормления',
+                  isChecked: true
+                },
+                {
+                  label: 'Кроватка',
+                  isChecked: true
+                },
+                {
+                  label: 'Телевизор',
+                  isChecked: false
+                },
+                {
+                  label: 'Шампунь',
+                  isChecked: false
+                }
+              ]})
+        .search-room__rooms
+          h1.search-room__rooms-title Номера, которые мы для вас подобрали
+          .search-room__rooms-list
+            .search-room__room-card
+              +room-card({galleryItems: [
+                {
+                  img: 'room-1.png'
+                },
+                {
+                  img: 'room-2.png'
+                },
+                {
+                  img: 'room-3.png'
+                },
+                {
+                  img: 'room-4.png'
+                }
+              ],
+                rate: 5,
+                reviewCount: 145,
+                isLuxe: true
+                })
+            .search-room__room-card
+              +room-card({galleryItems: [
+                {
+                  img: 'room-1.png'
+                },
+                {
+                  img: 'room-2.png'
+                },
+                {
+                  img: 'room-3.png'
+                },
+                {
+                  img: 'room-4.png'
+                }
+              ],
+                number: 840,
+                rate: 4,
+                reviewCount: 65,
+                })
+            .search-room__room-card
+              +room-card({galleryItems: [
+                {
+                  img: 'room-1.png'
+                },
+                {
+                  img: 'room-2.png'
+                },
+                {
+                  img: 'room-3.png'
+                },
+                {
+                  img: 'room-4.png'
+                }
+              ],
+                number: 980,
+                price: '8 500',
+                rate: 3,
+                reviewCount: 35,
+                isLuxe: true
+                })
+            .search-room__room-card
+              +room-card({galleryItems: [
+                {
+                  img: 'room-1.png'
+                },
+                {
+                  img: 'room-2.png'
+                },
+                {
+                  img: 'room-3.png'
+                },
+                {
+                  img: 'room-4.png'
+                }
+              ],
+                number: 856,
+                price: '7 300',
+                rate: 5,
+                reviewCount: 19
+                })
+            .search-room__room-card
+              +room-card({galleryItems: [
+                {
+                  img: 'room-1.png'
+                },
+                {
+                  img: 'room-2.png'
+                },
+                {
+                  img: 'room-3.png'
+                },
+                {
+                  img: 'room-4.png'
+                }
+              ],
+                number: 740,
+                price: '6 000',
+                rate: 4,
+                reviewCount: 44
+                })
+            .search-room__room-card
+              +room-card({galleryItems: [
+                {
+                  img: 'room-1.png'
+                },
+                {
+                  img: 'room-2.png'
+                },
+                {
+                  img: 'room-3.png'
+                },
+                {
+                  img: 'room-4.png'
+                }
+              ],
+                number: 982,
+                price: '5 800',
+                rate: 5,
+                reviewCount: 56
+                })
+            .search-room__room-card
+              +room-card({galleryItems: [
+                {
+                  img: 'room-1.png'
+                },
+                {
+                  img: 'room-2.png'
+                },
+                {
+                  img: 'room-3.png'
+                },
+                {
+                  img: 'room-4.png'
+                }
+              ],
+                number: 678,
+                price: '5 500',
+                rate: 5,
+                reviewCount: 45
+                })
+            .search-room__room-card
+              +room-card({galleryItems: [
+                {
+                  img: 'room-1.png'
+                },
+                {
+                  img: 'room-2.png'
+                },
+                {
+                  img: 'room-3.png'
+                },
+                {
+                  img: 'room-4.png'
+                }
+              ],
+                number: 450,
+                price: '5 300',
+                rate: 4,
+                reviewCount: 39
+                })
+            .search-room__room-card
+              +room-card({galleryItems: [
+                {
+                  img: 'room-1.png'
+                },
+                {
+                  img: 'room-2.png'
+                },
+                {
+                  img: 'room-3.png'
+                },
+                {
+                  img: 'room-4.png'
+                }
+              ],
+                number: 350,
+                price: '5 000',
+                rate: 3,
+                reviewCount: 77
+                })
+            .search-room__room-card
+              +room-card({galleryItems: [
+                {
+                  img: 'room-1.png'
+                },
+                {
+                  img: 'room-2.png'
+                },
+                {
+                  img: 'room-3.png'
+                },
+                {
+                  img: 'room-4.png'
+                }
+              ],
+                number: 666,
+                price: '5 000',
+                rate: 5,
+                reviewCount: 25
+                })
+            .search-room__room-card
+              +room-card({galleryItems: [
+                {
+                  img: 'room-1.png'
+                },
+                {
+                  img: 'room-2.png'
+                },
+                {
+                  img: 'room-3.png'
+                },
+                {
+                  img: 'room-4.png'
+                }
+              ],
+                number: 444,
+                price: '5 000',
+                rate: 3,
+                reviewCount: 15
+                })
+            .search-room__room-card
+              +room-card({galleryItems: [
+                {
+                  img: 'room-1.png'
+                },
+                {
+                  img: 'room-2.png'
+                },
+                {
+                  img: 'room-3.png'
+                },
+                {
+                  img: 'room-4.png'
+                }
+              ],
+                number: 352,
+                price: '5 000',
+                rate: 3,
+                reviewCount: 55
+                })
+
+          .search-room__pagination
+            +pagination({ 
+              text: "1 &ndash; 12 из 100+ вариантов аренды",
+              items: [
+                { link: "/page", text: "1", active: true },
+                { link: "/page", text: "2" },
+                { link: "/page", text: "3" },
+                { text: "..." },
+                { link: "/page", text: "15" },
+              ]
+            })

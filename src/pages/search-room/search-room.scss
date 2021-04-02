@@ -1,0 +1,69 @@
+@import '../../theme/variables.scss';
+
+.search-room {
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    justify-content: stretch;
+    padding: 30px 0 76px;
+
+    @include media-breakpoint($md) {
+      grid-template-columns: none;
+      justify-content: unset;
+    }
+  }
+
+  &__sidebar {
+    max-width: 266px;
+
+    @include media-breakpoint($md) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__dates {
+    margin-bottom: 20px;
+  }
+
+  &__guests,
+  &__price,
+  &__rules,
+  &__availability,
+  &__facilities {
+    margin-bottom: 30px;
+  }
+
+  &__rules-item {
+    margin-bottom: 13px;
+  }
+
+  &__availability-item {
+    margin-bottom: 10px;
+  }
+
+  &__rooms {
+    margin-left: 35px;
+
+    @include media-breakpoint($md) {
+      margin-left: 0;
+    }
+  }
+
+  &__rooms-title {
+    margin-bottom: 20px;
+  }
+
+  &__rooms-list {
+    display: grid;
+    grid-row-gap: 20px;
+    grid-column-gap: 12px;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    margin-bottom: 37px;
+  }
+
+  &__pagination {
+    display: flex;
+    justify-content: center;
+  }
+}
