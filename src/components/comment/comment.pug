@@ -6,13 +6,13 @@ include ../like-btn/like-btn
   options.description
 
 mixin comment(options = {})
-  - const {img, author, day, description, likes} = options
+  - const {img, author, day, description, likes, isLiked = true} = options
 
   article.comment 
     .comment__column.comment__column_center
       img.comment__img(src=require(`/components/comment/img/${img}`), alt=`${author}`)
       .comment__likes
-        +like-btn({likes, isLiked: true})
+        +like-btn({likes, isLiked})
     .comment__column 
       .comment__info 
         .comment__author= author
