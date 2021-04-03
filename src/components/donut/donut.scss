@@ -1,0 +1,27 @@
+@import '../../theme/variables.scss';
+
+.donut {
+  position: relative;
+  width: 150px;
+  height: 150px;
+
+  &__text {
+    position: absolute;
+    top: 36px;
+    left: 29px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: $purple;
+    font-weight: bold;
+  }
+
+  &__amount {
+    font-size: 1.714rem;
+  }
+
+  &__voices {
+    font-size: 0.857rem;
+    text-transform: uppercase;
+  }
+}
