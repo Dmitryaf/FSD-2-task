@@ -1,0 +1,85 @@
+extends ../base/base
+
+include ../../components/container/container
+include ../../components/booking-card/booking-card
+include ../../components/advantage/advantage
+include ../../components/comment/comment
+include ../../components/bullet/bullet
+include ../../components/subtitle/subtitle
+include ../../components/donut/donut
+
+block title
+  title Room details
+
+block content
+  .room-details
+    .room-details__gallery
+      .room-details__left
+        img.room-details__gallery-img(src=require('/pages/room-details/img/room-details-main.jpg'), alt='room-main')
+      .room-details__right
+        .room-details__right-item
+          img.room-details__gallery-img(src=require('/pages/room-details/img/room-details-top.jpg'), alt='room-top')
+        .room-details__right-item
+          img.room-details__gallery-img(src=require('/pages/room-details/img/room-details-bottom.jpg'), alt='room-bottom')
+
+    +container()
+      .room-details__content
+        .room-details__column
+          .room-details__group
+            .room-details__item
+              h3.room-details__title Сведения о номере
+              .room-details__advantages
+                .room-details__advantages-item
+                  +advantage()
+                .room-details__advantages-item
+                  +advantage({icon: 'location_city', title: 'Удобство', description: 'Окно в каждой из спален'})
+                .room-details__advantages-item
+                  +advantage({icon: 'whatshot', title: 'Уют', description: 'Номер оснащен камином', isBorder: false})
+            .room-details__item
+              h3.room-details__title Впечатления от номера
+              .room-details__impress
+                .room-details__impress-content
+                  +donut()
+                  .room-details__impress-bullet
+                    +bullet([
+                      {
+                        text: 'Великолепно',
+                        class: 'bullet__item_indent_sm bullet__item_color_yellow'
+                      },
+                      {
+                        text: 'Хорошо',
+                        class: 'bullet__item_indent_sm bullet__item_color_green'
+                      },
+                      {
+                        text: 'Удовлетворительно',
+                        class: 'bullet__item_indent_sm bullet__item_color_blue'
+                      },
+                      {
+                        text: 'Разочарован',
+                        class: 'bullet__item_indent_sm bullet__item_color_black'
+                      }
+                    ])
+          .room-details__item
+            h3.room-details__title Отзывы посетителей номера
+            .room-details__comments
+              .room-details__comments-item
+                +comment({img: 'avatar1.png', author: 'Мурад Сарафанов', day: '5 дней назад', description: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.', likes: 12})
+              .room-details__comments-item
+                +comment({img: 'avatar2.png', author: 'Патрисия Стёклышкова', day: 'Неделю назад', description: 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент', likes: 2, isLiked: false})
+
+          .room-details__info
+            .room-details__info-item
+              h3.room-details__title.room-details__title_indent_ml Правила
+              .room-details__info-bullet
+                +bullet([
+                  {text: 'Нельзя с питомцами'},
+                  {text: 'Без вечеринок и мероприятий'},
+                  {text: 'Время прибытия — после 13:00, а выезд до 12:00'}
+                ])
+            .room-details__info-item
+              h3.room-details__title Отмена
+              p.room-details__info-text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+
+
+        .room-details__column
+          +booking-card()

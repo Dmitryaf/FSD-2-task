@@ -1,0 +1,163 @@
+@import '../../theme/variables.scss';
+
+.room-details {
+  &__gallery {
+    display: flex;
+    margin-bottom: 67px;
+
+    @include media-breakpoint($sm) {
+      flex-direction: column;
+    }
+  }
+
+  &__gallery-img {
+    display: block;
+    width: 100%;
+  }
+
+  &__left {
+    width: 68%;
+
+    @include media-breakpoint($sm) {
+      width: 100%;
+    }
+  }
+
+  &__right {
+    width: 32%;
+
+    @include media-breakpoint($sm) {
+      width: 100%;
+    }
+
+  }
+
+  &__right-item {
+    max-height: 49.4%;
+  }
+
+  &__content {
+    display: flex;
+    padding-bottom: 62px;
+
+    @include media-breakpoint($lg) {
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+  }
+
+  &__column {
+    margin-right: 21px;
+
+    @include media-breakpoint($lg) {
+      margin: 0 0 20px;
+    }
+
+    &:last-child {
+      margin-right: 0;
+
+      @include media-breakpoint($lg) {
+        margin: 0 0 40px;
+      }
+    }
+  }
+
+  &__group {
+    display: flex;
+    margin-bottom: 14px;
+
+    @include media-breakpoint($lg) {
+      flex-wrap: wrap;
+      margin-bottom: 25px;
+    }
+  }
+
+  &__item {
+    @include media-breakpoint($sm) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__title {
+    font-size: 1.357rem;
+    font-weight: bold;
+    color: $darkShade100;
+
+    &_indent_ml {
+      margin-left: 19px;
+
+      @include media-breakpoint($sm) {
+        margin-left: 0;
+      }
+    }
+  }
+
+  &__advantages {
+    max-width: 280px;
+    margin: 20px 105px 0 0;
+  }
+
+  &__advantages-item {
+    margin-bottom: 24px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__impress {
+    margin-top: 21px;
+  }
+
+  &__impress-content {
+    display: flex;
+  }
+
+  &__impress-bullet {
+    margin-top: 31px;
+  }
+
+  &__comments {
+    margin: 18px 0 33px;
+  }
+
+  &__comments-item {
+    margin-bottom: 20px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__info {
+    display: flex;
+
+    @include media-breakpoint($lg) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__info-item {
+    max-width: 330px;
+    margin-right: 100px;
+
+    @include media-breakpoint($lg) {
+      margin-right: 30px;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__info-bullet {
+    margin-top: 18px;
+    max-width: 260px;
+  }
+
+  &__info-text {
+    margin-top: 18px;
+    line-height: 24px;
+  }
+
+}
