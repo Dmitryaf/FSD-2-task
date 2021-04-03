@@ -2,6 +2,7 @@
 
 .bullet {
   list-style: none;
+
   &__item {
     position: relative;
     color: $darkShade75;
@@ -19,6 +20,40 @@
       height: 10px;
       border-radius: 50%;
       background-color: $darkShade25;
+    }
+
+    &_indent_sm {
+      line-height: 17px;
+      padding: 0 0 0 16px;
+      margin-bottom: 7px;
+
+      &::before {
+        top: 3px;
+      }
+    }
+
+    &_color_yellow {
+      &::before {
+        background: linear-gradient(180deg, #ffe39c 0%, #ffba9c 100%);
+      }
+    }
+
+    &_color_green {
+      &::before {
+        background: $gradient-green;
+      }
+    }
+
+    &_color_blue {
+      &::before {
+        background: $gradient;
+      }
+    }
+
+    &_color_black {
+      &::before {
+        background: linear-gradient(180deg, #919191 0%, #3d4975 100%);
+      }
     }
   }
 }
