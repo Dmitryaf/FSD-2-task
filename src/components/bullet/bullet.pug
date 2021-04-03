@@ -1,4 +1,4 @@
 mixin bullet(items = [])
   ul.bullet
     for item in items 
-      li.bullet__item= item.text
+      li.bullet__item(class= item.class)= item.text
