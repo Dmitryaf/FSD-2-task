@@ -11,22 +11,22 @@ include ../../components/kit-logo/kit-logo
 block title
   title Headers & Footers
 
-  block body
-    body.headers-footers
+block body
+  body.headers-footers
 
-    block header
-      .headers-footers__logo
-        +kit-logo()
-      .headers-footers__item
-        +header({menuItems: locals.menuItems, isAuth: false})
-      .headers-footers__item
-        +header({menuItems: locals.menuItems, isAuth: true})
+  block header
+    .headers-footers__logo
+      +kit-logo()
+    .headers-footers__item
+      +header({menuItems: locals.menuItems, isAuth: false})
+    .headers-footers__item
+      +header({menuItems: locals.menuItems, isAuth: true})
 
-    block content
+  block content
 
-    block footer
-      .headers-footers__item
-        +footer({menuItems: locals.footerMenuItems, subscription: locals.subscription})
+  block footer
+    .headers-footers__item
+      +footer({menuItems: locals.footerMenuItems, subscription: locals.subscription})
 
-      .headers-footers__item
-        +simple-footer()
+    .headers-footers__item
+      +simple-footer()
