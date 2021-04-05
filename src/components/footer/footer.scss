@@ -39,7 +39,7 @@
 
   &__right {
     display: flex;
-    padding-top: 5px;
+    padding-top: 4px;
     margin-left: 40px;
 
     @include media-breakpoint($md) {
@@ -84,7 +84,7 @@
   }
 
   &__subscription {
-    padding-top: 5px;
+    padding-top: 4px;
   }
 
   &__copyright {
