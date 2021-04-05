@@ -1,79 +1,69 @@
+extends ../ui-kit/ui-kit
+
 include ../../components/kit-logo/kit-logo
 include ../../components/container/container
 include ../../components/colors/colors
 
-doctype html 
-html
-  head
-    meta(charset = 'utf-8')
-    meta(name='viewport', content="initial-scale=1.0, width=device-width")
-    title Colors & Type
 
-  body.body-colors-type
-    block header
+block title
+  title Colors & Type
 
-    block content
-      .colors-type
-        .colors-type__logo 
-          +kit-logo()
+block content
+  .colors-type
+    .colors-type__logo 
+      +kit-logo()
 
-        .colors-type__container
-          .colors-type__content
-            .colors-type__colors
-              +colors({items: [
-                {
-                  title: 'Dark Shade 100%',
-                  hex: '#1F2041',
-                  colorPrefix: 'ds100'
-                },
-                {
-                  title: 'Dark Shade 75%',
-                  hex: '#1F2041',
-                  colorPrefix: 'ds75'
-                },
-                {
-                  title: 'Dark Shade 50%',
-                  hex: '#1F2041',
-                  colorPrefix: 'ds50'
-                },
-                {
-                  title: 'Dark Shade 25%',
-                  hex: '#1F2041',
-                  colorPrefix: 'ds25'
-                },
-                {
-                  title: 'Dark Shade 5%',
-                  hex: '#1F2041',
-                  colorPrefix: 'ds5'
-                },
-                {
-                  title: 'Purple',
-                  hex: '#BC9CFF',
-                  colorPrefix: 'purple'
-                },
-                {
-                  title: 'Green',
-                  hex: '#6FCF97',
-                  colorPrefix: 'green'
-                },
-              ]})
+    .colors-type__container
+      .colors-type__content
+        .colors-type__colors
+          +colors({items: [
+            {
+              title: 'Dark Shade 100%',
+              hex: '#1F2041',
+              colorPrefix: 'ds100'
+            },
+            {
+              title: 'Dark Shade 75%',
+              hex: '#1F2041',
+              colorPrefix: 'ds75'
+            },
+            {
+              title: 'Dark Shade 50%',
+              hex: '#1F2041',
+              colorPrefix: 'ds50'
+            },
+            {
+              title: 'Dark Shade 25%',
+              hex: '#1F2041',
+              colorPrefix: 'ds25'
+            },
+            {
+              title: 'Dark Shade 5%',
+              hex: '#1F2041',
+              colorPrefix: 'ds5'
+            },
+            {
+              title: 'Purple',
+              hex: '#BC9CFF',
+              colorPrefix: 'purple'
+            },
+            {
+              title: 'Green',
+              hex: '#6FCF97',
+              colorPrefix: 'green'
+            },
+          ]})
 
-            .colors-type__types
-              .colors-type__types-item.colors-type__types-item_h1
-                .colors-type__types-tag= 'H1'
-                .colors-type__types-text= 'This one is the sub-section or widget title'
-              .colors-type__types-item.colors-type__types-item_h2
-                .colors-type__types-tag= 'H2'
-                .colors-type__types-text= 'Next one is the item title inside widgets'
-              .colors-type__types-item.colors-type__types-item_h3
-                .colors-type__types-tag= 'H3'
-                .colors-type__types-text= 'this is a label or cta text'
-              .colors-type__types-item.colors-type__types-item_body
-                .colors-type__types-tag= 'Body'
-                .colors-type__types-text= 'This is the body text which is used for most of the design, like paragraphs, lists etc.'
-
-
-
-
-
-    block footer
+        .colors-type__types
+          .colors-type__types-item.colors-type__types-item_h1
+            .colors-type__types-tag= 'H1'
+            .colors-type__types-text= 'This one is the sub-section or widget title'
+          .colors-type__types-item.colors-type__types-item_h2
+            .colors-type__types-tag= 'H2'
+            .colors-type__types-text= 'Next one is the item title inside widgets'
+          .colors-type__types-item.colors-type__types-item_h3
+            .colors-type__types-tag= 'H3'
+            .colors-type__types-text= 'this is a label or cta text'
+          .colors-type__types-item.colors-type__types-item_body
+            .colors-type__types-tag= 'Body'
+            .colors-type__types-text= 'This is the body text which is used for most of the design, like paragraphs, lists etc.'

@@ -1,3 +1,5 @@
+extends ../ui-kit/ui-kit
+
 include ../../components/kit-logo/kit-logo
 include ../../components/room-search-card/room-search-card
 include ../../components/registration-card/registration-card
@@ -7,78 +9,72 @@ include ../../components/container/container
 include ../../components/calendar/calendar
 include ../../components/room-card/room-card
 
+block title
+  title Cards
 
-doctype html 
-html
-  head
-    meta(charset = 'utf-8')
-    meta(name='viewport', content="initial-scale=1.0, width=device-width")
-    title Cards
+block body
+  body.cards-body
 
-  body
-    block header
+  block content
+    .cards
+      .cards__logo 
+        +kit-logo()
 
-    block content
-      .cards
-        .cards__logo 
-          +kit-logo()
+      +container()
+        .cards__content
+          .cards__column
+            .cards__item.cards__item_room-search
+              +room-search-card()
+            .cards__item 
+              +registration-card()
 
-        +container()
-          .cards__content
-            .cards__column
-              .cards__item.cards__item_room-search
-                +room-search-card()
-              .cards__item 
-                +registration-card()
+          .cards__column
+            .cards__item
+              +booking-card()
+            .cards__item
+              +sign-in-card()
 
-            .cards__column
+          .cards__column
+            .cards__item
+              +calendar()
+            .cards__item
+              +room-card({galleryItems: [
+                {
+                  img: 'room-1.png'
+                },
+                {
+                  img: 'room-2.png'
+                },
+                {
+                  img: 'room-3.png'
+                },
+                {
+                  img: 'room-4.png'
+                }
+              ],
+              rate: 5,
+              reviewCount: 145,
+              isLuxe: true
+              })
               .cards__item
-                +booking-card()
-              .cards__item
-                +sign-in-card()
-
-            .cards__column
-              .cards__item
-                +calendar()
-              .cards__item
-                +room-card({galleryItems: [
-                  {
-                    img: 'room-1.png'
-                  },
-                  {
-                    img: 'room-2.png'
-                  },
-                  {
-                    img: 'room-3.png'
-                  },
-                  {
-                    img: 'room-4.png'
-                  }
-                ],
-                rate: 5,
-                reviewCount: 145,
-                isLuxe: true
-                })
-                .cards__item
-                +room-card({galleryItems: [
-                  {
-                    img: 'room-1.png'
-                  },
-                  {
-                    img: 'room-2.png'
-                  },
-                  {
-                    img: 'room-3.png'
-                  },
-                  {
-                    img: 'room-4.png'
-                  }
-                ],
-                galleryNav: 'hide',
-                number: 840,
-                rate: 4,
-                reviewCount: 65,
-                })
+              +room-card({galleryItems: [
+                {
+                  img: 'room-1.png'
+                },
+                {
+                  img: 'room-2.png'
+                },
+                {
+                  img: 'room-3.png'
+                },
+                {
+                  img: 'room-4.png'
+                }
+              ],
+              galleryNav: 'hide',
+              number: 840,
+              rate: 4,
+              reviewCount: 65,
+              })
 
 
-    block footer

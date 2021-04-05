@@ -1,5 +1,4 @@
-include ../base/base-data
-block variables
+extends ../ui-kit/ui-kit
 
 include ../../components/header/header
 include ../../components/footer/footer
@@ -9,22 +8,21 @@ include ../../components/socials/socials
 include ../../components/kit-logo/kit-logo
 
 
-doctype html 
-html
-  head
-    meta(charset = 'utf-8')
-    meta(name='viewport', content="initial-scale=1.0, width=device-width")
-    title Headers & Footers
+block title
+  title Headers & Footers
 
-  body.headers-footers
-    .headers-footers__logo
-      +kit-logo()
-    .headers-footers__item
-      +header({menuItems: locals.menuItems, isAuth: false})
-    .headers-footers__item
-      +header({menuItems: locals.menuItems, isAuth: true})
+  block body
+    body.headers-footers
 
-    block main
+    block header
+      .headers-footers__logo
+        +kit-logo()
+      .headers-footers__item
+        +header({menuItems: locals.menuItems, isAuth: false})
+      .headers-footers__item
+        +header({menuItems: locals.menuItems, isAuth: true})
+
+    block content
 
     block footer
       .headers-footers__item
@@ -32,6 +30,3 @@ html
 
       .headers-footers__item
         +simple-footer()
-
-
-    block scripts

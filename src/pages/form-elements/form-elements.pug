@@ -1,3 +1,5 @@
+extends ../ui-kit/ui-kit
+
 include ../../components/container/container
 include ../../components/kit-logo/kit-logo
 include ../../components/date-dropdown/date-dropdown
@@ -22,261 +24,251 @@ include ../../components/bullet/bullet
 include ../../components/advantage/advantage
 include ../../components/comment/comment
 
-doctype html 
-html
-  head
-    meta(charset = 'utf-8')
-    meta(name='viewport', content="initial-scale=1.0, width=device-width")
-    title Forms Elements
+block title
+  title Forms Elements
 
-  body
-    block header
+block content
+  .form-elements
+    .form-elements__logo
+      +kit-logo
 
-    block content
-      .form-elements
-        .form-elements__logo
-          +kit-logo
+    +container()
+      .form-elements__content
+        .form-elements__row
+          .form-elements__column.form-elements__column_width320.form-elements__column_mr90
+            .form-elements__item
+              .form-elements__title
+                .form-elements__name text-field
+                .form-elements__state default
+              +text-field({placeholder: 'Email'})
 
-        +container()
-          .form-elements__content
-            .form-elements__row
-              .form-elements__column.form-elements__column_width320.form-elements__column_mr90
-                .form-elements__item
-                  .form-elements__title
-                    .form-elements__name text-field
-                    .form-elements__state default
-                  +text-field({placeholder: 'Email'})
+            .form-elements__item
+              .form-elements__title
+                .form-elements__name text-field
+                .form-elements__state hover / focus
+              +text-field({placeholder: 'Email', value: 'This is pretty awesome', isFocused: true})
 
-                .form-elements__item
-                  .form-elements__title
-                    .form-elements__name text-field
-                    .form-elements__state hover / focus
-                  +text-field({placeholder: 'Email', value: 'This is pretty awesome', isFocused: true})
-
-                .form-elements__item
-                  .form-elements__title
-                    .form-elements__name dropdown
-                  +dropdown()
+            .form-elements__item
+              .form-elements__title
+                .form-elements__name dropdown
+              +dropdown()
 
 
-                .form-elements__item.form-elements__item_mb
-                  .form-elements__title
-                    .form-elements__name masked text-field
-                  +text-field({isMask: true})
+            .form-elements__item.form-elements__item_mb
+              .form-elements__title
+                .form-elements__name masked text-field
+              +text-field({isMask: true})
 
-                .form-elements__item.form-elements__item_mb
-                  +date-dropdown({firstTitle: 'date-dropdown', secondTitle: 'date-dropdown'})
+            .form-elements__item.form-elements__item_mb
+              +date-dropdown({firstTitle: 'date-dropdown', secondTitle: 'date-dropdown'})
 
-                .form-elements__item.form-elements__item_mb.form-elements__item_sm
-                  +filter-dropdown()
+            .form-elements__item.form-elements__item_mb.form-elements__item_sm
+              +filter-dropdown()
 
-                .form-elements__item.form-elements__item_sm
-                  .form-elements__title
-                    .form-elements__name subscription text field
-                  +subscription({placeholder: 'Email'})
+            .form-elements__item.form-elements__item_sm
+              .form-elements__title
+                .form-elements__name subscription text field
+              +subscription({placeholder: 'Email'})
 
-              .form-elements__column.form-elements__column_width320
-                .form-elements__item.form-elements__item_mb
-                  .form-elements__title.form-elements__title_mb
-                    .form-elements__name checkbox buttons
-                  .form-elements__checkbox
-                    +checkbox({label: 'Можно курить'})
-                  .form-elements__checkbox
-                    +checkbox({label: 'Можно с питомцами', isChecked: true})
-                  .form-elements__checkbox
-                    +checkbox({label: 'Можно пригралисть гостей (до 10 человек)', isChecked: true, isBold: false})
+          .form-elements__column.form-elements__column_width320
+            .form-elements__item.form-elements__item_mb
+              .form-elements__title.form-elements__title_mb
+                .form-elements__name checkbox buttons
+              .form-elements__checkbox
+                +checkbox({label: 'Можно курить'})
+              .form-elements__checkbox
+                +checkbox({label: 'Можно с питомцами', isChecked: true})
+              .form-elements__checkbox
+                +checkbox({label: 'Можно пригралисть гостей (до 10 человек)', isChecked: true, isBold: false})
 
-                .form-elements__item.form-elements__item_mb
-                  .form-elements__title.form-elements__title_mb
-                    .form-elements__name radio buttons
-                  +radio([
-                    {label: 'Мужчина', name: 'gender', isChecked: true},
-                    {label: 'Женщина', name: 'gender', isChecked: false}
-                    ])
+            .form-elements__item.form-elements__item_mb
+              .form-elements__title.form-elements__title_mb
+                .form-elements__name radio buttons
+              +radio([
+                {label: 'Мужчина', name: 'gender', isChecked: true},
+                {label: 'Женщина', name: 'gender', isChecked: false}
+                ])
 
-                .form-elements__item.form-elements__item_toggle
-                  .form-elements__title.form-elements__title_mb
-                    .form-elements__name toggle
-                  .form-elements__toggle
-                    +toggle({label: 'Получать спецпредложения', isChecked: true})
-                  .form-elements__toggle
-                    +toggle({label: 'Получать спецпредложения', isChecked: false})
+            .form-elements__item.form-elements__item_toggle
+              .form-elements__title.form-elements__title_mb
+                .form-elements__name toggle
+              .form-elements__toggle
+                +toggle({label: 'Получать спецпредложения', isChecked: true})
+              .form-elements__toggle
+                +toggle({label: 'Получать спецпредложения', isChecked: false})
 
-                .form-elements__item.form-elements__item_mb
-                  .form-elements__title.form-elements__title_like-btn
-                    .form-elements__name like button
-                  span.form-elements__like
-                    +like-btn({likes: 2, isLiked: false})
-                  +like-btn({likes: 12, isLiked: true})
+            .form-elements__item.form-elements__item_mb
+              .form-elements__title.form-elements__title_like-btn
+                .form-elements__name like button
+              span.form-elements__like
+                +like-btn({likes: 2, isLiked: false})
+              +like-btn({likes: 12, isLiked: true})
 
-                .form-elements__item.form-elements__item_mb
-                  .form-elements__title.form-elements__title_rate
-                    .form-elements__name rate button
-                  .form-elements__rating
-                    .form-elements__rating-item
-                      +rate-btn({rate: 4})
-                    +rate-btn({rate: 5})
+            .form-elements__item.form-elements__item_mb
+              .form-elements__title.form-elements__title_rate
+                .form-elements__name rate button
+              .form-elements__rating
+                .form-elements__rating-item
+                  +rate-btn({rate: 4})
+                +rate-btn({rate: 5})
 
 
 
-              .form-elements__column.form-elements__column_width320
-                .form-elements__item.form-elements__item_range
-                  +range-slider()
+          .form-elements__column.form-elements__column_width320
+            .form-elements__item.form-elements__item_range
+              +range-slider()
 
-                .form-elements__item.form-elements__item_btn
-                  .form-elements__title.form-elements__title_mb
-                    .form-elements__name buttons
-                  .form-elements__buttons
-                    .form-elements__buttons-row
-                      .form-elements__buttons-item
-                        +button({text: 'click me', size: 'lg'})
-                      .form-elements__buttons-item
-                        +button({text: 'click me', size: 'lg', isDisabled: true})
-                    .form-elements__buttons-row
-                      .form-elements__buttons-item
-                        +button({text: 'click me', size: 'lg', isInverted: true})
-                      .form-elements__buttons-item
-                        +button({text: 'click me', size: 'lg', isInverted: true, isDisabled: true})
-                    .form-elements__buttons-row
-                      .form-elements__buttons-item
-                        +simple-button({text: 'click me'})
-                      .form-elements__buttons-item
-                        +simple-button({text: 'click me', isDisabled: true})
-                    .form-elements__buttons-row
-                      +long-button({text: 'Перейти к оплате'})
+            .form-elements__item.form-elements__item_btn
+              .form-elements__title.form-elements__title_mb
+                .form-elements__name buttons
+              .form-elements__buttons
+                .form-elements__buttons-row
+                  .form-elements__buttons-item
+                    +button({text: 'click me', size: 'lg'})
+                  .form-elements__buttons-item
+                    +button({text: 'click me', size: 'lg', isDisabled: true})
+                .form-elements__buttons-row
+                  .form-elements__buttons-item
+                    +button({text: 'click me', size: 'lg', isInverted: true})
+                  .form-elements__buttons-item
+                    +button({text: 'click me', size: 'lg', isInverted: true, isDisabled: true})
+                .form-elements__buttons-row
+                  .form-elements__buttons-item
+                    +simple-button({text: 'click me'})
+                  .form-elements__buttons-item
+                    +simple-button({text: 'click me', isDisabled: true})
+                .form-elements__buttons-row
+                  +long-button({text: 'Перейти к оплате'})
 
-                .form-elements__item
-                  .form-elements__title.form-elements__title_mb
-                    .form-elements__name pagination
-                  +pagination({ 
-                    text: "1 &ndash; 12 из 100+ вариантов аренды",
-                    items: [
-                      { link: "/page", text: "1", active: true },
-                      { link: "/page", text: "2" },
-                      { link: "/page", text: "3" },
-                      { text: "..." },
-                      { link: "/page", text: "15" },
-                    ]
-                  })
+            .form-elements__item
+              .form-elements__title.form-elements__title_mb
+                .form-elements__name pagination
+              +pagination({ 
+                text: "1 &ndash; 12 из 100+ вариантов аренды",
+                items: [
+                  { link: "/page", text: "1", active: true },
+                  { link: "/page", text: "2" },
+                  { link: "/page", text: "3" },
+                  { text: "..." },
+                  { link: "/page", text: "15" },
+                ]
+              })
 
-            .form-elements__row.form-elements__row_dropdown
-              .form-elements__column.form-elements__column_width320.form-elements__column_mr178
-                .form-elements__item.form-elements__item_sm
-                  .form-elements__title
-                    .form-elements__name dropdown
-                    .form-elements__state default
-                  +dropdown({type: 'room', isDefault: 'show'})
-                .form-elements__item.form-elements__item_sm
-                  .form-elements__title
-                    .form-elements__name dropdown
-                    .form-elements__state expanded
-                  +dropdown({type: 'room', isVisible: 'show', withBtn: false, isDefault: 'show'})
+        .form-elements__row.form-elements__row_dropdown
+          .form-elements__column.form-elements__column_width320.form-elements__column_mr178
+            .form-elements__item.form-elements__item_sm
+              .form-elements__title
+                .form-elements__name dropdown
+                .form-elements__state default
+              +dropdown({type: 'room', isDefault: 'show'})
+            .form-elements__item.form-elements__item_sm
+              .form-elements__title
+                .form-elements__name dropdown
+                .form-elements__state expanded
+              +dropdown({type: 'room', isVisible: 'show', withBtn: false, isDefault: 'show'})
 
-              .form-elements__column.form-elements__column_width320.form-elements__column_mr72
-                .form-elements__item
-                  .form-elements__title
-                    .form-elements__name dropdown
-                  +dropdown({type: 'guest', isVisible: 'show', isDefault: 'hide'})
+          .form-elements__column.form-elements__column_width320.form-elements__column_mr72
+            .form-elements__item
+              .form-elements__title
+                .form-elements__name dropdown
+              +dropdown({type: 'guest', isVisible: 'show', isDefault: 'hide'})
 
-              .form-elements__column.form-elements__column_width320
-                .form-elements__item
-                  .form-elements__title
-                    .form-elements__name dropdown
-                  +dropdown({type: 'guest', isVisible: 'show', isDefault: 'show'})
+          .form-elements__column.form-elements__column_width320
+            .form-elements__item
+              .form-elements__title
+                .form-elements__name dropdown
+              +dropdown({type: 'guest', isVisible: 'show', isDefault: 'show'})
 
-            .form-elements__row.form-elements__row_checkboxes
-              .form-elements__column.form-elements__column_width320.form-elements__column_mr178
-                .form-elements__item.form-elements__item_sm.form-elements__item_expander
-                  +expander({
-                    items: [
-                    {
-                      label: 'Завтрак',
-                      isChecked: false
-                    },
-                    {
-                      label: 'Письменный стол',
-                      isChecked: false
-                    },
-                    {
-                      label: 'Стул для кормления',
-                      isChecked: false
-                    },
-                    {
-                      label: 'Кроватка',
-                      isChecked: false
-                    },
-                    {
-                      label: 'Телевизор',
-                      isChecked: false
-                    },
-                    {
-                      label: 'Шампунь',
-                      isChecked: false
-                    }
-                  ]})
+        .form-elements__row.form-elements__row_checkboxes
+          .form-elements__column.form-elements__column_width320.form-elements__column_mr178
+            .form-elements__item.form-elements__item_sm.form-elements__item_expander
+              +expander({
+                items: [
+                {
+                  label: 'Завтрак',
+                  isChecked: false
+                },
+                {
+                  label: 'Письменный стол',
+                  isChecked: false
+                },
+                {
+                  label: 'Стул для кормления',
+                  isChecked: false
+                },
+                {
+                  label: 'Кроватка',
+                  isChecked: false
+                },
+                {
+                  label: 'Телевизор',
+                  isChecked: false
+                },
+                {
+                  label: 'Шампунь',
+                  isChecked: false
+                }
+              ]})
 
-                .form-elements__item.form-elements__item_sm
-                  +expander({
-                    visibility: 'show',
-                    items: [
-                    {
-                      label: 'Завтрак',
-                      isChecked: false
-                    },
-                    {
-                      label: 'Письменный стол',
-                      isChecked: true
-                    },
-                    {
-                      label: 'Стул для кормления',
-                      isChecked: true
-                    },
-                    {
-                      label: 'Кроватка',
-                      isChecked: true
-                    },
-                    {
-                      label: 'Телевизор',
-                      isChecked: false
-                    },
-                    {
-                      label: 'Шампунь',
-                      isChecked: false
-                    }
-                  ]})
+            .form-elements__item.form-elements__item_sm
+              +expander({
+                visibility: 'show',
+                items: [
+                {
+                  label: 'Завтрак',
+                  isChecked: false
+                },
+                {
+                  label: 'Письменный стол',
+                  isChecked: true
+                },
+                {
+                  label: 'Стул для кормления',
+                  isChecked: true
+                },
+                {
+                  label: 'Кроватка',
+                  isChecked: true
+                },
+                {
+                  label: 'Телевизор',
+                  isChecked: false
+                },
+                {
+                  label: 'Шампунь',
+                  isChecked: false
+                }
+              ]})
 
-              .form-elements__column.form-elements__column_width320.form-elements__column_mr72
-                .form-elements__item
-                  .form-elements__title.form-elements__title_mb
-                    .form-elements__name rich Checkbox Buttons
-                  .form-elements__rich-checkbox
-                    +rich-checkbox({label: 'Широкий коридор', description: 'Ширина коридоров в номере не менее 91 см.'})
-                  .form-elements__rich-checkbox
-                    +rich-checkbox({label: 'Помошник для инвалидов', description: 'На 1 этаже вас встретит специалист  и проводит до номера.'})
+          .form-elements__column.form-elements__column_width320.form-elements__column_mr72
+            .form-elements__item
+              .form-elements__title.form-elements__title_mb
+                .form-elements__name rich Checkbox Buttons
+              .form-elements__rich-checkbox
+                +rich-checkbox({label: 'Широкий коридор', description: 'Ширина коридоров в номере не менее 91 см.'})
+              .form-elements__rich-checkbox
+                +rich-checkbox({label: 'Помошник для инвалидов', description: 'На 1 этаже вас встретит специалист  и проводит до номера.'})
 
-              .form-elements__column.form-elements__column_width320
-                .form-elements__item
-                  .form-elements__title.form-elements__title_bullet
-                    .form-elements__name bullet list
-                  +bullet([
-                    {text: 'Нельзя с питомцами'},
-                    {text: 'Без вечеринок и мероприятий'},
-                    {text: 'Время прибытия — после 13:00, а выезд до 12:00'}
-                  ])
+          .form-elements__column.form-elements__column_width320
+            .form-elements__item
+              .form-elements__title.form-elements__title_bullet
+                .form-elements__name bullet list
+              +bullet([
+                {text: 'Нельзя с питомцами'},
+                {text: 'Без вечеринок и мероприятий'},
+                {text: 'Время прибытия — после 13:00, а выезд до 12:00'}
+              ])
 
-            .form-elements__row.form-elements__row_no-space
-              .form-elements__column.form-elements__column_width320.form-elements__column_advantages
-                .form-elements__item.form-elements__item_sm
-                  +advantage()
-                .form-elements__item.form-elements__item_sm
-                  +advantage({icon: 'location_city', title: 'Удобство', description: 'Окно в каждой из спален'})
+        .form-elements__row.form-elements__row_no-space
+          .form-elements__column.form-elements__column_width320.form-elements__column_advantages
+            .form-elements__item.form-elements__item_sm
+              +advantage()
+            .form-elements__item.form-elements__item_sm
+              +advantage({icon: 'location_city', title: 'Удобство', description: 'Окно в каждой из спален'})
 
-              .form-elements__column
-                .form-elements__item.form-elements__item_lg
-                  .form-elements__comment
-                    +comment({img: 'avatar1.png', author: 'Мурад Сарафанов', day: '5 дней назад', description: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.', likes: 12})
-
-
-    block footer
+          .form-elements__column
+            .form-elements__item.form-elements__item_lg
+              .form-elements__comment
+                +comment({img: 'avatar1.png', author: 'Мурад Сарафанов', day: '5 дней назад', description: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.', likes: 12})
 
 
