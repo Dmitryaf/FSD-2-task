@@ -34,7 +34,6 @@ const htmlPlugins = pages.map(
       template: `./pages/${fileName}/${fileName}.pug`,
       alwaysWriteToDisk: true,
       inject: 'body',
-      hash: true,
     })
 );
 
@@ -57,13 +56,12 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].[hash].js',
-    publicPath: '/',
   },
   resolve: {
     extensions: ['.js'],
   },
   devServer: {
-    contentBase: './dist',
+    contentBase: path.join(__dirname, 'dist'),
     compress: true,
   },
   mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
