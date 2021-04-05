@@ -56,7 +56,7 @@ module.exports = {
   entry: './entry.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].js',
+    filename: '[name].[hash].js',
     publicPath: '/',
   },
   resolve: {
@@ -70,9 +70,9 @@ module.exports = {
   target: process.env.NODE_ENV === 'production' ? 'browserslist' : 'web',
 
   plugins: [
-    new CleanWebpackPlugin({ cleanStaleWebpackAssets: false, dry: true }),
+    new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: '[name].css',
+      filename: '[name].[hash].css',
     }),
     new CopyWebpackPlugin({
       patterns: [{ from: `favicons`, to: 'favicons' }],
