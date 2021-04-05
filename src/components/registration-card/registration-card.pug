@@ -5,7 +5,9 @@ include ../long-button/long-button
 include ../account/account
 include ../subtitle/subtitle
 
-mixin registration-card()
+mixin registration-card(options = {})
+  - const {btnText = 'Перейти к оплате'} = options
+
   .registration-card
     h1.registration-card__title Регистрация аккаунта
     .registration-card__item
@@ -42,7 +44,7 @@ mixin registration-card()
 
     .registration-card__item.registration-card__item_btn
       .registration-card__btn
-        +long-button({text: 'Зарегистрироваться'})
+        +long-button({text: btnText})
 
     .registration-card__account
       +account({btnText: 'Войти', description: 'Уже есть аккаунт на Toxin'})
