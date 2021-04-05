@@ -1,0 +1,28 @@
+extends ../base/base
+
+include ../../components/container/container
+
+block title
+  title Pages
+
+block content
+  - 
+    const pages = [
+      { link: 'colors-and-type', title: 'Colors & Type'},
+      { link: 'headers-and-footers', title: 'Headers & Footers'},
+      { link: 'cards', title: 'Cards'},
+      { link: 'form-elements', title: 'Form Elements'},
+      { link: 'landing', title: 'Langing'},
+      { link: 'search-room', title: 'Search Room'},
+      { link: 'room-details', title: 'Room Details'},
+      { link: 'registration', title: 'Registration'},
+      { link: 'sign-in', title: 'Sign In'},
+    ]
+
+  .index
+    +container()
+      .index__content
+        ul.index__list
+          for page in pages
+            li.index__item
+              a.index__link(href=`${page.link}.html` target='_blank' rel='noopener noreferrer')= page.title

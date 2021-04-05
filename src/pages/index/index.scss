@@ -1,0 +1,25 @@
+@import '../../theme/variables.scss';
+
+.index {
+
+  &__content {
+    padding: 100px 0;
+  }
+
+  &__list {
+    background-color: white;
+    width: 380px;
+    padding: 20px 40px;
+    margin: 0 auto;
+  }
+
+  &__item {
+    margin-bottom: 20px;
+  }
+
+  &__link {
+    font-size: 1.429rem;
+    color: $darkShade50;
+    text-decoration: none;
+  }
+}
