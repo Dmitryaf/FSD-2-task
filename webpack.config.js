@@ -21,15 +21,6 @@ fs.readdirSync(path.resolve(__dirname, 'src', 'pages'))
 const htmlPlugins = pages.map(
   (fileName) =>
     new HtmlWebpackPlugin({
-      getData: () => {
-        try {
-          return JSON.parse(
-            fs.readFileSync(`./pages/${fileName}/data.json`, 'utf-8')
-          );
-        } catch (e) {
-          console.warn(`data.json was not provided for page ${fileName}`);
-        }
-      },
       filename: `${fileName}.html`,
       template: `./pages/${fileName}/${fileName}.pug`,
       alwaysWriteToDisk: true,
@@ -64,8 +55,6 @@ module.exports = {
     contentBase: path.join(__dirname, 'dist'),
     compress: true,
   },
-  mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
-  target: process.env.NODE_ENV === 'production' ? 'browserslist' : 'web',
 
   plugins: [
     new CleanWebpackPlugin(),
