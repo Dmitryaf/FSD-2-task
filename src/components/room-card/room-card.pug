@@ -13,7 +13,7 @@ mixin room-card(options = {})
       .room-card__info
         +room-info({roomNumber: number, isLuxe, price, size: roomInfoSize})
       .room-card__rate
-        +rate-btn({rate})
+        +rate-btn(rate)
         .room-card__reviews
           span.room-card__reviews-count= reviewCount
           span.room-card__reviews-text= ' Отзывов'

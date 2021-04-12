@@ -4,8 +4,7 @@ include ../calendar/calendar
 //-
   options.title
 
-mixin filter-dropdown(options = {})
-  - const {title = 'filter date dropdown'} = options
+mixin filter-dropdown(title = 'filter date dropdown')
 
   .filter-dropdown
     +calendar({type: 'filter'})

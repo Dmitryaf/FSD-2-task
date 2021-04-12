@@ -6,7 +6,7 @@ include ../../components/advantage/advantage
 include ../../components/comment/comment
 include ../../components/bullet/bullet
 include ../../components/subtitle/subtitle
-include ../../components/donut/donut
+include ../../components/pie-chart/pie-chart
 
 block title
   title Room details
@@ -39,7 +39,7 @@ block content
               h3.room-details__title Впечатления от номера
               .room-details__impress
                 .room-details__impress-content
-                  +donut()
+                  +pie-chart()
                   .room-details__impress-bullet
                     +bullet([
                       {

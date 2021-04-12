@@ -3,11 +3,9 @@
   item.hex
   item.colorPrefix
 
-mixin colors(options = {})
-  - const {items = []} = options
-
+mixin colors(items = [])
   ul.colors__list
-    for item in options.items
+    for item in items
       li.colors__item
         .colors__square(class= `colors__square_${item.colorPrefix}`)
         .colors__info

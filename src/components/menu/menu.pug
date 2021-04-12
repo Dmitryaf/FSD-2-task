@@ -7,7 +7,8 @@ include ../button/button
   options.isAuth - bool
 
 mixin menu(options = {})
-  - const {items = []} = options
+  - const {items = [], isAuth} = options
+
   .menu.js-menu
     nav.menu__nav
       ul.menu__list.js-menu__list
@@ -21,9 +22,9 @@ mixin menu(options = {})
                     a.submenu__item-link(href = child.href)= child.name
           else
             li.menu__item
-              a.menu__link(class= item.active ? 'menu__link_active' : '' , href = item.href)= item.name
+              a.menu__link(class= item.active ? 'menu__link_active' : '' , href= item.href)= item.name
 
-        if !options.isAuth
+        if !isAuth
           li.menu__item.menu__item_btns
             +button({text: 'Войти', isInverted: true})
             +button({text: 'Зарегистрироваться'})
