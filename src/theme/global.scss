@@ -5,7 +5,6 @@
 @import './plugins/ion-slider.scss';
 @import './plugins/slick-carousel.scss';
 
-
 * {
   margin: 0;
   padding: 0;
@@ -25,8 +24,7 @@
 }
 
 html {
-  font-family: Montserrat,
-    Arial, sans-serif;
+  font-family: Montserrat, OpenSans, sans-serif;
   font-size: 14px;
   color: $darkShade75;
 }
